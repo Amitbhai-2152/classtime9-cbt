@@ -30,7 +30,8 @@ function doPost(e) {
     body += "Mobile: " + (c.mobile || "") + "\n";
     body += "Submitted: " + (data.submittedAt || "") + "\n";
     body += "Time Spent: " + Math.floor((data.timeSpentSeconds || 0) / 60) + " min\n";
-    body += "Objective Score: " + (o.score || 0) + " / " + (o.totalMarks || 0) + "\n\n";
+    body += "Objective Score: " + (o.score || 0) + " / " + (o.totalMarks || 0) + "\n";
+    body += "Subjective marked on copy: " + (data.subjectiveMarked || 0) + " / 14\n\n";
     body += "OBJECTIVE ANSWERS\n";
     body += "=================\n";
 
