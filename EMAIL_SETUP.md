@@ -1,4 +1,4 @@
-# JNVST Class 9 Mock Test 2027–28 — Automatic Email Setup
+# ClassTime 9 — TEST 02 — BSEB Class 9 Practice CBT — Automatic Email Setup
 
 ## What changed
 - Removed the student-facing “परिणाम मेरे ईमेल...” button.
