@@ -1,7 +1,8 @@
 // TEST 02 — ClassTime 9 | BSEB Class 9 Practice CBT
 // Superior question design: every syllabus component has 1 easy, 1 medium, and 1 hard MCQ.
 // Hindi and English include dedicated passage-based comprehension questions.
-// Exactly 2 written-copy subjective questions remain per subject; no typed answer field is used.
+// Exactly 2 written-copy subjective questions remain per subject; each is designed for ~2–3 minutes.
+// No typed answer field is used.
 const QUESTIONS = [
   {
     "id": 1,
@@ -106,7 +107,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "moderate",
     "topic": "निर्देशांक ज्यामिति",
-    "question": "कार्तीय तल बनाकर मूलबिंदु, x-अक्ष और y-अक्ष को अंकित कीजिए तथा किसी भी दो चतुर्थांशों के उदाहरण बिंदु लिखिए।"
+    "question": "निर्देशांक ज्यामिति: कार्तीय तल बनाकर बिंदु A(3, 2) और B(−2, −3) अंकित कीजिए तथा दोनों बिंदुओं के चतुर्थांश लिखिए।"
   },
   {
     "id": 8,
@@ -115,7 +116,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "challenging",
     "topic": "दो चरों वाले रैखिक समीकरण",
-    "question": "दो चरों वाले किसी एक रैखिक समीकरण के कम-से-कम चार क्रमित युग्म लिखकर दिखाइए कि वे समीकरण को संतुष्ट करते हैं।"
+    "question": "दो चरों वाले रैखिक समीकरण: समीकरण 2x + y = 6 के कोई तीन हल लिखिए।"
   },
   {
     "id": 9,
@@ -220,7 +221,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "moderate",
     "topic": "परमाणु एवं अणु",
-    "question": "परमाणु, अणु और आयन में अंतर उदाहरण सहित समझाइए।"
+    "question": "परमाणु एवं अणु: परमाणु और अणु में कोई दो अंतर लिखिए तथा प्रत्येक का एक उदाहरण दीजिए।"
   },
   {
     "id": 16,
@@ -229,7 +230,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "challenging",
     "topic": "परमाणु की संरचना",
-    "question": "रदरफोर्ड के परमाणु मॉडल के मुख्य निष्कर्ष और उसकी एक सीमा अपने शब्दों में लिखिए।"
+    "question": "परमाणु की संरचना: परमाणु संख्या और द्रव्यमान संख्या की परिभाषा लिखिए तथा परमाणु संख्या 11 और द्रव्यमान संख्या 23 वाले परमाणु में प्रोटॉन व न्यूट्रॉन की संख्या बताइए।"
   },
   {
     "id": 17,
@@ -529,7 +530,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "moderate",
     "topic": "गद्य-साहित्य",
-    "question": "‘लाल पान की बेगम’ कहानी में ग्रामीण परिवेश की दो विशेषताएँ अपने शब्दों में लिखिए।"
+    "question": "‘लाल पान की बेगम’ कहानी के ग्रामीण परिवेश की कोई दो विशेषताएँ 3–4 वाक्यों में लिखिए।"
   },
   {
     "id": 36,
@@ -538,7 +539,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "challenging",
     "topic": "काव्य-साहित्य",
-    "question": "‘मंझन के पद’ या ‘गुरु गोविंद सिंह के पद’ में से किसी एक के केंद्रीय भाव को उदाहरण सहित स्पष्ट कीजिए।"
+    "question": "‘गुरु गोविंद सिंह के पद’ में व्यक्त वीरता के भाव को 3–4 वाक्यों में स्पष्ट कीजिए।"
   },
   {
     "id": 37,
@@ -643,7 +644,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "moderate",
     "topic": "यक्ष-युधिष्ठिर संवाद",
-    "question": "संवाद में युधिष्ठिर के किसी एक उत्तर से मिलने वाली नीति-शिक्षा संस्कृत में या सरल हिन्दी में लिखिए।"
+    "question": "‘यक्ष-युधिष्ठिर संवाद’ से मिलने वाली कोई एक नीति-शिक्षा 2–3 वाक्यों में लिखिए।"
   },
   {
     "id": 44,
@@ -652,7 +653,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "challenging",
     "topic": "चत्वारो वेदाः",
-    "question": "चत्वारो वेदाः पाठ के आधार पर चार वेदों के नाम और उनमें से किसी एक की विशेषता लिखिए।"
+    "question": "चारों वेदों के नाम लिखिए और किसी एक वेद के बारे में एक तथ्य लिखिए।"
   },
   {
     "id": 45,
@@ -853,7 +854,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "moderate",
     "topic": "इतिहास",
-    "question": "फ्रांस की क्रांति के किसी दो प्रमुख कारणों को संक्षेप में लिखिए।"
+    "question": "फ्रांस की क्रांति के कोई दो कारण लिखिए।"
   },
   {
     "id": 58,
@@ -862,7 +863,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "challenging",
     "topic": "भूगोल",
-    "question": "हिमालयी और प्रायद्वीपीय अपवाह तंत्र में दो प्रमुख अंतर लिखिए।"
+    "question": "हिमालयी और प्रायद्वीपीय नदियों में कोई दो अंतर लिखिए।"
   },
   {
     "id": 59,
@@ -1162,7 +1163,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "moderate",
     "topic": "Reader / Panorama",
-    "question": "Write the central message of either ‘Saint Kabir’ or ‘Yayati’ in about 60–80 words."
+    "question": "Write the central idea of either ‘Saint Kabir’ or ‘Yayati’ in about 40–50 words."
   },
   {
     "id": 78,
@@ -1171,7 +1172,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "challenging",
     "topic": "Language & Skills",
-    "question": "Write six sentences using different tenses, and underline the finite verb in each sentence."
+    "question": "Write four sentences using four different tenses. Underline the verb in each sentence."
   },
   {
     "id": 79,
@@ -1420,7 +1421,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "moderate",
     "topic": "Alphabet Series",
-    "question": "बिना अक्षरों को लिखे केवल वर्णक्रम की स्थिति के आधार पर A, E, J, O, U की स्थिति-संख्या तुलना कीजिए और सबसे छोटे तथा सबसे बड़े मान का कारण लिखिए।"
+    "question": "चार शब्दों की एक alphabet series बनाइए जिसमें हर अगला अक्षर 2 स्थान आगे बढ़े और पाँच पद लिखिए।"
   },
   {
     "id": 95,
@@ -1429,6 +1430,6 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "challenging",
     "topic": "Alphabet Series",
-    "question": "दो अलग-अलग alphabet-series बनाइए: एक में क्रमिक अंतर बढ़ता जाए और दूसरी में घटता जाए। प्रत्येक में कम-से-कम पाँच पद लिखिए।"
+    "question": "एक alphabet series बनाइए जिसमें बढ़ने वाले steps क्रमशः 1, 2, 3, 4 हों। कम-से-कम पाँच पद लिखिए।"
   }
 ];
