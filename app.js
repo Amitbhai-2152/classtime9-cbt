@@ -1,3 +1,4 @@
+const TEST_NAME = "ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा";
 // Google Apps Script Web App endpoint.
 // Deploy the supplied google-apps-script.gs as a Web App and paste its /exec URL here.
 const EMAIL_ENDPOINT = "https://script.google.com/macros/s/AKfycbx341brEbkoRCD-vzkrDtUIGH81NvY7xMoHngv82D0pOJv_ozE5iZlgtuwrzbfdUxAQ/exec";
@@ -104,13 +105,13 @@ window.onload = () => {
 };
 
 // JNVST Mock Test duration: 2 घंटे 30 मिनट = 150 मिनट
-const TEST_DURATION_SECONDS = 2.5 * 60 * 60;
+const TEST_DURATION_SECONDS = 2.5 * 60 * 60; // 02:30:00
 let totalSeconds = TEST_DURATION_SECONDS;
 let timerInterval = null;
 let timeElapsedSeconds = 0;
 let selectedSubjectFilter = "All";
 
-const subjectsList = ["All", "गणित", "सामान्य विज्ञान", "English", "हिंदी"];
+const subjectsList = ["All", "गणित", "विज्ञान", "हिन्दी", "संस्कृत", "सामाजिक विज्ञान", "English", "तर्कशक्ति"];
 
 function goToScreen(screenId) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -368,7 +369,7 @@ function buildSubmissionPayload() {
   const score = answers.reduce((sum, a) => sum + (a.isCorrect ? a.marks : 0), 0);
 
   return {
-    testName: "JNVST कक्षा 9 मॉक टेस्ट 2027–28",
+    testName: TEST_NAME,
     submittedAt: new Date().toISOString(),
     candidate: {
       name: userProfile.name,
@@ -431,8 +432,8 @@ function finalizeSubmission() {
   const totalMcqMarks = objectiveQuestions.reduce((sum, q) => sum + q.marks, 0);
   const attempted = QUESTIONS.reduce((sum, q, i) =>
     sum + (q.type === "mcq" && studentResponses[i].selectedOption !== null && studentResponses[i].selectedOption !== undefined ? 1 : 0), 0);
-  const wrong = Math.max(0, attempted - mcqScore);
-  const unanswered = QUESTIONS.length - attempted;
+  const wrong = QUESTIONS.reduce((sum, q, i) => sum + (q.type === "mcq" && studentResponses[i].selectedOption !== null && studentResponses[i].selectedOption !== undefined && studentResponses[i].selectedOption !== q.correct ? 1 : 0), 0);
+  const unanswered = objectiveQuestions.length - attempted;
   const percentage = totalMcqMarks ? ((mcqScore / totalMcqMarks) * 100).toFixed(1).replace(/\.0$/, "") : "0";
 
   document.getElementById('statMcqScore').innerText = `${mcqScore} / ${totalMcqMarks}`;
