@@ -87,6 +87,7 @@ p.subtext { color: var(--text-muted); font-size: 13px; margin-top: 6px; }
 .status-answered { background: var(--answered); }
 .status-unanswered { background: var(--unanswered); }
 .status-review { background: var(--review); }
+.palette-subjective { outline: 2px dashed #f59e0b; outline-offset: -3px; }
 .active-q { box-shadow: 0 0 0 3px #0f172a !important; }
 .stat-row { display: flex; gap: 10px; margin: 20px 0; text-align: center; }
 .stat-box { flex: 1; padding: 16px 10px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; }
