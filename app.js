@@ -104,7 +104,7 @@ window.onload = () => {
   }
 };
 
-// JNVST Mock Test duration: 2 घंटे 30 मिनट = 150 मिनट
+// TEST 02 duration: 2 घंटे 30 मिनट = 150 मिनट
 const TEST_DURATION_SECONDS = 2.5 * 60 * 60; // 02:30:00
 let totalSeconds = TEST_DURATION_SECONDS;
 let timerInterval = null;
