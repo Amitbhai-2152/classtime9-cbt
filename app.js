@@ -379,6 +379,7 @@ function buildSubmissionPayload() {
       mobile: userProfile.mobile
     },
     timeSpentSeconds: timeElapsedSeconds,
+    subjectiveMarked: QUESTIONS.filter(q => q.type === "subjective").reduce((sum, q) => { const i = QUESTIONS.findIndex(item => item.id === q.id); return sum + (studentResponses[i]?.writtenInCopy ? 1 : 0); }, 0),
     objective: {
       score,
       totalMarks: objectiveQuestions.reduce((sum, q) => sum + q.marks, 0),
@@ -430,15 +431,17 @@ function finalizeSubmission() {
   goToScreen('screen-summary');
 
   const totalMcqMarks = objectiveQuestions.reduce((sum, q) => sum + q.marks, 0);
-  const attempted = QUESTIONS.reduce((sum, q, i) =>
-    sum + (q.type === "mcq" && studentResponses[i].selectedOption !== null && studentResponses[i].selectedOption !== undefined ? 1 : 0), 0);
+  const attempted = objectiveQuestions.reduce((sum, q) => { const i = QUESTIONS.findIndex(item => item.id === q.id); return sum + (studentResponses[i].selectedOption !== null && studentResponses[i].selectedOption !== undefined ? 1 : 0);
+    sum; }, 0);
   const wrong = QUESTIONS.reduce((sum, q, i) => sum + (q.type === "mcq" && studentResponses[i].selectedOption !== null && studentResponses[i].selectedOption !== undefined && studentResponses[i].selectedOption !== q.correct ? 1 : 0), 0);
+  const subjectiveQuestions = QUESTIONS.filter(q => q.type === "subjective");
+  const subjectiveMarked = subjectiveQuestions.reduce((sum, q) => { const i = QUESTIONS.findIndex(item => item.id === q.id); return sum + (studentResponses[i]?.writtenInCopy ? 1 : 0); }, 0);
   const unanswered = objectiveQuestions.length - attempted;
   const percentage = totalMcqMarks ? ((mcqScore / totalMcqMarks) * 100).toFixed(1).replace(/\.0$/, "") : "0";
 
   document.getElementById('statMcqScore').innerText = `${mcqScore} / ${totalMcqMarks}`;
   document.getElementById('statPercentage').innerText = `${percentage}%`;
-  document.getElementById('statAttempted').innerText = `${attempted} / ${QUESTIONS.length}`;
+  document.getElementById('statAttempted').innerText = `${attempted} / ${objectiveQuestions.length}`;
   document.getElementById('statUnanswered').innerText = String(unanswered);
   document.getElementById('statWrong').innerText = String(wrong);
 
