@@ -1,6 +1,6 @@
 // TEST 02 — ClassTime 9 | BSEB Class 9 Practice CBT
 // Superior question design: every syllabus component has 1 easy, 1 medium, and 1 hard MCQ.
-// Hard questions emphasize application, elimination, inference, calculation, or multi-step reasoning.
+// Hindi and English include dedicated passage-based comprehension questions.
 // Exactly 2 written-copy subjective questions remain per subject; no typed answer field is used.
 const QUESTIONS = [
   {
@@ -478,14 +478,15 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "अपठित गद्यांश",
-    "question": "‘जल-प्रबंधन’ गद्यांश में दिए गए उपायों में से कौन-सा घर और विद्यालय दोनों में सीधे अपनाया जा सकता है?",
+    "question": "गद्यांश के अनुसार तालाब की स्थिति खराब होने का एक प्रमुख कारण क्या था?",
     "options": [
-      "रिसाव रोकना और पानी का विवेकपूर्ण उपयोग",
-      "केवल बड़ी सिंचाई परियोजना बनाना",
-      "केवल बाँध बनाना",
-      "केवल नदी की दिशा बदलना"
+      "किनारे कचरा डालना",
+      "अधिक वर्षा होना",
+      "खेतों में कम काम होना",
+      "विद्यार्थियों का अभियान"
     ],
-    "correct": 0
+    "correct": 0,
+    "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
     "id": 33,
@@ -494,14 +495,15 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "अपठित गद्यांश",
-    "question": "निम्न में से कौन-सा निष्कर्ष किसी ऐसे गद्यांश से निकाला जा सकता है जिसमें वर्षा जल-संचयन, रिसाव रोकने और जरूरत के अनुसार उपयोग पर बल दिया गया हो?",
+    "question": "विद्यार्थियों ने तालाब की स्थिति सुधारने के लिए कौन-सा कदम नहीं उठाया?",
     "options": [
-      "छोटे-छोटे संरक्षण उपाय भी सामूहिक रूप से महत्वपूर्ण हो सकते हैं",
-      "जल-संकट का समाधान केवल उद्योग कर सकते हैं",
-      "जल बचाने के लिए पानी का उपयोग बंद करना चाहिए",
-      "वर्षा जल का कोई उपयोग नहीं है"
+      "सफाई अभियान चलाया",
+      "कचरा डालने पर रोक की अपील की",
+      "वर्षा जल की नालियों की सफाई की",
+      "तालाब को पूरी तरह पाट दिया"
     ],
-    "correct": 0
+    "correct": 3,
+    "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
     "id": 34,
@@ -510,14 +512,15 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "अपठित गद्यांश",
-    "question": "पढ़ते समय किसी कथन के लिए पाठ में प्रत्यक्ष प्रमाण न मिले, लेकिन वह कथन संभावित लगे। परीक्षा में सबसे उचित तरीका क्या होगा?",
+    "question": "अगले वर्ष तालाब में अधिक पानी जमा होने से कौन-सा निष्कर्ष सबसे उचित है?",
     "options": [
-      "उसे सत्य मान लेना",
-      "पाठ से मिलने वाले प्रमाण के आधार पर ही निष्कर्ष चुनना",
-      "सबसे लंबा विकल्प चुनना",
-      "अपनी निजी राय को सही मान लेना"
+      "सामूहिक प्रयास और जल-प्रबंधन से स्थानीय जल-स्रोत सुधर सकते हैं",
+      "केवल गर्मी कम होने से तालाब सुधरा",
+      "तालाब का पानी अपने-आप शुद्ध हो गया",
+      "कचरा डालने से जल-संग्रह बढ़ता है"
     ],
-    "correct": 1
+    "correct": 0,
+    "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
     "id": 35,
@@ -916,14 +919,15 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "Reader — The eyes are not here",
-    "question": "Where does the narrator meet the girl?",
+    "question": "Where does the young traveller sit at the beginning of the passage?",
     "options": [
-      "On a train",
-      "At a school",
-      "In a market",
-      "At a theatre"
+      "Near the window",
+      "Near the door",
+      "In the dining car",
+      "On the platform"
     ],
-    "correct": 0
+    "correct": 0,
+    "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
     "id": 63,
@@ -932,14 +936,15 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "Reader — The eyes are not here",
-    "question": "At the beginning of the story, what does the narrator assume about the girl?",
+    "question": "Why do the two passengers form mistaken impressions of each other?",
     "options": [
-      "That she can see normally",
-      "That she is a teacher",
-      "That she is the train guard",
-      "That she is a musician"
+      "They have never spoken to each other",
+      "They depend on limited clues instead of directly asking everything",
+      "The train stops unexpectedly",
+      "They are reading different books"
     ],
-    "correct": 0
+    "correct": 1,
+    "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
     "id": 64,
@@ -948,14 +953,15 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "Reader — The eyes are not here",
-    "question": "The ending is effective mainly because the conversation makes each person form an incorrect conclusion about—",
+    "question": "What makes the ending effective according to the passage?",
     "options": [
-      "the train journey",
-      "the other person’s eyesight",
-      "the weather",
-      "the railway timetable"
+      "A timetable changes suddenly",
+      "The final discovery exposes how unreliable their earlier assumptions were",
+      "The passengers leave before speaking",
+      "The conversation becomes an argument"
     ],
-    "correct": 1
+    "correct": 1,
+    "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
     "id": 65,
