@@ -1,7 +1,7 @@
 // TEST 02 — ClassTime 9 | BSEB Class 9 Practice CBT
-// Balanced coverage: one easy + one moderate + one challenging MCQ per syllabus topic.
-// Plus exactly 2 checkbox-only written-copy subjective questions per subject.
-// 81 MCQs + 14 subjective = 95 total questions.
+// Superior question design: every syllabus component has 1 easy, 1 medium, and 1 hard MCQ.
+// Hard questions emphasize application, elimination, inference, calculation, or multi-step reasoning.
+// Exactly 2 written-copy subjective questions remain per subject; no typed answer field is used.
 const QUESTIONS = [
   {
     "id": 1,
@@ -10,14 +10,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "निर्देशांक ज्यामिति",
-    "question": "कार्तीय तल में बिंदुओं की स्थिति समझाते हुए, बिंदु (−4, −2) किस चतुर्थांश में स्थित है?",
+    "question": "बिंदु P(−4, −3) किस चतुर्थांश में स्थित है?",
     "options": [
       "I",
       "II",
       "III",
       "IV"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 2,
@@ -26,14 +26,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "निर्देशांक ज्यामिति",
-    "question": "बिंदु A(3, −5) की x-अक्ष से दूरी कितनी है?",
+    "question": "बिंदु A(3, −5) की x-अक्ष से दूरी और y-अक्ष से दूरी क्रमशः कितनी हैं?",
     "options": [
-      "5 इकाई",
-      "−5 इकाई",
-      "3 इकाई",
-      "8 इकाई"
+      "3 और 5",
+      "5 और 3",
+      "3 और −5",
+      "−5 और 3"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 3,
@@ -42,14 +42,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "निर्देशांक ज्यामिति",
-    "question": "प्रथम चतुर्थांश में स्थित ऐसे बिंदु के निर्देशांक चुनिए जिसकी y-अक्ष से दूरी 6 इकाई और x-अक्ष से दूरी 2 इकाई है।",
+    "question": "किस बिंदु के लिए x-अक्ष से दूरी 6 इकाई, y-अक्ष से दूरी 2 इकाई और वह द्वितीय चतुर्थांश में स्थित हो?",
     "options": [
-      "(6,2)",
-      "(2,6)",
-      "(−2,6)",
-      "(6,−2)"
+      "(6, 2)",
+      "(−6, 2)",
+      "(−2, 6)",
+      "(2, −6)"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 4,
@@ -58,7 +58,7 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "दो चरों वाले रैखिक समीकरण",
-    "question": "2x + y = 9 में x = 3 होने पर y क्या होगा?",
+    "question": "2x + y = 9 में x = 3 होने पर y का मान क्या होगा?",
     "options": [
       "2",
       "3",
@@ -74,14 +74,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "दो चरों वाले रैखिक समीकरण",
-    "question": "निम्न में से कौन-सा बिंदु 2x + 3y = 12 का हल है?",
+    "question": "3x − 2y = 6 में x = 4 होने पर y का मान है—",
     "options": [
-      "(3,2)",
-      "(2,3)",
-      "(0,4)",
-      "(4,0)"
+      "1",
+      "2",
+      "3",
+      "4"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 6,
@@ -90,14 +90,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "दो चरों वाले रैखिक समीकरण",
-    "question": "x + y = 8 के आलेख पर इनमें से कौन-सा बिंदु स्थित नहीं है?",
+    "question": "एक रेखा x-अक्ष को (5, 0) और y-अक्ष को (0, 5) पर काटती है। उस रेखा का समीकरण कौन-सा है?",
     "options": [
-      "(1,7)",
-      "(2,6)",
-      "(4,4)",
-      "(5,3)"
+      "x − y = 5",
+      "x + y = 5",
+      "5x + y = 5",
+      "x + 5y = 5"
     ],
-    "correct": 3
+    "correct": 1
   },
   {
     "id": 7,
@@ -124,14 +124,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "परमाणु एवं अणु",
-    "question": "द्रव्यमान संरक्षण के नियम के अनुसार रासायनिक अभिक्रिया में क्या संरक्षित रहता है?",
+    "question": "किस नियम के अनुसार किसी शुद्ध यौगिक में उसके अवयवी तत्व सदैव निश्चित द्रव्यमान अनुपात में पाए जाते हैं?",
     "options": [
-      "द्रव्यमान",
-      "केवल आयतन",
-      "केवल तापमान",
-      "केवल रंग"
+      "द्रव्यमान संरक्षण का नियम",
+      "निश्चित अनुपात का नियम",
+      "गुरुत्वाकर्षण का नियम",
+      "ऊर्जा संरक्षण का नियम"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 10,
@@ -140,12 +140,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "परमाणु एवं अणु",
-    "question": "जल (H₂O) में हाइड्रोजन और ऑक्सीजन का द्रव्यमान अनुपात कितना होता है?",
+    "question": "H₂SO₄ का आणविक द्रव्यमान कितना है? (H=1, S=32, O=16)",
     "options": [
-      "1:8",
-      "8:1",
-      "2:1",
-      "1:2"
+      "96 u",
+      "98 u",
+      "100 u",
+      "102 u"
     ],
     "correct": 1
   },
@@ -156,12 +156,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "परमाणु एवं अणु",
-    "question": "यदि X की संयोजकता 2 और Y की संयोजकता 3 है, तो बनने वाले यौगिक का न्यूनतम सूत्र क्या होगा?",
+    "question": "एक यौगिक में Ca, C और O का द्रव्यमान प्रतिशत क्रमशः 40%, 12% और 48% है। इसका सरलतम सूत्र कौन-सा होगा? (Ca=40, C=12, O=16)",
     "options": [
-      "XY",
-      "X₂Y₃",
-      "X₃Y₂",
-      "X₂Y"
+      "CaCO",
+      "CaCO₂",
+      "CaCO₃",
+      "Ca₂CO₃"
     ],
     "correct": 2
   },
@@ -172,7 +172,7 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "परमाणु की संरचना",
-    "question": "इलेक्ट्रॉन का आवेश कैसा होता है?",
+    "question": "इलेक्ट्रॉन पर किस प्रकार का आवेश होता है?",
     "options": [
       "धनात्मक",
       "ऋणात्मक",
@@ -188,14 +188,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "परमाणु की संरचना",
-    "question": "रदरफोर्ड के प्रयोग से परमाणु की संरचना के बारे में क्या निष्कर्ष निकला?",
+    "question": "किसी उदासीन परमाणु की परमाणु संख्या 8 है। उसके नाभिक के बाहर इलेक्ट्रॉनों की संख्या कितनी होगी?",
     "options": [
-      "परमाणु का अधिकांश भाग खाली है",
-      "परमाणु केवल ठोस पिंड है",
-      "इलेक्ट्रॉन नाभिक में हैं",
-      "नाभिक का कोई आवेश नहीं है"
+      "6",
+      "8",
+      "10",
+      "16"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 14,
@@ -204,14 +204,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "परमाणु की संरचना",
-    "question": "परमाणु संख्या 19 और द्रव्यमान संख्या 39 वाले परमाणु में न्यूट्रॉनों की संख्या कितनी होगी?",
+    "question": "किसी उदासीन परमाणु में 17 प्रोटॉन और 18 न्यूट्रॉन हैं। उसके परमाणु संख्या और द्रव्यमान संख्या क्रमशः क्या होंगी?",
     "options": [
-      "19",
-      "20",
-      "39",
-      "58"
+      "17 और 35",
+      "18 और 35",
+      "17 और 18",
+      "35 और 17"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 15,
@@ -238,12 +238,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "ग्राम-गीत का मर्म",
-    "question": "ग्राम-गीतों की सबसे प्रमुख विशेषता क्या मानी गई है?",
+    "question": "‘ग्राम-गीत का मर्म’ के लेखक कौन हैं?",
     "options": [
-      "बनावटी भाषा",
-      "सहज लोक-अभिव्यक्ति",
-      "केवल हास्य",
-      "केवल शहरी जीवन"
+      "फणीश्वरनाथ रेणु",
+      "लक्ष्मीनारायण सुधांशु",
+      "प्रेमचंद",
+      "रामधारी सिंह दिनकर"
     ],
     "correct": 1
   },
@@ -254,12 +254,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "ग्राम-गीत का मर्म",
-    "question": "लेखक के अनुसार ग्राम-गीत लोक-जीवन से किस प्रकार जुड़े हैं?",
+    "question": "पाठ के विचारों के अनुसार ग्राम-गीतों का सबसे महत्वपूर्ण साहित्यिक आधार क्या है?",
     "options": [
-      "सिर्फ त्योहारों तक",
-      "लोक-जीवन और सामूहिक अनुभवों से",
-      "केवल विद्यालयी शिक्षा से",
-      "केवल राजनीति से"
+      "कृत्रिम अलंकार",
+      "जनजीवन के सहज अनुभव और भाव",
+      "केवल राजदरबार",
+      "केवल धार्मिक अनुष्ठान"
     ],
     "correct": 1
   },
@@ -270,12 +270,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "ग्राम-गीत का मर्म",
-    "question": "ग्राम-गीतों की सहजता और लोक-संवेदना उनके साहित्यिक महत्व को कैसे बढ़ाती है?",
+    "question": "यदि किसी लोकगीत में प्रेम, संघर्ष, उत्सव और दुख जैसे अनेक मानवीय भाव स्वाभाविक रूप से व्यक्त हों, तो पाठ के आधार पर उसका सबसे उचित मूल्यांकन क्या होगा?",
     "options": [
-      "यह लोक-संवेदना और अनुभवों को सहज रूप में अभिव्यक्त करते हैं",
-      "वे केवल मनोरंजन हैं",
-      "वे केवल शास्त्रीय ग्रंथ हैं",
-      "वे केवल दरबारी गीत हैं"
+      "वह ग्राम-गीत की व्यापक जीवन-संबद्धता को दर्शाता है",
+      "वह ग्राम-गीत नहीं हो सकता क्योंकि उसमें कई भाव हैं",
+      "लोकगीत में केवल मनोरंजन होना चाहिए",
+      "ऐसे गीत साहित्यिक दृष्टि से निरर्थक होते हैं"
     ],
     "correct": 0
   },
@@ -286,12 +286,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "लाल पान की बेगम",
-    "question": "‘लाल पान की बेगम’ के लेखक कौन हैं?",
+    "question": "‘लाल पान की बेगम’ कहानी के लेखक कौन हैं?",
     "options": [
       "फणीश्वरनाथ रेणु",
+      "लक्ष्मीनारायण सुधांशु",
       "प्रेमचंद",
-      "दिनकर",
-      "जयशंकर प्रसाद"
+      "अमृतलाल नागर"
     ],
     "correct": 0
   },
@@ -302,12 +302,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "लाल पान की बेगम",
-    "question": "कहानी में ग्रामीण जीवन को जीवंत बनाने वाला प्रमुख तत्व क्या है?",
+    "question": "कहानी में बिरजू की माँ के मन की बेचैनी का तत्काल कारण क्या था?",
     "options": [
-      "लोक-संस्कृति और ग्रामीण गतिविधियाँ",
-      "वैज्ञानिक प्रयोग",
-      "राजकीय युद्ध",
-      "समुद्री व्यापार"
+      "बैलगाड़ी के देर से आने की चिंता",
+      "फसल खराब होना",
+      "बच्चों का विद्यालय न जाना",
+      "गाँव छोड़ने की तैयारी"
     ],
     "correct": 0
   },
@@ -318,12 +318,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "लाल पान की बेगम",
-    "question": "कहानी में ग्रामीण समाज के कौन-कौन से मानवीय पक्ष उभरते हैं?",
+    "question": "‘लाल पान की बेगम’ शीर्षक की सार्थकता मुख्यतः किस कारण दिखाई देती है?",
     "options": [
-      "आशा-निराशा, संबंध और सामाजिक भावनाएँ",
-      "केवल युद्ध",
-      "केवल विज्ञान",
-      "केवल राजदरबार"
+      "यह ग्रामीण जीवन, व्यक्तित्व और सामाजिक भावनाओं को एक प्रतीकात्मक नाम में बाँधता है",
+      "यह कहानी के स्थान का वास्तविक सरकारी नाम है",
+      "यह केवल पान की दुकान का वर्णन है",
+      "यह कहानी के लेखक का उपनाम है"
     ],
     "correct": 0
   },
@@ -334,12 +334,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "मंझन के पद",
-    "question": "मंझन किस काव्य-परंपरा से जुड़े कवि माने जाते हैं?",
+    "question": "मंझन किस काव्य-परंपरा से जुड़े कवि हैं?",
     "options": [
       "सूफी काव्य-परंपरा",
       "छायावाद",
-      "रीतिकालीन दरबार",
-      "वीरगाथा"
+      "रीतिकालीन दरबारी काव्य",
+      "प्रगतिवाद"
     ],
     "correct": 0
   },
@@ -350,14 +350,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "मंझन के पद",
-    "question": "पदों में प्रेम का कौन-सा रूप प्रमुख है?",
+    "question": "मंझन के पदों में प्रेम की अभिव्यक्ति को सबसे उपयुक्त रूप में कैसे समझा जा सकता है?",
     "options": [
-      "आध्यात्मिक और मानवीय प्रेम",
-      "केवल हास्य",
-      "केवल राजनीतिक प्रेम",
-      "केवल धन"
+      "केवल हास्य के रूप में",
+      "मानवीय प्रेम और आध्यात्मिक अनुभूति के मेल के रूप में",
+      "केवल राजनीतिक भावना के रूप में",
+      "केवल प्रकृति-वर्णन के रूप में"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 25,
@@ -366,12 +366,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "मंझन के पद",
-    "question": "मंझन के काव्य में प्रेम को केवल व्यक्तिगत भावना से आगे कैसे देखा गया है?",
+    "question": "मंझन की प्रेम-दृष्टि को ‘मानवीय से आध्यात्मिक’ बनाने वाला तत्व कौन-सा है?",
     "options": [
-      "प्रेम को मानवीय और आध्यात्मिक अनुभव बनाना",
-      "प्रेम को केवल लाभ मानना",
-      "प्रेम को युद्ध मानना",
-      "प्रेम को केवल प्रतियोगिता मानना"
+      "प्रेम को आत्मिक मिलन और व्यापक अनुभूति से जोड़ना",
+      "प्रेम को केवल सामाजिक प्रतिष्ठा से जोड़ना",
+      "प्रेम को धन प्राप्ति का साधन बनाना",
+      "प्रेम को केवल युद्ध से जोड़ना"
     ],
     "correct": 0
   },
@@ -382,14 +382,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "गुरु गोविंद सिंह के पद",
-    "question": "गुरु गोविंद सिंह सिख परंपरा में किस स्थान पर हैं?",
+    "question": "गुरु गोविंद सिंह सिख परंपरा के कौन-से गुरु थे?",
     "options": [
-      "दसवें गुरु",
-      "पहले गुरु",
-      "मुगल सम्राट",
-      "केवल दरबारी कवि"
+      "आठवें",
+      "नवें",
+      "दसवें",
+      "ग्यारहवें"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 27,
@@ -398,12 +398,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "गुरु गोविंद सिंह के पद",
-    "question": "पदों में कौन-सा भाव विशेष रूप से प्रबल है?",
+    "question": "इन पदों की प्रमुख भाव-धारा कौन-सी है?",
     "options": [
-      "वीरता और उत्साह",
+      "वीरता, आत्मबल और उत्साह",
       "केवल हास्य",
-      "केवल विरह",
-      "केवल प्रकृति"
+      "केवल करुणा",
+      "केवल प्रकृति-सौंदर्य"
     ],
     "correct": 0
   },
@@ -414,12 +414,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "गुरु गोविंद सिंह के पद",
-    "question": "ओज और वीर भाव उनकी कविता के प्रभाव को कैसे बढ़ाते हैं?",
+    "question": "किसी कविता में कठिन परिस्थितियों के सामने निर्भय रहने, संघर्ष करने और उच्च आदर्श के लिए समर्पित होने की प्रेरणा हो, तो वह पाठ के किस केंद्रीय भाव से सबसे अधिक मेल खाती है?",
     "options": [
-      "ओज और वीर भाव",
-      "केवल कठिन शब्द",
-      "केवल शांत भाव",
-      "केवल हास्य"
+      "वीर और ओजपूर्ण जीवन-दृष्टि",
+      "भोग-विलास",
+      "निराशा",
+      "निष्क्रियता"
     ],
     "correct": 0
   },
@@ -430,14 +430,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "बिहार की संगीत साधना",
-    "question": "यह पाठ किस पुस्तक का भाग है?",
+    "question": "‘बिहार की संगीत साधना’ किस पुस्तक से संबंधित पाठ है?",
     "options": [
-      "वर्णिका भाग 1",
-      "गोधूली भाग 1",
-      "पीयूषम् भाग 1",
+      "गोधूली",
+      "वर्णिका",
+      "पीयूषम्",
       "Panorama"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 30,
@@ -446,12 +446,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "बिहार की संगीत साधना",
-    "question": "पाठ का केंद्रीय विषय क्या है?",
+    "question": "समुद्रगुप्त किस वाद्य को बजाने में निपुण माने गए हैं?",
     "options": [
-      "बिहार की संगीत परंपरा और साधकों का योगदान",
-      "केवल फिल्म संगीत",
-      "केवल नृत्य",
-      "केवल विदेशी संगीत"
+      "वीणा",
+      "शहनाई",
+      "तबला",
+      "बाँसुरी"
     ],
     "correct": 0
   },
@@ -462,12 +462,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "बिहार की संगीत साधना",
-    "question": "संगीत-साधना और सांस्कृतिक विरासत के बीच क्या संबंध दिखाई देता है?",
+    "question": "पाठ में अलग-अलग कालों के संगीत-साधकों का उल्लेख किस व्यापक तथ्य को रेखांकित करता है?",
     "options": [
-      "साधना, परिश्रम और सांस्कृतिक विरासत का संबंध",
-      "संगीत का मेहनत से संबंध नहीं",
-      "केवल आधुनिक संगीत महत्वपूर्ण है",
-      "परंपरा का कोई महत्व नहीं"
+      "बिहार की संगीत परंपरा में ऐतिहासिक निरंतरता और विविधता",
+      "संगीत केवल आधुनिक काल में विकसित हुआ",
+      "संगीत का संबंध केवल राजाओं से था",
+      "बिहार में वाद्य-संगीत का कोई इतिहास नहीं है"
     ],
     "correct": 0
   },
@@ -478,14 +478,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "अपठित गद्यांश",
-    "question": "गद्यांश के अनुसार जल संरक्षण का एक व्यावहारिक उपाय क्या है?",
+    "question": "‘जल-प्रबंधन’ गद्यांश में दिए गए उपायों में से कौन-सा घर और विद्यालय दोनों में सीधे अपनाया जा सकता है?",
     "options": [
-      "वर्षा जल संचयन",
-      "रिसाव रोकना",
-      "पानी बहने देना",
-      "अनावश्यक सिंचाई"
+      "रिसाव रोकना और पानी का विवेकपूर्ण उपयोग",
+      "केवल बड़ी सिंचाई परियोजना बनाना",
+      "केवल बाँध बनाना",
+      "केवल नदी की दिशा बदलना"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 33,
@@ -494,14 +494,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "अपठित गद्यांश",
-    "question": "दिए गए गद्यांश का मुख्य संदेश क्या है?",
+    "question": "निम्न में से कौन-सा निष्कर्ष किसी ऐसे गद्यांश से निकाला जा सकता है जिसमें वर्षा जल-संचयन, रिसाव रोकने और जरूरत के अनुसार उपयोग पर बल दिया गया हो?",
     "options": [
-      "जल का समझदारीपूर्ण उपयोग और संचयन आवश्यक है",
-      "जल संरक्षण असंभव है",
-      "केवल सरकार जिम्मेदार है",
-      "केवल किसान जिम्मेदार हैं"
+      "छोटे-छोटे संरक्षण उपाय भी सामूहिक रूप से महत्वपूर्ण हो सकते हैं",
+      "जल-संकट का समाधान केवल उद्योग कर सकते हैं",
+      "जल बचाने के लिए पानी का उपयोग बंद करना चाहिए",
+      "वर्षा जल का कोई उपयोग नहीं है"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 34,
@@ -510,14 +510,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "अपठित गद्यांश",
-    "question": "‘व्यावहारिक उपाय’ से किस प्रकार के उपायों का संकेत मिलता है?",
+    "question": "पढ़ते समय किसी कथन के लिए पाठ में प्रत्यक्ष प्रमाण न मिले, लेकिन वह कथन संभावित लगे। परीक्षा में सबसे उचित तरीका क्या होगा?",
     "options": [
-      "ऐसे उपाय जिन्हें वास्तविक जीवन में अपनाया जा सके",
-      "केवल किताबों के विचार",
-      "केवल महँगे उपकरण",
-      "केवल प्रयोगशाला कार्य"
+      "उसे सत्य मान लेना",
+      "पाठ से मिलने वाले प्रमाण के आधार पर ही निष्कर्ष चुनना",
+      "सबसे लंबा विकल्प चुनना",
+      "अपनी निजी राय को सही मान लेना"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 35,
@@ -560,12 +560,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "यक्ष-युधिष्ठिर संवाद",
-    "question": "इस संवाद में मुख्यतः किस प्रकार के प्रश्न पूछे गए हैं?",
+    "question": "‘यक्ष-युधिष्ठिर संवाद’ की प्रश्नोत्तर शैली का मुख्य उद्देश्य किसे परखना है?",
     "options": [
-      "नीति और जीवन-मूल्य",
-      "केवल युद्ध",
-      "केवल प्रकृति-वर्णन",
-      "केवल हास्य"
+      "युधिष्ठिर की नीति-बुद्धि और जीवन-दृष्टि",
+      "युधिष्ठिर की धन-संपत्ति",
+      "उनकी युद्ध-कौशल",
+      "उनकी संगीत-प्रतिभा"
     ],
     "correct": 0
   },
@@ -576,12 +576,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "यक्ष-युधिष्ठिर संवाद",
-    "question": "युधिष्ठिर के उत्तर उनके किस नैतिक गुण को सबसे अधिक प्रकट करते हैं?",
+    "question": "यदि किसी उत्तर में तात्कालिक लाभ के बजाय धर्म, संयम और विवेक को प्राथमिकता दी गई हो, तो वह युधिष्ठिर के किस गुण को सबसे अधिक दर्शाएगा?",
     "options": [
-      "धैर्य और नीतिपरक बुद्धि",
+      "नीतिपरक विवेक",
       "अहंकार",
       "आलस्य",
-      "अविवेक"
+      "उतावली"
     ],
     "correct": 0
   },
@@ -592,12 +592,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "चत्वारो वेदाः",
-    "question": "वेदों की संख्या कितनी है?",
+    "question": "‘चत्वारो वेदाः’ का शाब्दिक आशय क्या है?",
     "options": [
-      "दो",
-      "तीन",
-      "चार",
-      "पाँच"
+      "दो वेद",
+      "तीन वेद",
+      "चार वेद",
+      "पाँच वेद"
     ],
     "correct": 2
   },
@@ -608,7 +608,7 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "चत्वारो वेदाः",
-    "question": "निम्न में से कौन-सा चार वेदों में शामिल है?",
+    "question": "निम्न में से कौन-सा चार वेदों में सम्मिलित है?",
     "options": [
       "ऋग्वेद",
       "पुराणवेद",
@@ -624,12 +624,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "चत्वारो वेदाः",
-    "question": "चारों वेदों के नाम सही क्रम में लिखने वाला विकल्प कौन-सा है?",
+    "question": "निम्न में से कौन-सा विकल्प चार वेदों के नामों का सही समूह देता है?",
     "options": [
       "ऋग्वेद, यजुर्वेद, सामवेद, अथर्ववेद",
-      "ऋग्वेद, सामवेद, नाट्यवेद, पुराणवेद",
-      "यजुर्वेद, पुराणवेद, सामवेद, अथर्ववेद",
-      "अथर्ववेद, इतिहासवेद, ऋग्वेद, सामवेद"
+      "ऋग्वेद, पुराणवेद, सामवेद, नाट्यवेद",
+      "यजुर्वेद, इतिहासवेद, सामवेद, पुराणवेद",
+      "अथर्ववेद, नाट्यवेद, ऋग्वेद, इतिहासवेद"
     ],
     "correct": 0
   },
@@ -657,8 +657,8 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "topic": "फ्रांस की क्रांति",
-    "question": "फ्रांस की क्रांति किस वर्ष आरंभ हुई?",
+    "topic": "इतिहास — फ्रांस की क्रांति",
+    "question": "फ्रांस की क्रांति का आरंभ किस वर्ष हुआ?",
     "options": [
       "1776",
       "1789",
@@ -673,15 +673,15 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "topic": "फ्रांस की क्रांति",
-    "question": "बास्तील के पतन की तिथि किस घटना से जुड़ी है?",
+    "topic": "इतिहास — फ्रांस की क्रांति",
+    "question": "1789 में बास्तील के पतन का महत्व मुख्यतः किससे जुड़ा था?",
     "options": [
-      "4 जुलाई 1776",
-      "14 जुलाई 1789",
-      "26 अगस्त 1789",
-      "21 जनवरी 1793"
+      "निरंकुश राजसत्ता के विरुद्ध जनविद्रोह का प्रतीक बनना",
+      "फ्रांस के औद्योगीकरण का आरंभ",
+      "नेपोलियन का राज्याभिषेक",
+      "प्रथम विश्व युद्ध का आरंभ"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 47,
@@ -689,13 +689,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "topic": "फ्रांस की क्रांति",
-    "question": "मानव और नागरिक अधिकारों की घोषणा का मुख्य उद्देश्य क्या था?",
+    "topic": "इतिहास — फ्रांस की क्रांति",
+    "question": "यदि किसी समाज में एक वर्ग करों का अधिकांश भार उठाए, जबकि विशेषाधिकार प्राप्त वर्ग करों से अपेक्षाकृत मुक्त रहे, तो फ्रांस की क्रांति के संदर्भ में यह स्थिति किस समस्या को दर्शाती है?",
     "options": [
-      "स्वतंत्रता और समानता के अधिकारों को मान्यता देना",
-      "राजा की शक्ति बढ़ाना",
-      "सामंती विशेषाधिकार सुरक्षित करना",
-      "कर केवल किसानों पर लगाना"
+      "सामाजिक और आर्थिक असमानता",
+      "धार्मिक एकता",
+      "वैज्ञानिक प्रगति",
+      "औद्योगिक शांति"
     ],
     "correct": 0
   },
@@ -705,7 +705,7 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "topic": "विश्व युद्धों का इतिहास",
+    "topic": "इतिहास — विश्व युद्धों का इतिहास",
     "question": "प्रथम विश्व युद्ध किस वर्ष शुरू हुआ?",
     "options": [
       "1914",
@@ -721,13 +721,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "topic": "विश्व युद्धों का इतिहास",
-    "question": "द्वितीय विश्व युद्ध के यूरोप में आरंभ से कौन-सी घटना जुड़ी है?",
+    "topic": "इतिहास — विश्व युद्धों का इतिहास",
+    "question": "द्वितीय विश्व युद्ध के यूरोपीय मोर्चे पर आरंभ से कौन-सी घटना जुड़ी है?",
     "options": [
       "जर्मनी का पोलैंड पर आक्रमण",
-      "भारत की स्वतंत्रता",
-      "औद्योगिक क्रांति",
-      "फ्रांस की क्रांति"
+      "भारत का गणतंत्र बनना",
+      "फ्रांस की क्रांति",
+      "औद्योगिक क्रांति"
     ],
     "correct": 0
   },
@@ -737,13 +737,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "topic": "विश्व युद्धों का इतिहास",
-    "question": "दोनों विश्व युद्धों के बाद अंतरराष्ट्रीय शांति की आवश्यकता क्यों अधिक महसूस हुई?",
+    "topic": "इतिहास — विश्व युद्धों का इतिहास",
+    "question": "दोनों विश्व युद्धों के अनुभव से अंतरराष्ट्रीय सहयोग की आवश्यकता क्यों अधिक स्पष्ट हुई?",
     "options": [
-      "युद्धों से भारी मानव और आर्थिक क्षति हुई थी",
-      "युद्धों से कोई नुकसान नहीं हुआ",
-      "केवल व्यापार बंद करना था",
-      "केवल सीमाएँ बदलना लक्ष्य था"
+      "विनाश, मानवीय क्षति और आर्थिक संकट ने सामूहिक शांति-व्यवस्था की आवश्यकता बढ़ाई",
+      "युद्धों ने सभी देशों को आर्थिक रूप से समृद्ध कर दिया",
+      "युद्धों से सीमाओं पर कोई प्रभाव नहीं पड़ा",
+      "युद्धों ने राष्ट्रों के बीच सभी विवाद समाप्त कर दिए"
     ],
     "correct": 0
   },
@@ -753,15 +753,15 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "topic": "भौतिक स्वरूप",
-    "question": "संरचना एवं उच्चावच: भारत के उत्तर में कौन-सी प्रमुख पर्वत श्रेणी स्थित है?",
+    "topic": "भूगोल — भौतिक स्वरूप : संरचना एवं उच्चावच",
+    "question": "भारत के उत्तरी सीमा क्षेत्र में कौन-सी प्रमुख पर्वत प्रणाली है?",
     "options": [
-      "हिमालय",
       "अरावली",
+      "हिमालय",
       "सतपुड़ा",
       "नीलगिरि"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 52,
@@ -769,13 +769,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "topic": "भौतिक स्वरूप",
-    "question": "संरचना एवं उच्चावच: उत्तरी मैदान मुख्यतः किस प्रकार के निक्षेपों से बने हैं?",
+    "topic": "भूगोल — भौतिक स्वरूप : संरचना एवं उच्चावच",
+    "question": "उत्तरी मैदान मुख्यतः किस प्रकार के निक्षेपों से निर्मित हैं?",
     "options": [
-      "जलोढ़ निक्षेप",
+      "जलोढ़",
       "लावा",
       "ग्रेनाइट",
-      "केवल बालू"
+      "बलुआ पत्थर"
     ],
     "correct": 0
   },
@@ -785,13 +785,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "topic": "भौतिक स्वरूप",
-    "question": "संरचना एवं उच्चावच: प्रायद्वीपीय पठार की प्रमुख भौगोलिक विशेषता क्या है?",
+    "topic": "भूगोल — भौतिक स्वरूप : संरचना एवं उच्चावच",
+    "question": "किस संयोजन में भारत की तीन प्रमुख भौतिक इकाइयों का सही संबंध दिया गया है?",
     "options": [
-      "प्राचीन कठोर चट्टानों का पठारी भाग",
-      "नवीन जलोढ़ मैदान",
-      "हिम से बना क्षेत्र",
-      "केवल तटीय रेत"
+      "हिमालय—नवीन वलित पर्वत; उत्तरी मैदान—जलोढ़ निक्षेप; प्रायद्वीपीय पठार—प्राचीन कठोर चट्टानें",
+      "हिमालय—जलोढ़ मैदान; उत्तरी मैदान—प्राचीन पठार; प्रायद्वीपीय पठार—नवीन वलित पर्वत",
+      "हिमालय—रेगिस्तान; उत्तरी मैदान—लावा; पठार—समुद्री द्वीप",
+      "तीनों इकाइयाँ समान प्रकार की चट्टानों से बनी हैं"
     ],
     "correct": 0
   },
@@ -801,13 +801,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "topic": "अपवाह स्वरूप",
-    "question": "भारत की एक प्रमुख बारहमासी नदी कौन-सी है?",
+    "topic": "भूगोल — अपवाह स्वरूप",
+    "question": "‘अपवाह तंत्र’ से क्या तात्पर्य है?",
     "options": [
-      "गंगा",
-      "गोदावरी",
-      "लूनी",
-      "चंबल"
+      "नदियों और उनकी सहायक नदियों के जाल से",
+      "सड़कों के जाल से",
+      "नहरों के समूह से",
+      "केवल वर्षा की मात्रा से"
     ],
     "correct": 0
   },
@@ -817,13 +817,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "topic": "अपवाह स्वरूप",
-    "question": "अपवाह तंत्र किसे कहा जाता है?",
+    "topic": "भूगोल — अपवाह स्वरूप",
+    "question": "हिमालयी नदियाँ सामान्यतः बारहमासी क्यों होती हैं?",
     "options": [
-      "नदियों और उनकी सहायक नदियों का जाल",
-      "सड़कों का जाल",
-      "केवल नहरों का समूह",
-      "केवल वर्षा की मात्रा"
+      "उन्हें वर्षा के साथ हिमनदों और बर्फ पिघलने से भी जल मिलता है",
+      "वे केवल भूमिगत जल पर निर्भर हैं",
+      "उनमें वर्षा कभी नहीं होती",
+      "वे केवल समुद्री जल से बनती हैं"
     ],
     "correct": 0
   },
@@ -833,13 +833,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "topic": "अपवाह स्वरूप",
-    "question": "हिमालयी नदियों को बारहमासी कहे जाने का मुख्य कारण क्या है?",
+    "topic": "भूगोल — अपवाह स्वरूप",
+    "question": "यदि कोई नदी वर्ष भर बहती रहे और उसके प्रवाह को मानसूनी वर्षा के साथ हिम-पिघलाव से भी जल मिलता रहे, तो वह किस प्रकार की नदी के अधिक निकट होगी?",
     "options": [
-      "वर्षा के साथ हिमनदों और बर्फ पिघलने से भी जल मिलता है",
-      "केवल समुद्री जल मिलता है",
-      "वे कभी नहीं सूखतीं क्योंकि उनमें समुद्र का जल होता है",
-      "वे केवल मानसून में बहती हैं"
+      "हिमालयी नदी",
+      "केवल मौसमी नदी",
+      "केवल मरुस्थलीय नदी",
+      "केवल तटीय धारा"
     ],
     "correct": 0
   },
@@ -867,13 +867,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "topic": "Saint Kabir",
-    "question": "Kabir’s teachings mainly emphasise what?",
+    "topic": "Reader — Saint Kabir",
+    "question": "Kabir’s teachings most strongly emphasise—",
     "options": [
-      "outer show only",
+      "outer show",
       "inner truth and devotion",
-      "warfare",
-      "wealth"
+      "wealth",
+      "political power"
     ],
     "correct": 1
   },
@@ -883,13 +883,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "topic": "Saint Kabir",
-    "question": "What did Kabir criticise when religious practices became empty rituals?",
+    "topic": "Reader — Saint Kabir",
+    "question": "Kabir’s criticism of ritualism suggests that he valued—",
     "options": [
-      "simple and sincere",
-      "empty rituals without inner understanding",
-      "based on kindness",
-      "connected with self-discipline"
+      "mechanical custom over understanding",
+      "sincere inner realisation",
+      "social status",
+      "material success"
     ],
     "correct": 1
   },
@@ -899,13 +899,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "topic": "Saint Kabir",
-    "question": "What central idea about human unity is conveyed through Kabir’s teachings?",
+    "topic": "Reader — Saint Kabir",
+    "question": "If two people follow different outward traditions but share compassion, humility and devotion, Kabir’s teaching would most likely view them as—",
     "options": [
-      "division between communities",
-      "unity and inner realisation beyond superficial divisions",
-      "pursuit of luxury",
-      "rejection of moral values"
+      "fundamentally divided by ritual",
+      "sharing a deeper spiritual common ground",
+      "unrelated to spiritual life",
+      "competing for social status"
     ],
     "correct": 1
   },
@@ -915,7 +915,7 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "topic": "The eyes are not here",
+    "topic": "Reader — The eyes are not here",
     "question": "Where does the narrator meet the girl?",
     "options": [
       "On a train",
@@ -931,13 +931,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "topic": "The eyes are not here",
-    "question": "What does the narrator initially assume about the girl’s ability to see?",
+    "topic": "Reader — The eyes are not here",
+    "question": "At the beginning of the story, what does the narrator assume about the girl?",
     "options": [
-      "see clearly",
-      "sing beautifully",
-      "drive the train",
-      "read a newspaper"
+      "That she can see normally",
+      "That she is a teacher",
+      "That she is the train guard",
+      "That she is a musician"
     ],
     "correct": 0
   },
@@ -947,13 +947,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "topic": "The eyes are not here",
-    "question": "What creates the irony at the end of the story?",
+    "topic": "Reader — The eyes are not here",
+    "question": "The ending is effective mainly because the conversation makes each person form an incorrect conclusion about—",
     "options": [
-      "both passengers know each other completely",
-      "the narrator and girl make assumptions about eyesight",
-      "the train never moves",
-      "the narrator knows the girl for years"
+      "the train journey",
+      "the other person’s eyesight",
+      "the weather",
+      "the railway timetable"
     ],
     "correct": 1
   },
@@ -963,13 +963,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "topic": "Yayati",
-    "question": "Who is Yayati in the story?",
+    "topic": "Panorama — Prose — Yayati",
+    "question": "Who is Yayati in the lesson?",
     "options": [
       "A king",
       "A merchant",
-      "A scientist",
-      "A farmer"
+      "A farmer",
+      "A soldier"
     ],
     "correct": 0
   },
@@ -979,13 +979,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "topic": "Yayati",
-    "question": "What major human desire is explored through Yayati’s experience?",
+    "topic": "Panorama — Prose — Yayati",
+    "question": "Why does Yayati seek another person’s youth?",
     "options": [
-      "the value of endless youth and desire",
-      "how to build a ship",
-      "the discovery of electricity",
-      "the making of paper"
+      "He wants to escape old age and continue satisfying his desires",
+      "He wants to become a soldier",
+      "He wants to leave his kingdom immediately",
+      "He wants to become a scholar"
     ],
     "correct": 0
   },
@@ -995,13 +995,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "topic": "Yayati",
-    "question": "What does the story suggest about unlimited satisfaction of desire?",
+    "topic": "Panorama — Prose — Yayati",
+    "question": "Yayati’s later realisation that desire cannot be satisfied simply by feeding it supports which interpretation?",
     "options": [
-      "always brings peace",
-      "may deepen dissatisfaction rather than remove it",
-      "makes duty unnecessary",
-      "guarantees wisdom"
+      "More possessions necessarily remove desire",
+      "Uncontrolled desire can keep generating further desire",
+      "Old age is only a physical problem",
+      "Duty has no value"
     ],
     "correct": 1
   },
@@ -1011,13 +1011,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "topic": "On His Blindness",
-    "question": "Who wrote the poem?",
+    "topic": "Panorama — Poetry — On His Blindness",
+    "question": "Who wrote ‘On His Blindness’?",
     "options": [
       "John Milton",
+      "John Keats",
       "William Wordsworth",
-      "Robert Frost",
-      "John Keats"
+      "Robert Frost"
     ],
     "correct": 0
   },
@@ -1027,13 +1027,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "topic": "On His Blindness",
-    "question": "What personal difficulty does Milton reflect upon?",
+    "topic": "Panorama — Poetry — On His Blindness",
+    "question": "What does Milton’s loss of eyesight make him question?",
     "options": [
-      "having a physical limitation that affects his work",
-      "owning a large estate",
-      "winning a battle",
-      "travelling abroad"
+      "Whether he can still serve God through his abilities",
+      "Whether he should become a king",
+      "Whether poetry is enjoyable",
+      "Whether travel is possible"
     ],
     "correct": 0
   },
@@ -1043,13 +1043,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "topic": "On His Blindness",
-    "question": "What does the poem finally suggest about serving God?",
+    "topic": "Panorama — Poetry — On His Blindness",
+    "question": "The poem moves from anxiety about usefulness toward acceptance. What idea best explains this change?",
     "options": [
-      "only physical strength",
-      "patient faith and sincere service",
-      "only wealth",
-      "only public fame"
+      "Worth is measured only by physical ability",
+      "Patient service and faith can have value even without visible activity",
+      "A person must avoid all work",
+      "Only public recognition matters"
     ],
     "correct": 1
   },
@@ -1059,15 +1059,15 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "topic": "Tenses",
-    "question": "She ___ to school every day.",
+    "topic": "Language & Skills — Tenses",
+    "question": "Choose the correct form: Riya ___ her homework every evening.",
     "options": [
-      "goes",
-      "go",
-      "went",
-      "going"
+      "do",
+      "does",
+      "did",
+      "doing"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 72,
@@ -1075,15 +1075,15 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "topic": "Tenses",
-    "question": "When I reached the station, the train ___.",
+    "topic": "Language & Skills — Tenses",
+    "question": "Choose the correct form: By the time we reached the cinema, the film ___.",
     "options": [
-      "had left",
-      "leaves",
-      "has left",
-      "will leave"
+      "starts",
+      "has started",
+      "had started",
+      "will start"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 73,
@@ -1091,15 +1091,15 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "topic": "Tenses",
-    "question": "Choose the grammatically correct sentence using the present perfect continuous tense.",
+    "topic": "Language & Skills — Tenses",
+    "question": "Choose the sentence that correctly shows an action continuing from the past up to the present.",
     "options": [
+      "I live here since 2020.",
       "I am living here since 2020.",
       "I have been living here since 2020.",
-      "I was living here since 2020.",
-      "I live here since 2020."
+      "I lived here since 2020."
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 74,
@@ -1107,8 +1107,8 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "topic": "Modals",
-    "question": "You ___ obey the traffic rules.",
+    "topic": "Language & Skills — Modals",
+    "question": "You ___ obey the safety rules in the laboratory.",
     "options": [
       "must",
       "might",
@@ -1123,8 +1123,8 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "topic": "Modals",
-    "question": "___ I borrow your pen for a minute?",
+    "topic": "Language & Skills — Modals",
+    "question": "___ I use your dictionary for a few minutes?",
     "options": [
       "Must",
       "May",
@@ -1139,13 +1139,13 @@ const QUESTIONS = [
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "topic": "Modals",
-    "question": "You ___ have informed me earlier; the meeting is already over.",
+    "topic": "Language & Skills — Modals",
+    "question": "The sentence ‘You ___ have informed me earlier’ expresses—",
     "options": [
-      "should",
-      "can",
-      "may",
-      "will"
+      "past obligation or criticism",
+      "future possibility only",
+      "present ability",
+      "permission"
     ],
     "correct": 0
   },
@@ -1174,12 +1174,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "Alphabet Series",
-    "question": "Complete the series A, C, E, G, __",
+    "question": "Complete the series: B, D, F, H, __",
     "options": [
-      "H",
       "I",
       "J",
-      "K"
+      "K",
+      "L"
     ],
     "correct": 1
   },
@@ -1190,14 +1190,14 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "Alphabet Series",
-    "question": "Complete the series Z, X, V, T, __",
+    "question": "Complete the series: Z, W, T, Q, __",
     "options": [
-      "R",
-      "S",
-      "Q",
-      "P"
+      "O",
+      "N",
+      "P",
+      "M"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 81,
@@ -1206,46 +1206,46 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "Alphabet Series",
-    "question": "Complete the series B, E, H, K, __",
+    "question": "If A=1, B=2, …, what is the value of G − C?",
     "options": [
-      "M",
-      "N",
-      "O",
-      "P"
+      "2",
+      "3",
+      "4",
+      "5"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 82,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
+    "difficulty": "easy",
     "topic": "Alphabet Series",
-    "question": "Complete the series D, H, L, P, __",
+    "question": "Which letter is 6 places after F?",
     "options": [
-      "T",
-      "U",
-      "V",
-      "S"
+      "K",
+      "L",
+      "M",
+      "N"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 83,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
+    "difficulty": "easy",
     "topic": "Alphabet Series",
-    "question": "Complete the series AZ, BY, CX, DW, __",
+    "question": "Which letter is 5 places before R?",
     "options": [
-      "EV",
-      "FU",
-      "EW",
-      "FV"
+      "L",
+      "M",
+      "N",
+      "O"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 84,
@@ -1254,23 +1254,7 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "Alphabet Series",
-    "question": "Complete the series A, D, H, M, __",
-    "options": [
-      "Q",
-      "R",
-      "S",
-      "T"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 85,
-    "subject": "तर्कशक्ति",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "challenging",
-    "topic": "Alphabet Series",
-    "question": "Complete the series C, F, J, O, __",
+    "question": "Complete the series: A, C, F, J, O, __",
     "options": [
       "T",
       "U",
@@ -1280,18 +1264,34 @@ const QUESTIONS = [
     "correct": 1
   },
   {
+    "id": 85,
+    "subject": "तर्कशक्ति",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "topic": "Alphabet Series",
+    "question": "Complete the series: AZ, BY, CX, DW, __",
+    "options": [
+      "EV",
+      "FU",
+      "EW",
+      "FV"
+    ],
+    "correct": 0
+  },
+  {
     "id": 86,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "challenging",
+    "difficulty": "moderate",
     "topic": "Alphabet Series",
-    "question": "Complete the series B, G, M, T, __",
+    "question": "Complete the series: C, G, K, O, __",
     "options": [
-      "A",
-      "B",
-      "C",
-      "D"
+      "R",
+      "S",
+      "T",
+      "U"
     ],
     "correct": 2
   },
@@ -1300,14 +1300,14 @@ const QUESTIONS = [
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "easy",
+    "difficulty": "moderate",
     "topic": "Alphabet Series",
-    "question": "If A=1, B=2, …, what is C + F?",
+    "question": "Complete the series: B, E, I, N, __",
     "options": [
-      "8",
-      "9",
-      "10",
-      "11"
+      "S",
+      "T",
+      "U",
+      "V"
     ],
     "correct": 1
   },
@@ -1318,28 +1318,28 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "Alphabet Series",
-    "question": "Which letter is 5 places after H?",
+    "question": "If the first letter moves 2 places forward, the next 3 places, the next 4 places and so on, then A, C, F, J, __ gives—",
     "options": [
-      "L",
       "M",
       "N",
-      "O"
+      "O",
+      "P"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 89,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
+    "difficulty": "challenging",
     "topic": "Alphabet Series",
-    "question": "Which letter is 4 places before P?",
+    "question": "Complete the series: D, H, M, S, __",
     "options": [
-      "K",
-      "L",
-      "M",
-      "N"
+      "X",
+      "Y",
+      "Z",
+      "W"
     ],
     "correct": 1
   },
@@ -1350,12 +1350,12 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "Alphabet Series",
-    "question": "B, D, G, K, P, __ follows increasing steps. What comes next?",
+    "question": "Complete the series: Y, V, R, M, __",
     "options": [
-      "V",
-      "W",
-      "X",
-      "Y"
+      "H",
+      "I",
+      "J",
+      "K"
     ],
     "correct": 0
   },
@@ -1366,28 +1366,28 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "Alphabet Series",
-    "question": "Complete the series Y, V, R, M, __",
+    "question": "Complete the series: B, G, M, T, __ (continue cyclically after Z)",
     "options": [
-      "H",
-      "I",
-      "J",
-      "K"
+      "A",
+      "B",
+      "C",
+      "D"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 92,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "easy",
+    "difficulty": "challenging",
     "topic": "Alphabet Series",
-    "question": "Complete the series M, O, Q, S, __",
+    "question": "Find the missing pair: AB, DE, HI, MN, __",
     "options": [
-      "T",
-      "U",
-      "V",
-      "W"
+      "RS",
+      "ST",
+      "TU",
+      "UV"
     ],
     "correct": 1
   },
@@ -1396,14 +1396,14 @@ const QUESTIONS = [
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
+    "difficulty": "challenging",
     "topic": "Alphabet Series",
-    "question": "Complete the series AB, DE, GH, JK, __",
+    "question": "In the series C, F, J, O, __, each step increases by one letter more than the previous step. What is the next letter?",
     "options": [
-      "LM",
-      "MN",
-      "NO",
-      "OP"
+      "T",
+      "U",
+      "V",
+      "W"
     ],
     "correct": 1
   },
