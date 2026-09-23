@@ -222,7 +222,7 @@ function buildPaletteGrid() {
   QUESTIONS.forEach((q, idx) => {
     if (selectedSubjectFilter !== "All" && q.subject !== selectedSubjectFilter) return;
     const btn = document.createElement('button');
-    btn.className = `palette-btn status-${studentResponses[idx].status} ${idx === currentIndex ? 'active-q' : ''}`;
+    btn.className = `palette-btn status-${studentResponses[idx].status} ${q.type === 'subjective' ? 'palette-subjective' : ''} ${idx === currentIndex ? 'active-q' : ''}`;
     btn.innerText = q.id;
     btn.onclick = () => loadQuestion(idx);
     grid.appendChild(btn);
@@ -237,7 +237,7 @@ function loadQuestion(index) {
   if (resp.status === 'not-visited') resp.status = 'unanswered';
 
   document.getElementById('questionTitle').innerText = `प्रश्न ${q.id} [${q.subject}]`;
-  document.getElementById('questionMarksTag').innerText = `${q.marks} अंक`;
+  document.getElementById('questionMarksTag').innerText = q.type === 'subjective' ? 'लिखित • कॉपी में' : `${q.marks} अंक`;
 
   const questionText = document.getElementById('questionText');
   questionText.innerHTML = "";
@@ -290,7 +290,7 @@ function loadQuestion(index) {
     area.innerHTML = `
       <div class="subjective-instruction-box">
         <h4>✍️ सब्जेक्टिव प्रश्न</h4>
-        <p>इस प्रश्न का उत्तर अपनी कॉपी में विस्तार से लिखें।</p>
+        <p>इस प्रश्न का संक्षिप्त उत्तर अपनी कॉपी में लगभग 2–3 मिनट में लिखें।</p>
         <label class="written-checkbox-label">
           <input type="checkbox" ${resp.writtenInCopy ? 'checked' : ''} onchange="toggleWrittenInCopy(this.checked)"> मैंने कॉपी में उत्तर लिख लिया है
         </label>
