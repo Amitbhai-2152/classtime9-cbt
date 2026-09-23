@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>JNVST कक्षा 9 मॉक टेस्ट 2027–28</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="screen-registration" class="screen active">
+    <div class="auth-container">
+      <div class="brand-header">
+        <h1>JNVST कक्षा 9 मॉक टेस्ट 2027–28</h1>
+        <p class="subtext">कक्षा 9 प्रवेश परीक्षा — हिंदी माध्यम</p>
+      </div>
+      <div id="recoveryNotice" style="display:none; background:#fff7ed; border:1px solid #fed7aa; color:#9a3412; padding:12px 14px; border-radius:8px; margin-bottom:16px; font-size:14px; text-align:left;">
+        <strong>↩️ पिछली परीक्षा मिली है</strong><br>
+        आपके पहले से चुने गए उत्तर और परीक्षा की प्रगति इस डिवाइस पर सुरक्षित हैं। आगे बढ़ने पर परीक्षा वहीं से जारी होगी।
+      </div>
+      <form onsubmit="handleRegistration(event)">
+        <div class="form-group"><label>छात्र/छात्रा का पूरा नाम *</label><input type="text" id="candidateName" required /></div>
+        <div class="form-group"><label>माता/पिता का नाम *</label><input type="text" id="parentName" required /></div>
+        <div class="form-group"><label>आप कहाँ रहते हैं? (शहर / जिला) *</label><input type="text" id="liveLocation" required /></div>
+        <div class="form-group"><label>रोल नंबर (अनुक्रमांक) *</label><input type="text" id="rollNo" required /></div>
+        <div class="form-group"><label>मोबाइल नंबर *</label><input type="tel" id="mobileNo" pattern="[0-9]{10}" required /></div>
+        <button type="submit" class="btn btn-primary">निर्देश पढ़ें &rarr;</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="screen-instructions" class="screen">
+    <div class="auth-container">
+      <div class="brand-header"><h1>सामान्य निर्देश</h1></div>
+      <div class="instruction-card">
+        <strong>परीक्षा का विवरण:</strong>
+        <ul class="instruction-list">
+          <li><strong>कुल समय:</strong> 2 घंटे 30 मिनट (150 मिनट)</li>
+          <li><strong>कुल प्रश्न:</strong> 100 बहुविकल्पीय प्रश्न</li>
+          <li><strong>कुल अंक:</strong> 100 अंक</li>
+          <li><strong>गणित:</strong> 35 प्रश्न × 1 अंक = 35 अंक</li>
+          <li><strong>सामान्य विज्ञान:</strong> 35 प्रश्न × 1 अंक = 35 अंक</li>
+          <li><strong>English:</strong> 15 प्रश्न × 1 अंक = 15 अंक</li>
+          <li><strong>हिंदी:</strong> 15 प्रश्न × 1 अंक = 15 अंक</li>
+          <li><strong>प्रश्न का प्रकार:</strong> प्रत्येक प्रश्न में केवल एक सही विकल्प चुनें।</li>
+          <li><strong>नकारात्मक अंकन:</strong> गलत उत्तर के लिए कोई नकारात्मक अंक नहीं है।</li>
+          <li><strong>उत्तर सेव करें:</strong> अगला प्रश्न खोलने से पहले अपना चुना हुआ विकल्प जाँच लें।</li>
+          <li><strong>रिव्यू:</strong> संदेह वाले प्रश्न को “रिव्यू के लिए मार्क करें” करके बाद में वापस आ सकते हैं।</li>
+          <li><strong>उत्तर मिटाना:</strong> “उत्तर मिटाएं” से वर्तमान प्रश्न का चयन हटाया जा सकता है।</li>
+          <li><strong>तकनीकी सावधानी:</strong> परीक्षा के दौरान ब्राउज़र टैब बार-बार बंद/रीलोड न करें।</li>
+          <li><strong>सबमिशन:</strong> समय पूरा होने पर परीक्षा स्वतः सबमिट हो सकती है।</li>
+          <li><strong>ईमेल:</strong> सबमिट करते ही आपके उत्तर निर्धारित शिक्षक ईमेल पर स्वचालित रूप से भेजे जाएँगे; अलग ईमेल बटन की आवश्यकता नहीं है।</li>
+        </ul>
+        <div class="highlight-rule">💡 यह एक अभ्यास/डायग्नोस्टिक मॉक टेस्ट है। प्रत्येक प्रश्न के चार विकल्पों में से एक सही उत्तर चुनें।</div>
+      </div>
+      <label class="checkbox-agree"><input type="checkbox" id="agreeRules" onchange="document.getElementById('startTestBtn').disabled = !this.checked;" /><span>मैंने सभी निर्देश पढ़ लिए हैं और परीक्षा शुरू करने के लिए तैयार हूँ।</span></label>
+      <div class="btn-row">
+        <button class="btn btn-outline" onclick="goToScreen('screen-registration')">&larr; पीछे</button>
+        <button id="startTestBtn" class="btn btn-primary" disabled onclick="startTest()">परीक्षा शुरू करें &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-exam" class="screen">
+    <header class="exam-header">
+      <div style="font-size: 15px; font-weight: 700;" id="examHeaderName">छात्र का नाम</div>
+      <div id="connectionStatus" style="font-size:12px; font-weight:700; padding:5px 9px; border-radius:999px; background:#dcfce7; color:#166534;">🟢 Online</div>
+      <div class="timer-container" id="timerDisplay">02:30:00</div>
+    </header>
+    <div class="exam-body">
+      <main class="exam-main">
+        <div class="section-pills" id="sectionPillsContainer"></div>
+        <div style="margin-bottom: 10px; display: flex; justify-content: space-between;">
+          <span class="q-number" id="questionTitle">प्रश्न 1</span>
+          <span style="font-size: 13px; background:#f1f5f9; padding:4px 8px; border-radius:4px; color: #475569; font-weight:bold;" id="questionMarksTag">1 अंक</span>
+        </div>
+        <div class="question-content" id="questionText">लोड हो रहा है...</div>
+        <div id="answerInteractionArea"></div>
+        <div class="btn-row" style="margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 15px;">
+          <button class="btn btn-warning" onclick="markForReview()">रिव्यू के लिए मार्क करें</button>
+          <button class="btn btn-outline" onclick="clearCurrentResponse()">उत्तर मिटाएं</button>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-outline" id="prevBtn" onclick="navigateQuestion(-1)">&larr; पिछला</button>
+          <button class="btn btn-primary" onclick="saveAndNext()">सेव करें और अगला &rarr;</button>
+        </div>
+      </main>
+      <aside class="exam-sidebar">
+        <div style="font-size: 13px; font-weight: bold; margin-bottom: 10px; text-align: center;">प्रश्न पैलेट (Question Palette)</div>
+        <div class="palette-grid" id="paletteGrid"></div>
+        <button class="btn btn-success" style="margin-top: 10px;" onclick="confirmSubmitTest()">परीक्षा सबमिट करें</button>
+      </aside>
+    </div>
+  </div>
+
+  <div id="screen-summary" class="screen">
+    <div class="auth-container" style="text-align: center;">
+      <h1 style="color: #10b981; font-size: 26px;">🎉 JNVST मॉक टेस्ट सफलतापूर्वक सबमिट हो गया!</h1>
+      <p class="subtext">आपके 100 बहुविकल्पीय प्रश्नों के उत्तर दर्ज कर लिए गए हैं।</p>
+      <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:12px; margin:16px 0; font-size:13px; font-weight:700;">
+        📘 परीक्षा स्तर: कक्षा 8 (JNVST Class IX Lateral Entry standard)
+      </div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="num" id="statMcqScore">0 / 100</div><div style="font-size: 12px; margin-top:5px;">कुल स्कोर</div></div>
+        <div class="stat-box"><div class="num" id="statPercentage">0%</div><div style="font-size: 12px; margin-top:5px;">प्रतिशत</div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="num" id="statAttempted">0 / 100</div><div style="font-size: 12px; margin-top:5px;">प्रयास किए</div></div>
+        <div class="stat-box"><div class="num" id="statUnanswered">0</div><div style="font-size: 12px; margin-top:5px;">अनुत्तरित</div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="num" id="statWrong">0</div><div style="font-size: 12px; margin-top:5px;">गलत उत्तर</div></div>
+        <div class="stat-box"><div class="num" id="statTimeSpent">--:--</div><div style="font-size: 12px; margin-top:5px;">लिया गया समय</div></div>
+      </div>
+      <div id="subjectScoreBreakdown" style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 20px; text-align:center;"></div>
+      <div style="text-align: left; background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 14px;">⚠️ <strong>महत्वपूर्ण निर्देश:</strong><br>अपने परिणाम की समीक्षा करें और गलत प्रश्नों को दोबारा हल करें।</div>
+      <div id="emailStatus" class="email-status">आपके उत्तर शिक्षक के ईमेल पर स्वचालित रूप से भेजे जाएँगे।</div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+  <script src="submission-queue.js"></script>
+  <script>
+    // Fill the registration form from the recovered attempt.
+    window.addEventListener('load', () => {
+      try {
+        const raw = localStorage.getItem('class9_cbt_active_exam_v1');
+        if (raw) {
+          const state = JSON.parse(raw);
+          if (state && state.userProfile && state.examDeadlineMs && state.examDeadlineMs > Date.now()) {
+            const p = state.userProfile;
+            if (p.name) document.getElementById('candidateName').value = p.name;
+            if (p.parent) document.getElementById('parentName').value = p.parent;
+            if (p.location) document.getElementById('liveLocation').value = p.location;
+            if (p.roll) document.getElementById('rollNo').value = p.roll;
+            if (p.mobile) document.getElementById('mobileNo').value = p.mobile;
+          }
+        }
+      } catch (error) {
+        console.warn('Could not prefill recovered registration:', error);
+      }
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js').catch(error => {
+          console.warn('Offline app shell registration failed:', error);
+        });
+      }
+
+      const updateConnectionStatus = () => {
+        const el = document.getElementById('connectionStatus');
+        if (!el) return;
+        if (navigator.onLine) {
+          el.innerText = '🟢 Online';
+          el.style.background = '#dcfce7';
+          el.style.color = '#166534';
+        } else {
+          el.innerText = '🟠 Offline — उत्तर सुरक्षित हैं';
+          el.style.background = '#ffedd5';
+          el.style.color = '#9a3412';
+        }
+      };
+      window.addEventListener('online', updateConnectionStatus);
+      window.addEventListener('offline', updateConnectionStatus);
+      updateConnectionStatus();
+    });
+  </script>
+</body>
+</html>
