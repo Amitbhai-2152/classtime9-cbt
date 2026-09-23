@@ -1,5 +1,5 @@
 /**
- * JNVST Class 9 Mock Test 2027–28 — Google Apps Script email receiver
+ * ClassTime 9 — TEST 02 — BSEB Class 9 Practice CBT — Google Apps Script email receiver
  *
  * 1. Create a new Google Apps Script project.
  * 2. Paste this file.
@@ -22,7 +22,7 @@ function doPost(e) {
     const answers = o.answers || [];
 
     let body = "";
-    body += "CLASS 9 JNVST CLASS 9 MOCK TEST 2027–28\n\n";
+    body += "CLASSTIME 9 — TEST 02 — BSEB CLASS 9 PRACTICE CBT\n\n";
     body += "Candidate: " + (c.name || "") + "\n";
     body += "Parent: " + (c.parent || "") + "\n";
     body += "Location: " + (c.location || "") + "\n";
