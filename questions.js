@@ -1421,7 +1421,7 @@ const QUESTIONS = [
     "marks": 0,
     "difficulty": "moderate",
     "topic": "Alphabet Series",
-    "question": "चार शब्दों की एक alphabet series बनाइए जिसमें हर अगला अक्षर 2 स्थान आगे बढ़े और पाँच पद लिखिए।"
+    "question": "Alphabet Series: एक alphabet series बनाइए जिसमें हर अगला अक्षर 2 स्थान आगे बढ़े और पाँच पद लिखिए।"
   },
   {
     "id": 95,
