@@ -1,1514 +1,1304 @@
-// JNVST Class 9 Mock Test 2027–28 — Hindi Medium
-// Complete 100-question diagnostic bank.
-// Answer options are balanced across A/B/C/D with no run longer than 2.
-// English and Hindi passage questions use separate passage blocks for clean rendering.
-
+// TEST 02 — ClassTime 9 | BSEB Class 9 Practice CBT
+// Coverage rule: maximum 3 MCQs per listed syllabus topic component.
+// 22 syllabus components × 3 = 66 questions, plus 15 Alphabet Series questions = 81.
 const QUESTIONS = [
   {
     "id": 1,
     "subject": "गणित",
+    "topic": "निर्देशांक ज्यामिति",
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "question": "3/4 - 5/6 का मान क्या है?",
+    "question": "बिंदु A(−3, 4) किस चतुर्थांश में स्थित है?",
     "options": [
-      "-7/12",
-      "7/12",
-      "1/12",
-      "-1/12"
+      "I",
+      "II",
+      "III",
+      "IV"
     ],
-    "correct": 3
+    "correct": 1
   },
   {
     "id": 2,
     "subject": "गणित",
+    "topic": "निर्देशांक ज्यामिति",
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "question": "(-7/9) × (27/14) का मान है—",
+    "question": "बिंदु P(5, −7) की x-अक्ष से दूरी कितनी है?",
     "options": [
-      "7/6",
-      "-7/6",
-      "-3/2",
-      "3/2"
+      "5 इकाई",
+      "7 इकाई",
+      "−7 इकाई",
+      "12 इकाई"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 3,
     "subject": "गणित",
+    "topic": "निर्देशांक ज्यामिति",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "easy",
-    "question": "-5/8 का गुणनात्मक प्रतिलोम क्या है?",
+    "difficulty": "challenging",
+    "question": "एक बिंदु प्रथम चतुर्थांश में है, जिसकी y-अक्ष से दूरी 3 इकाई और x-अक्ष से दूरी 4 इकाई है। उसके निर्देशांक होंगे—",
     "options": [
-      "-5/8",
-      "8/5",
-      "-8/5",
-      "5/8"
+      "(4, 3)",
+      "(3, 4)",
+      "(−3, 4)",
+      "(4, −3)"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 4,
     "subject": "गणित",
+    "topic": "दो चरों वाले रैखिक समीकरण",
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "question": "35 का वर्ग क्या है?",
+    "question": "समीकरण 2x + y = 7 में x = 2 होने पर y का मान क्या होगा?",
     "options": [
-      "1225",
-      "1250",
-      "1125",
-      "1325"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 5,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "√1764 का मान है—",
-    "options": [
-      "40",
-      "38",
-      "44",
-      "42"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 6,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "√0.0081 का मान क्या है?",
-    "options": [
-      "0.0009",
-      "0.9",
-      "0.09",
-      "0.009"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 7,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "12³ का मान है—",
-    "options": [
-      "1728",
-      "144",
-      "1331",
-      "432"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 8,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "∛3375 का मान है—",
-    "options": [
-      "12",
-      "15",
-      "25",
-      "18"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 9,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "(-2)⁵ का मान क्या है?",
-    "options": [
-      "16",
-      "-16",
-      "-32",
-      "32"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 10,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "2³ × 2⁴ का मान है—",
-    "options": [
-      "256",
-      "128",
-      "32",
-      "64"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 11,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "3⁻² का मान है—",
-    "options": [
-      "-1/9",
-      "-9",
-      "9",
-      "1/9"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 12,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "5 कॉपियों की कीमत ₹60 है। समान दर पर 8 कॉपियों की कीमत कितनी होगी?",
-    "options": [
-      "₹100",
-      "₹84",
-      "₹96",
-      "₹90"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 13,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "12 मजदूर किसी काम को 15 दिनों में पूरा करते हैं। उसी काम को 20 मजदूर कितने दिनों में पूरा करेंगे?",
-    "options": [
-      "9 दिन",
-      "10 दिन",
-      "8 दिन",
-      "12 दिन"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 14,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "240 का 25% कितना है?",
-    "options": [
-      "65",
-      "55",
-      "60",
-      "50"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 15,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "किसी वस्तु का क्रय मूल्य ₹800 और विक्रय मूल्य ₹920 है। लाभ प्रतिशत कितना है?",
-    "options": [
-      "20%",
-      "15%",
-      "10%",
-      "12%"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 16,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "किसी वस्तु का अंकित मूल्य ₹1500 है और उस पर 12% की छूट दी गई। विक्रय मूल्य क्या होगा?",
-    "options": [
-      "₹1350",
-      "₹1380",
-      "₹1280",
-      "₹1320"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 17,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "₹5000 पर 8% वार्षिक दर से 2 वर्षों का साधारण ब्याज कितना होगा?",
-    "options": [
-      "₹800",
-      "₹1000",
-      "₹600",
-      "₹400"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 18,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "₹10,000 पर 10% वार्षिक चक्रवृद्धि ब्याज की दर से 2 वर्षों में चक्रवृद्धि ब्याज कितना होगा?",
-    "options": [
-      "₹2000",
-      "₹2100",
-      "₹2200",
-      "₹2500"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 19,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "3x + 5x - 2 का सरल रूप है—",
-    "options": [
-      "8x - 2",
-      "8x",
-      "8x + 2",
-      "2x - 8"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 20,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "(a + b)² बराबर है—",
-    "options": [
-      "a² + b²",
-      "a² + 2ab + b²",
-      "a² + ab + b²",
-      "a² - ab + b²"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 21,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "x² - 9 का गुणनखंड है—",
-    "options": [
-      "(x - 9)(x + 1)",
-      "(x - 9)(x + 9)",
-      "(x - 1)(x + 9)",
-      "(x - 3)(x + 3)"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 22,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "6x + 12 का गुणनखंड रूप है—",
-    "options": [
-      "6(x - 2)",
-      "6(x + 2)",
-      "3(x + 3)",
-      "12(x + 6)"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 23,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "3x + 7 = 25 में x का मान क्या है?",
-    "options": [
-      "8",
-      "6",
-      "7",
+      "2",
+      "3",
+      "4",
       "5"
     ],
     "correct": 1
   },
   {
-    "id": 24,
+    "id": 5,
     "subject": "गणित",
+    "topic": "दो चरों वाले रैखिक समीकरण",
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "question": "5(x - 2) = 3x + 14 में x का मान है—",
+    "question": "इनमें से कौन-सा बिंदु 3x + 2y = 12 का एक हल है?",
     "options": [
-      "11",
-      "13",
-      "12",
-      "10"
+      "(2, 3)",
+      "(4, 1)",
+      "(2, 2)",
+      "(3, 1)"
     ],
     "correct": 2
   },
   {
-    "id": 25,
+    "id": 6,
     "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "2x/3 = 10 में x का मान है—",
-    "options": [
-      "15",
-      "18",
-      "20",
-      "12"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 26,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "एक समांतर चतुर्भुज का एक कोण 110° है। उसके आसन्न कोण का माप होगा—",
-    "options": [
-      "110°",
-      "70°",
-      "60°",
-      "80°"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 27,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "एक चतुर्भुज के तीन कोण 80°, 90° और 100° हैं। चौथे कोण का माप कितना है?",
-    "options": [
-      "80°",
-      "100°",
-      "90°",
-      "110°"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 28,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "समांतर चतुर्भुज की कौन-सी बात सदैव सत्य है?",
-    "options": [
-      "विकर्ण सदैव लंबवत होते हैं",
-      "सभी भुजाएँ बराबर होती हैं",
-      "विपरीत भुजाएँ बराबर और समांतर होती हैं",
-      "सभी कोण 90° होते हैं"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 29,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "एक समलंब चतुर्भुज की समानांतर भुजाएँ 10 सेमी और 16 सेमी हैं तथा ऊँचाई 7 सेमी है। उसका क्षेत्रफल कितना होगा?",
-    "options": [
-      "91 सेमी²",
-      "84 सेमी²",
-      "105 सेमी²",
-      "98 सेमी²"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 30,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "एक घनाभ की लंबाई 12 सेमी, चौड़ाई 5 सेमी और ऊँचाई 4 सेमी है। उसका आयतन कितना है?",
-    "options": [
-      "220 सेमी³",
-      "240 सेमी³",
-      "200 सेमी³",
-      "260 सेमी³"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 31,
-    "subject": "गणित",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "6 सेमी भुजा वाले घन का सम्पूर्ण पृष्ठीय क्षेत्रफल कितना होगा?",
-    "options": [
-      "180 सेमी²",
-      "144 सेमी²",
-      "256 सेमी²",
-      "216 सेमी²"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 32,
-    "subject": "गणित",
+    "topic": "दो चरों वाले रैखिक समीकरण",
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "question": "एक बेलन की त्रिज्या 7 सेमी और ऊँचाई 10 सेमी है। π = 22/7 लेने पर उसका आयतन कितना होगा?",
+    "question": "समीकरण x + y = 6 के आलेख पर कौन-सा बिंदु नहीं होगा?",
     "options": [
-      "3080 सेमी³",
-      "770 सेमी³",
-      "440 सेमी³",
-      "1540 सेमी³"
+      "(1, 5)",
+      "(2, 4)",
+      "(3, 3)",
+      "(4, 3)"
     ],
     "correct": 3
   },
   {
-    "id": 33,
-    "subject": "गणित",
+    "id": 7,
+    "subject": "विज्ञान",
+    "topic": "परमाणु एवं अणु",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "द्रव्यमान संरक्षण के नियम के अनुसार रासायनिक अभिक्रिया में—",
+    "options": [
+      "कुल द्रव्यमान नष्ट हो जाता है",
+      "कुल द्रव्यमान बढ़ जाता है",
+      "अभिकारकों और उत्पादों का कुल द्रव्यमान समान रहता है",
+      "केवल गैसों का द्रव्यमान समान रहता है"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 8,
+    "subject": "विज्ञान",
+    "topic": "परमाणु एवं अणु",
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "question": "किसी कक्षा में चार दिनों में उपस्थित विद्यार्थियों की संख्या क्रमशः 20, 25, 30 और 35 थी। इन चार दिनों का औसत उपस्थित विद्यार्थियों की संख्या कितनी है?",
+    "question": "पानी (H₂O) में हाइड्रोजन और ऑक्सीजन का द्रव्यमान अनुपात क्या है?",
     "options": [
-      "26.5",
-      "27.5",
-      "30",
-      "25"
+      "1 : 8",
+      "1 : 4",
+      "2 : 1",
+      "8 : 1"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 9,
+    "subject": "विज्ञान",
+    "topic": "परमाणु एवं अणु",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "यदि किसी यौगिक में तत्व X की संयोजकता 2 और तत्व Y की संयोजकता 3 है, तो उसका न्यूनतम सूत्र होगा—",
+    "options": [
+      "XY",
+      "X₂Y₃",
+      "X₃Y₂",
+      "X₂Y"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 10,
+    "subject": "विज्ञान",
+    "topic": "परमाणु की संरचना",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "इलेक्ट्रॉन पर किस प्रकार का आवेश होता है?",
+    "options": [
+      "धनात्मक",
+      "ऋणात्मक",
+      "उदासीन",
+      "द्विध्रुवीय"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 11,
+    "subject": "विज्ञान",
+    "topic": "परमाणु की संरचना",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "रदरफोर्ड के प्रयोग से मुख्यतः यह निष्कर्ष निकला कि परमाणु का अधिकांश भाग—",
+    "options": [
+      "ठोस और भरा हुआ है",
+      "ऋणावेशित है",
+      "खाली स्थान है",
+      "केवल न्यूट्रॉन से बना है"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 12,
+    "subject": "विज्ञान",
+    "topic": "परमाणु की संरचना",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "किसी परमाणु की परमाणु संख्या 17 और द्रव्यमान संख्या 35 है। उसके न्यूट्रॉनों की संख्या कितनी होगी?",
+    "options": [
+      "17",
+      "18",
+      "35",
+      "52"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 13,
+    "subject": "हिन्दी",
+    "topic": "ग्राम-गीत का मर्म",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "‘ग्राम-गीत का मर्म’ निबंध के लेखक कौन हैं?",
+    "options": [
+      "फणीश्वरनाथ रेणु",
+      "लक्ष्मीनारायण सुधांशु",
+      "रामधारी सिंह दिनकर",
+      "प्रेमचंद"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 14,
+    "subject": "हिन्दी",
+    "topic": "ग्राम-गीत का मर्म",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "लेखक के अनुसार ग्राम-गीतों की प्रमुख विशेषता क्या है?",
+    "options": [
+      "बनावटी भाषा",
+      "भावों की सहज अभिव्यक्ति",
+      "केवल धार्मिक विषय",
+      "केवल मनोरंजन"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 15,
+    "subject": "हिन्दी",
+    "topic": "ग्राम-गीत का मर्म",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "‘ग्राम-गीत’ को ‘कला-गीत’ के संदर्भ में समझने का सबसे उपयुक्त आशय क्या है?",
+    "options": [
+      "यह कला से असंबंधित लोक-रचना है",
+      "यह लोक-जीवन के सहज अनुभवों से विकसित काव्यात्मक अभिव्यक्ति है",
+      "यह केवल शिक्षाप्रद सरकारी गीत है",
+      "यह केवल शहरी जीवन का वर्णन है"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 16,
+    "subject": "हिन्दी",
+    "topic": "लाल पान की बेगम",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "‘लाल पान की बेगम’ के लेखक कौन हैं?",
+    "options": [
+      "फणीश्वरनाथ रेणु",
+      "लक्ष्मीनारायण सुधांशु",
+      "जयशंकर प्रसाद",
+      "हरिवंशराय बच्चन"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 17,
+    "subject": "हिन्दी",
+    "topic": "लाल पान की बेगम",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "कहानी के ग्रामीण परिवेश को जीवंत बनाने में किस तत्व की विशेष भूमिका है?",
+    "options": [
+      "केवल राजमहल का वर्णन",
+      "लोक-संस्कृति और ग्रामीण जीवन की गतिविधियाँ",
+      "वैज्ञानिक प्रयोग",
+      "समुद्री यात्रा"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 18,
+    "subject": "हिन्दी",
+    "topic": "लाल पान की बेगम",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "‘लाल पान की बेगम’ कहानी में ग्रामीण समाज के किस पक्ष का बहुआयामी चित्रण मिलता है?",
+    "options": [
+      "केवल आर्थिक समृद्धि",
+      "ईर्ष्या-द्वेष, आशा-निराशा और लोक-संस्कृति जैसे विविध भाव",
+      "केवल युद्ध-नीति",
+      "केवल शहरी जीवन"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 19,
+    "subject": "हिन्दी",
+    "topic": "मंझन के पद",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "‘मंझन के पद’ के कवि मंझन किस काव्य-परंपरा से जुड़े माने जाते हैं?",
+    "options": [
+      "सूफी काव्य-परंपरा",
+      "वीरगाथा परंपरा",
+      "रीतिकालीन दरबारी परंपरा",
+      "आधुनिक छायावाद"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 20,
+    "subject": "हिन्दी",
+    "topic": "मंझन के पद",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "मंझन के पदों में प्रेम का कौन-सा रूप प्रमुख रूप से उभरता है?",
+    "options": [
+      "केवल हास्य",
+      "आध्यात्मिक और मानवीय प्रेम",
+      "केवल राजनीतिक प्रेम",
+      "केवल प्रकृति-वर्णन"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 21,
+    "subject": "हिन्दी",
+    "topic": "मंझन के पद",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "मंझन के काव्य में प्रेम को व्यापक बनाने वाली दृष्टि क्या है?",
+    "options": [
+      "प्रेम को केवल निजी लाभ से जोड़ना",
+      "प्रेम को मानवीय और आध्यात्मिक अनुभव के रूप में देखना",
+      "प्रेम को युद्ध का पर्याय मानना",
+      "प्रेम को केवल धन प्राप्ति का साधन मानना"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 22,
+    "subject": "हिन्दी",
+    "topic": "गुरु गोविंद सिंह के पद",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "गुरु गोविंद सिंह किस रूप में प्रसिद्ध हैं?",
+    "options": [
+      "सिखों के दसवें गुरु",
+      "मुगल सम्राट",
+      "सूफी संत",
+      "केवल दरबारी कवि"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 23,
+    "subject": "हिन्दी",
+    "topic": "गुरु गोविंद सिंह के पद",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "गुरु गोविंद सिंह के पदों में कौन-सा भाव प्रमुख रूप से दिखाई देता है?",
+    "options": [
+      "वीरता और उत्साह",
+      "केवल हास्य",
+      "केवल विरह",
+      "केवल प्रकृति-चित्रण"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 24,
+    "subject": "हिन्दी",
+    "topic": "गुरु गोविंद सिंह के पद",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "इन पदों की काव्य-भाषा का प्रभाव किस कारण अधिक प्रखर बनता है?",
+    "options": [
+      "उत्साह, ओज और वीर भाव की अभिव्यक्ति",
+      "अत्यधिक वैज्ञानिक शब्दावली",
+      "केवल शांत भाव",
+      "केवल हास्य-व्यंग्य"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 25,
+    "subject": "हिन्दी",
+    "topic": "बिहार की संगीत साधना",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "‘बिहार की संगीत साधना’ किस पुस्तक का पाठ है?",
+    "options": [
+      "गोधूली भाग 1",
+      "वर्णिका भाग 1",
+      "पीयूषम् भाग 1",
+      "पैनोरमा"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 26,
+    "subject": "हिन्दी",
+    "topic": "बिहार की संगीत साधना",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "पाठ ‘बिहार की संगीत साधना’ का केंद्रीय विषय क्या है?",
+    "options": [
+      "बिहार की संगीत परंपरा और साधकों का योगदान",
+      "केवल आधुनिक फिल्म संगीत",
+      "केवल वाद्य खरीदना",
+      "केवल नृत्य प्रतियोगिता"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 27,
+    "subject": "हिन्दी",
+    "topic": "बिहार की संगीत साधना",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "इस पाठ से कौन-सा निष्कर्ष सबसे उपयुक्त है?",
+    "options": [
+      "संगीत-साधना केवल शहरों तक सीमित है",
+      "लोक और शास्त्रीय परंपराएँ साधना, परिश्रम और सांस्कृतिक विरासत से जुड़ी हैं",
+      "संगीत का संबंध मेहनत से नहीं है",
+      "केवल विदेशी संगीत महत्वपूर्ण है"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 28,
+    "subject": "हिन्दी",
+    "topic": "अपठित गद्यांश",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "गद्यांश के अनुसार जल संरक्षण का एक उपाय कौन-सा है?",
+    "options": [
+      "पानी को बहने देना",
+      "रिसाव रोकना",
+      "अधिक सिंचाई करना",
+      "केवल बोतलबंद पानी खरीदना"
+    ],
+    "correct": 1,
+    "passage": "जल संरक्षण केवल वर्षा जल को जमा करने तक सीमित नहीं है। घर, विद्यालय और खेतों में पानी के समझदारीपूर्ण उपयोग से भी बड़ी मात्रा में जल बचाया जा सकता है। वर्षा जल संचयन, रिसाव रोकना और आवश्यकता के अनुसार सिंचाई करना जल-संकट को कम करने के व्यावहारिक उपाय हैं।"
+  },
+  {
+    "id": 29,
+    "subject": "हिन्दी",
+    "topic": "अपठित गद्यांश",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "गद्यांश का मुख्य संदेश क्या है?",
+    "options": [
+      "जल संरक्षण केवल सरकार की जिम्मेदारी है",
+      "समझदारीपूर्ण उपयोग और संचयन से जल बचाया जा सकता है",
+      "केवल किसान जल बचा सकते हैं",
+      "वर्षा जल का कोई उपयोग नहीं है"
+    ],
+    "correct": 1,
+    "passage": "जल संरक्षण केवल वर्षा जल को जमा करने तक सीमित नहीं है। घर, विद्यालय और खेतों में पानी के समझदारीपूर्ण उपयोग से भी बड़ी मात्रा में जल बचाया जा सकता है। वर्षा जल संचयन, रिसाव रोकना और आवश्यकता के अनुसार सिंचाई करना जल-संकट को कम करने के व्यावहारिक उपाय हैं।"
+  },
+  {
+    "id": 30,
+    "subject": "हिन्दी",
+    "topic": "अपठित गद्यांश",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "गद्यांश में ‘व्यावहारिक उपाय’ से क्या आशय है?",
+    "options": [
+      "ऐसे उपाय जिन्हें वास्तविक जीवन में अपनाया जा सके",
+      "केवल किताबों में पढ़े जाने वाले विचार",
+      "बहुत महँगे उपकरण",
+      "केवल वैज्ञानिक प्रयोगशाला के कार्य"
+    ],
+    "correct": 0,
+    "passage": "जल संरक्षण केवल वर्षा जल को जमा करने तक सीमित नहीं है। घर, विद्यालय और खेतों में पानी के समझदारीपूर्ण उपयोग से भी बड़ी मात्रा में जल बचाया जा सकता है। वर्षा जल संचयन, रिसाव रोकना और आवश्यकता के अनुसार सिंचाई करना जल-संकट को कम करने के व्यावहारिक उपाय हैं।"
+  },
+  {
+    "id": 31,
+    "subject": "संस्कृत",
+    "topic": "यक्ष-युधिष्ठिर संवाद",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "‘यक्ष-युधिष्ठिर संवाद’ में प्रश्नों का उत्तर कौन देता है?",
+    "options": [
+      "भीम",
+      "अर्जुन",
+      "युधिष्ठिर",
+      "नकुल"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 32,
+    "subject": "संस्कृत",
+    "topic": "यक्ष-युधिष्ठिर संवाद",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "यक्ष-युधिष्ठिर संवाद की प्रमुख विशेषता क्या है?",
+    "options": [
+      "नीति और जीवन-मूल्यों पर आधारित प्रश्नोत्तर",
+      "केवल युद्ध का वर्णन",
+      "केवल प्रकृति-वर्णन",
+      "केवल हास्य"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 33,
+    "subject": "संस्कृत",
+    "topic": "यक्ष-युधिष्ठिर संवाद",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "युधिष्ठिर के उत्तरों से कौन-सा गुण सबसे स्पष्ट होता है?",
+    "options": [
+      "अविवेक",
+      "धैर्य और नीतिपरक बुद्धि",
+      "अहंकार",
+      "आलस्य"
     ],
     "correct": 1
   },
   {
     "id": 34,
-    "subject": "गणित",
+    "subject": "संस्कृत",
+    "topic": "चत्वारो वेदाः",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
-    "question": "किसी वृत्त-चित्र (Pie Chart) में किसी भाग का कोण 90° है। वह पूरे आँकड़े का कितने प्रतिशत दर्शाता है?",
+    "difficulty": "easy",
+    "question": "‘चत्वारो वेदाः’ में कितने वेदों का उल्लेख है?",
     "options": [
-      "30%",
-      "20%",
-      "25%",
-      "40%"
+      "दो",
+      "तीन",
+      "चार",
+      "पाँच"
     ],
     "correct": 2
   },
   {
     "id": 35,
-    "subject": "गणित",
+    "subject": "संस्कृत",
+    "topic": "चत्वारो वेदाः",
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "question": "एक थैले में 5 लाल और 3 नीली गेंदें हैं। बिना देखे एक गेंद निकाली जाती है। नीली गेंद निकलने की प्रायिकता क्या है?",
+    "question": "निम्नलिखित में से कौन-सा वेदों में शामिल है?",
     "options": [
-      "3/8",
-      "5/8",
-      "1/3",
-      "3/5"
+      "ऋग्वेद",
+      "पुराणवेद",
+      "इतिहासवेद",
+      "नाट्यवेद"
     ],
     "correct": 0
   },
   {
     "id": 36,
-    "subject": "सामान्य विज्ञान",
+    "subject": "संस्कृत",
+    "topic": "चत्वारो वेदाः",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "easy",
-    "question": "निम्नलिखित में से कौन-सी फसल सामान्यतः खरीफ फसल है?",
+    "difficulty": "challenging",
+    "question": "चार वेदों का सही क्रम कौन-सा है?",
     "options": [
-      "गेहूँ",
-      "धान",
-      "सरसों",
-      "चना"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 37,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "मिट्टी को पलटने और ढीला करने के लिए किस कृषि उपकरण का उपयोग किया जाता है?",
-    "options": [
-      "खुरपी",
-      "थ्रेशर",
-      "दरांती",
-      "हल"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 38,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "वायुमंडलीय नाइट्रोजन को पौधों के लिए उपयोगी रूप में बदलने में कौन-सा जीवाणु सहायक है?",
-    "options": [
-      "राइजोबियम",
-      "यीस्ट",
-      "पेनिसिलियम",
-      "लैक्टोबैसिलस"
+      "ऋग्वेद, यजुर्वेद, सामवेद, अथर्ववेद",
+      "ऋग्वेद, सामवेद, पुराणवेद, अथर्ववेद",
+      "यजुर्वेद, नाट्यवेद, सामवेद, अथर्ववेद",
+      "अथर्ववेद, ऋग्वेद, पुराणवेद, सामवेद"
     ],
     "correct": 0
   },
   {
-    "id": 39,
-    "subject": "सामान्य विज्ञान",
+    "id": 37,
+    "subject": "सामाजिक विज्ञान",
+    "topic": "इतिहास — फ्रांस की क्रांति",
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "question": "दूध से दही बनाने में कौन-सा सूक्ष्मजीव मुख्य रूप से सहायक होता है?",
+    "question": "फ्रांस की क्रांति किस वर्ष आरंभ हुई?",
     "options": [
-      "यीस्ट",
-      "राइजोबियम",
-      "प्लाज्मोडियम",
-      "लैक्टोबैसिलस"
+      "1776",
+      "1789",
+      "1815",
+      "1848"
     ],
-    "correct": 3
+    "correct": 1
+  },
+  {
+    "id": 38,
+    "subject": "सामाजिक विज्ञान",
+    "topic": "इतिहास — फ्रांस की क्रांति",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "बास्तील के किले का पतन किस तारीख से जुड़ा है?",
+    "options": [
+      "4 जुलाई 1776",
+      "14 जुलाई 1789",
+      "26 अगस्त 1789",
+      "21 जनवरी 1793"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 39,
+    "subject": "सामाजिक विज्ञान",
+    "topic": "इतिहास — फ्रांस की क्रांति",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "‘मानव और नागरिक अधिकारों की घोषणा’ का मूल उद्देश्य क्या था?",
+    "options": [
+      "राजा की निरंकुश सत्ता बढ़ाना",
+      "स्वतंत्रता और समानता जैसे अधिकारों को मान्यता देना",
+      "सामंती विशेषाधिकार सुरक्षित करना",
+      "करों को केवल किसानों पर लगाना"
+    ],
+    "correct": 1
   },
   {
     "id": 40,
-    "subject": "सामान्य विज्ञान",
+    "subject": "सामाजिक विज्ञान",
+    "topic": "इतिहास — विश्व युद्धों का इतिहास",
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "question": "लकड़ी के गूदे से बनाए जाने वाले कृत्रिम रेशे को क्या कहते हैं?",
+    "question": "प्रथम विश्व युद्ध कब शुरू हुआ?",
     "options": [
-      "रेयॉन",
-      "नायलॉन",
-      "ऐक्रिलिक",
-      "पॉलिएस्टर"
+      "1914",
+      "1918",
+      "1939",
+      "1945"
     ],
     "correct": 0
   },
   {
     "id": 41,
-    "subject": "सामान्य विज्ञान",
+    "subject": "सामाजिक विज्ञान",
+    "topic": "इतिहास — विश्व युद्धों का इतिहास",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "easy",
-    "question": "निम्नलिखित में से कौन-सा थर्मोसेटिंग प्लास्टिक है?",
+    "difficulty": "moderate",
+    "question": "द्वितीय विश्व युद्ध के तात्कालिक आरंभ से कौन-सी घटना जुड़ी है?",
     "options": [
-      "पॉलिप्रोपिलीन",
-      "PVC",
-      "बेकेलाइट",
-      "पॉलीथीन"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 42,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "निम्नलिखित में से कौन-सी धातु विद्युत की अच्छी चालक है?",
-    "options": [
-      "गंधक",
-      "फॉस्फोरस",
-      "कार्बन",
-      "तांबा"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 43,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "कोयला और पेट्रोलियम किस प्रकार के ईंधन हैं?",
-    "options": [
-      "सौर ईंधन",
-      "कृत्रिम ईंधन",
-      "जीवाश्म ईंधन",
-      "जैव ईंधन"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 44,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "वह न्यूनतम तापमान जिस पर कोई पदार्थ आग पकड़ लेता है, कहलाता है—",
-    "options": [
-      "प्रज्वलन तापमान",
-      "उबलने का तापमान",
-      "गलनांक",
-      "कमरे का तापमान"
+      "जर्मनी द्वारा पोलैंड पर आक्रमण",
+      "भारत की स्वतंत्रता",
+      "औद्योगिक क्रांति",
+      "फ्रांस की क्रांति"
     ],
     "correct": 0
   },
   {
-    "id": 45,
-    "subject": "सामान्य विज्ञान",
+    "id": 42,
+    "subject": "सामाजिक विज्ञान",
+    "topic": "इतिहास — विश्व युद्धों का इतिहास",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "विश्व युद्धों के बाद अंतरराष्ट्रीय स्तर पर शांति के प्रयासों की आवश्यकता क्यों बढ़ी?",
+    "options": [
+      "युद्धों से मानव और आर्थिक क्षति बहुत बढ़ गई थी",
+      "युद्धों से कोई क्षति नहीं हुई थी",
+      "देशों को व्यापार बंद करना था",
+      "केवल सीमाएँ बदलना उद्देश्य था"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 43,
+    "subject": "सामाजिक विज्ञान",
+    "topic": "भूगोल — भौतिक स्वरूप : संरचना एवं उच्चावच",
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "question": "वन्यजीव अभयारण्य का मुख्य उद्देश्य क्या है?",
+    "question": "भारत के उत्तरी भाग में कौन-सी प्रमुख पर्वत श्रेणी है?",
     "options": [
-      "केवल लकड़ी प्राप्त करना",
-      "शहर बसाना",
-      "खेती बढ़ाना",
-      "वन्य जीवों की सुरक्षा करना"
+      "अरावली",
+      "हिमालय",
+      "सतपुड़ा",
+      "नीलगिरि"
     ],
-    "correct": 3
+    "correct": 1
+  },
+  {
+    "id": 44,
+    "subject": "सामाजिक विज्ञान",
+    "topic": "भूगोल — भौतिक स्वरूप : संरचना एवं उच्चावच",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "भारत के उत्तरी मैदान मुख्यतः किससे निर्मित हैं?",
+    "options": [
+      "लावा",
+      "जलोढ़ निक्षेप",
+      "केवल चूना-पत्थर",
+      "ग्रेनाइट"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 45,
+    "subject": "सामाजिक विज्ञान",
+    "topic": "भूगोल — भौतिक स्वरूप : संरचना एवं उच्चावच",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "प्रायद्वीपीय पठार की एक प्रमुख विशेषता क्या है?",
+    "options": [
+      "यह अपेक्षाकृत प्राचीन कठोर चट्टानों से बना है",
+      "यह पूरी तरह नवीन जलोढ़ मैदान है",
+      "यह केवल हिम से बना है",
+      "यह केवल तटीय रेत से बना है"
+    ],
+    "correct": 0
   },
   {
     "id": 46,
-    "subject": "सामान्य विज्ञान",
+    "subject": "सामाजिक विज्ञान",
+    "topic": "भूगोल — अपवाह स्वरूप",
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "question": "वनों की कटाई से निम्नलिखित में से कौन-सी समस्या बढ़ सकती है?",
+    "question": "भारत की एक प्रमुख बारहमासी नदी कौन-सी है?",
     "options": [
-      "जैव विविधता में वृद्धि",
-      "मृदा अपरदन",
-      "वर्षा जल का संचयन",
-      "मिट्टी की उर्वरता में हमेशा वृद्धि"
+      "गोदावरी",
+      "गंगा",
+      "लूनी",
+      "चंबल"
     ],
     "correct": 1
   },
   {
     "id": 47,
-    "subject": "सामान्य विज्ञान",
+    "subject": "सामाजिक विज्ञान",
+    "topic": "भूगोल — अपवाह स्वरूप",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "easy",
-    "question": "नर और मादा युग्मकों के संलयन की प्रक्रिया को क्या कहते हैं?",
+    "difficulty": "moderate",
+    "question": "‘अपवाह तंत्र’ से क्या तात्पर्य है?",
     "options": [
-      "परागण",
-      "द्विखंडन",
-      "निषेचन",
-      "अंकुरण"
+      "सड़कों का जाल",
+      "नदियों और उनकी सहायक नदियों का जाल",
+      "केवल नहरों का समूह",
+      "केवल वर्षा की मात्रा"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 48,
-    "subject": "सामान्य विज्ञान",
+    "subject": "सामाजिक विज्ञान",
+    "topic": "भूगोल — अपवाह स्वरूप",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
-    "question": "किशोरावस्था सामान्यतः किस आयु अवधि को कहा जाता है?",
+    "difficulty": "challenging",
+    "question": "हिमालयी नदियों को प्रायः बारहमासी क्यों कहा जाता है?",
     "options": [
-      "1 से 5 वर्ष",
-      "6 से 10 वर्ष",
-      "20 से 30 वर्ष",
-      "11 से 19 वर्ष"
+      "उन्हें केवल समुद्री जल मिलता है",
+      "उन्हें वर्षा के साथ हिमनदों और बर्फ पिघलने से भी जल मिलता है",
+      "उनमें कभी बाढ़ नहीं आती",
+      "वे केवल मानसून में बहती हैं"
     ],
-    "correct": 3
+    "correct": 1
   },
   {
     "id": 49,
-    "subject": "सामान्य विज्ञान",
+    "subject": "English",
+    "topic": "Reader — Saint Kabir",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
-    "question": "यीस्ट में अलैंगिक जनन सामान्यतः किस विधि से होता है?",
+    "difficulty": "easy",
+    "question": "Saint Kabir’s teachings mainly emphasise—",
     "options": [
-      "कलिकाजनन",
-      "परागण",
-      "बीजाणु निर्माण",
-      "खंडन"
+      "outer show only",
+      "inner truth and devotion",
+      "warfare",
+      "wealth"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 50,
-    "subject": "सामान्य विज्ञान",
+    "subject": "English",
+    "topic": "Reader — Saint Kabir",
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "question": "मलेरिया रोग किस सूक्ष्मजीव के कारण होता है?",
+    "question": "Kabir criticised religious practices when they became—",
     "options": [
-      "प्लाज्मोडियम नामक प्रोटोजोआ",
-      "बैक्टीरिया",
-      "कवक",
-      "विषाणु"
+      "simple and sincere",
+      "empty rituals without inner understanding",
+      "based on kindness",
+      "connected with self-discipline"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 51,
-    "subject": "सामान्य विज्ञान",
+    "subject": "English",
+    "topic": "Reader — Saint Kabir",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
-    "question": "दाब (Pressure) किसके बराबर होता है?",
+    "difficulty": "challenging",
+    "question": "The central spirit of Kabir’s teaching can best be described as—",
     "options": [
-      "क्षेत्रफल ÷ बल",
-      "बल × क्षेत्रफल",
-      "बल ÷ क्षेत्रफल",
-      "बल + क्षेत्रफल"
+      "division between communities",
+      "unity and inner realization beyond superficial divisions",
+      "pursuit of luxury",
+      "rejection of all moral values"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 52,
-    "subject": "सामान्य विज्ञान",
+    "subject": "English",
+    "topic": "Reader — The eyes are not here",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
-    "question": "हम बिना फिसले जमीन पर चल पाते हैं। इसमें मुख्य रूप से किसका योगदान है?",
+    "difficulty": "easy",
+    "question": "Where does the narrator meet the girl in the story?",
     "options": [
-      "घर्षण",
-      "गुरुत्वाकर्षण की अनुपस्थिति",
-      "ध्वनि",
-      "चुंबकत्व"
+      "On a train",
+      "At a school",
+      "In a market",
+      "At a theatre"
     ],
     "correct": 0
   },
   {
     "id": 53,
-    "subject": "सामान्य विज्ञान",
+    "subject": "English",
+    "topic": "Reader — The eyes are not here",
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "question": "ध्वनि उत्पन्न होने का मूल कारण क्या है?",
+    "question": "The narrator initially assumes that the girl can—",
     "options": [
-      "दाब का अभाव",
-      "प्रकाश",
-      "ऊष्मा",
-      "कंपन"
+      "see clearly",
+      "sing beautifully",
+      "drive the train",
+      "read a newspaper"
     ],
-    "correct": 3
+    "correct": 0
   },
   {
     "id": 54,
-    "subject": "सामान्य विज्ञान",
+    "subject": "English",
+    "topic": "Reader — The eyes are not here",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
-    "question": "ध्वनि का तारत्व (Pitch) मुख्य रूप से किस पर निर्भर करता है?",
+    "difficulty": "challenging",
+    "question": "The ending creates irony mainly because—",
     "options": [
-      "माध्यम के रंग",
-      "आवृत्ति",
-      "ध्वनि की चाल",
-      "आयाम"
+      "both passengers openly know everything about each other",
+      "the narrator and the girl make assumptions about each other’s eyesight",
+      "the train never moves",
+      "the narrator has known the girl for years"
     ],
     "correct": 1
   },
   {
     "id": 55,
-    "subject": "सामान्य विज्ञान",
+    "subject": "English",
+    "topic": "Panorama — Prose — Yayati",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
-    "question": "किसी धातु की वस्तु पर दूसरी धातु की पतली परत चढ़ाने की प्रक्रिया कहलाती है—",
+    "difficulty": "easy",
+    "question": "Who is Yayati in the story?",
     "options": [
-      "वाष्पीकरण",
-      "आसवन",
-      "विद्युतलेपन (Electroplating)",
-      "विद्युत अपघटन"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 56,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "आकाश में बिजली चमकने के समय खुले मैदान में होने पर सबसे सुरक्षित व्यवहार क्या है?",
-    "options": [
-      "धातु की वस्तु पकड़ना",
-      "नीचे झुककर शरीर को जितना संभव हो छोटा रखना",
-      "पेड़ के नीचे खड़ा होना",
-      "जमीन पर सीधा लेट जाना"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 57,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "परावर्तन के नियम के अनुसार आपतन कोण और परावर्तन कोण में क्या संबंध है?",
-    "options": [
-      "आपतन कोण परावर्तन कोण के बराबर होता है",
-      "आपतन कोण दोगुना होता है",
-      "दोनों हमेशा अलग होते हैं",
-      "परावर्तन कोण शून्य होता है"
+      "A king",
+      "A merchant",
+      "A scientist",
+      "A farmer"
     ],
     "correct": 0
   },
   {
-    "id": 58,
-    "subject": "सामान्य विज्ञान",
+    "id": 56,
+    "subject": "English",
+    "topic": "Panorama — Prose — Yayati",
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "question": "प्रिज्म से गुजरते समय श्वेत प्रकाश का कई रंगों में विभाजित होना कहलाता है—",
+    "question": "The story of Yayati raises an important question about—",
     "options": [
-      "विसरण (Dispersion)",
-      "चालन",
-      "वाष्पीकरण",
-      "परावर्तन"
+      "the value of endless youth and desire",
+      "how to build a ship",
+      "the discovery of electricity",
+      "the making of paper"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 57,
+    "subject": "English",
+    "topic": "Panorama — Prose — Yayati",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "The story of Yayati most strongly suggests that unlimited satisfaction of desire—",
+    "options": [
+      "always brings lasting peace",
+      "may deepen dissatisfaction rather than remove it",
+      "makes duty unnecessary",
+      "guarantees wisdom"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 58,
+    "subject": "English",
+    "topic": "Panorama — Poetry — On His Blindness",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "Who wrote “On His Blindness”?",
+    "options": [
+      "John Milton",
+      "William Wordsworth",
+      "Robert Frost",
+      "John Keats"
     ],
     "correct": 0
   },
   {
     "id": 59,
-    "subject": "सामान्य विज्ञान",
+    "subject": "English",
+    "topic": "Panorama — Poetry — On His Blindness",
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
-    "question": "मानव शरीर में निषेचन के बाद भ्रूण का विकास मुख्य रूप से किस अंग में होता है?",
+    "question": "In the poem, Milton reflects on his sense of—",
     "options": [
-      "गुर्दा",
-      "हृदय",
-      "गर्भाशय",
-      "फेफड़ा"
+      "having a talent he can no longer use as before",
+      "owning a large estate",
+      "winning a battle",
+      "travelling abroad"
     ],
-    "correct": 2
+    "correct": 0
   },
   {
     "id": 60,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "किसी वस्तु पर लगाया गया बल उसकी गति के साथ-साथ उसके आकार में भी क्या कर सकता है?",
-    "options": [
-      "परिवर्तन कर सकता है",
-      "केवल रंग बदल सकता है",
-      "हमेशा तापमान घटा सकता है",
-      "कुछ नहीं कर सकता"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 61,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "किसी द्रव द्वारा लगाया गया दाब गहराई बढ़ने पर सामान्यतः क्या होता है?",
-    "options": [
-      "बढ़ता है",
-      "बदलता नहीं है",
-      "घटता है",
-      "हमेशा शून्य हो जाता है"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 62,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "गर्मियों में मिट्टी के घड़े का पानी ठंडा क्यों रहता है?",
-    "options": [
-      "घड़े में प्रकाश नहीं पहुँचता",
-      "घड़े की सतह से पानी का वाष्पीकरण ऊष्मा ले जाता है",
-      "पानी जम जाता है",
-      "घड़ा पानी को गर्म करता है"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 63,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "दलहनी फसल को फसल चक्र में शामिल करने से मिट्टी की उर्वरता बनाए रखने में क्यों मदद मिलती है?",
-    "options": [
-      "वे मिट्टी को पूरी तरह सूखा देती हैं",
-      "वे सूर्य के प्रकाश को रोकती हैं",
-      "वे मिट्टी से सारा नाइट्रोजन निकाल लेती हैं",
-      "उनकी जड़ों में राइजोबियम नाइट्रोजन स्थिरीकरण में मदद करता है"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 64,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "एक किसान बहुत अधिक रासायनिक उर्वरक के बजाय जैविक खाद का प्रयोग करता है। खाद का एक प्रमुख लाभ क्या है?",
-    "options": [
-      "यह पौधों को प्रकाश से मुक्त कर देती है",
-      "यह तुरंत सभी कीटों को समाप्त कर देती है",
-      "यह मिट्टी को हमेशा अम्लीय बना देती है",
-      "यह मिट्टी में ह्यूमस बढ़ाकर उसकी जलधारण क्षमता सुधार सकती है"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 65,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "पेनिसिलिन जैसे कुछ एंटीबायोटिक किस प्रकार के सूक्ष्मजीव से प्राप्त किए जाते हैं?",
-    "options": [
-      "कुछ कवक",
-      "केवल शैवाल",
-      "केवल प्रोटोजोआ",
-      "केवल कीट"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 66,
-    "subject": "सामान्य विज्ञान",
+    "subject": "English",
+    "topic": "Panorama — Poetry — On His Blindness",
     "type": "mcq",
     "marks": 1,
     "difficulty": "challenging",
-    "question": "सोडियम जैसी अत्यधिक क्रियाशील धातु को मिट्टी के तेल (केरोसिन) में क्यों रखा जाता है?",
+    "question": "The poem finally emphasises that God values—",
     "options": [
-      "उसकी विद्युत चालकता बढ़ाने के लिए",
-      "उसका रंग बदलने के लिए",
-      "हवा और नमी के साथ तीव्र अभिक्रिया से बचाने के लिए",
-      "उसे ठंडा रखने के लिए"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 67,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "तेल की आग पर पानी डालना खतरनाक हो सकता है। ऐसी आग को बुझाने में रेत या उपयुक्त अग्निशामक क्यों अधिक उपयोगी है?",
-    "options": [
-      "वे तेल का तापमान बढ़ाते हैं",
-      "वे आग को अधिक ऑक्सीजन देते हैं",
-      "वे आग और वायु के संपर्क को कम करते हैं",
-      "वे तेल को अधिक ज्वलनशील बनाते हैं"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 68,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "लुप्तप्राय और संकटग्रस्त प्रजातियों के बारे में जानकारी दर्ज करने वाली पुस्तक को क्या कहा जाता है?",
-    "options": [
-      "ब्लू बुक",
-      "व्हाइट बुक",
-      "ग्रीन बुक",
-      "रेड डेटा बुक"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 69,
-    "subject": "सामान्य विज्ञान",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "प्लेसेंटा (अपरा) का प्रमुख कार्य क्या है?",
-    "options": [
-      "भ्रूण के बालों का रंग बदलना",
-      "माँ से भ्रूण तक पोषक तत्व और ऑक्सीजन पहुँचाने तथा अपशिष्ट हटाने में सहायता करना",
-      "केवल भ्रूण को गति देना",
-      "केवल रक्त को जमाना"
+      "only physical strength",
+      "patient faith and sincere service",
+      "only wealth",
+      "only public fame"
     ],
     "correct": 1
   },
   {
-    "id": 70,
-    "subject": "सामान्य विज्ञान",
+    "id": 61,
+    "subject": "English",
+    "topic": "Language & Skills — Tenses",
     "type": "mcq",
     "marks": 1,
     "difficulty": "easy",
-    "question": "आकाश में बिजली चमकने के कुछ समय बाद गरज सुनाई देती है। इसका मुख्य कारण क्या है?",
+    "question": "Choose the correct form: She ___ to school every day.",
     "options": [
-      "ध्वनि हवा में नहीं चलती",
-      "बिजली केवल रात में बनती है",
-      "ध्वनि प्रकाश से तेज चलती है",
-      "प्रकाश ध्वनि की तुलना में बहुत तेज चलता है"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 71,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "Why does Riya visit the school library?",
-    "options": [
-      "To complete a science experiment",
-      "To meet her friends",
-      "To borrow a storybook",
-      "To play games"
-    ],
-    "correct": 2,
-    "passage": "Riya enjoys reading books in her free time. She visits the school library every Friday and usually borrows one storybook. Reading has helped her learn many new words and ideas."
-  },
-  {
-    "id": 72,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "According to the passage, how has reading helped Riya?",
-    "options": [
-      "It has taught her to play football",
-      "It has reduced her school time",
-      "It has made her sleep more",
-      "It has helped her learn new words and ideas"
-    ],
-    "correct": 3,
-    "passage": "Riya enjoys reading books in her free time. She visits the school library every Friday and usually borrows one storybook. Reading has helped her learn many new words and ideas."
-  },
-  {
-    "id": 73,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "Which statement is true?",
-    "options": [
-      "Riya visits the library every Monday",
-      "Riya usually borrows one storybook",
-      "Riya does not like reading",
-      "Riya borrows a newspaper every Friday"
-    ],
-    "correct": 1,
-    "passage": "Riya enjoys reading books in her free time. She visits the school library every Friday and usually borrows one storybook. Reading has helped her learn many new words and ideas."
-  },
-  {
-    "id": 74,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "Choose the best meaning of the word “usually”.",
-    "options": [
-      "Suddenly",
-      "Never",
-      "Rarely",
-      "Normally"
-    ],
-    "correct": 3,
-    "passage": "Riya enjoys reading books in her free time. She visits the school library every Friday and usually borrows one storybook. Reading has helped her learn many new words and ideas."
-  },
-  {
-    "id": 75,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "What is the main idea of the passage?",
-    "options": [
-      "Riya wants to become a teacher",
-      "Riya dislikes books",
-      "The school library is closed on Fridays",
-      "Reading is a useful habit for Riya"
-    ],
-    "correct": 3,
-    "passage": "Riya enjoys reading books in her free time. She visits the school library every Friday and usually borrows one storybook. Reading has helped her learn many new words and ideas."
-  },
-  {
-    "id": 76,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "Choose the correct option: She ___ to school every day.",
-    "options": [
-      "gone",
+      "go",
       "goes",
-      "going",
-      "go"
+      "went",
+      "going"
     ],
     "correct": 1
   },
   {
-    "id": 77,
+    "id": 62,
     "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "Choose the correct sentence using a degree of comparison.",
-    "options": [
-      "Of the two brothers, Rohan is more tall.",
-      "Of the two brothers, Rohan is taller.",
-      "Of the two brothers, Rohan is tallest.",
-      "Of the two brothers, Rohan is most tall."
-    ],
-    "correct": 1
-  },
-  {
-    "id": 78,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "Choose the correct preposition: The book is ___ the table.",
-    "options": [
-      "at",
-      "in",
-      "on",
-      "by"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 79,
-    "subject": "English",
+    "topic": "Language & Skills — Tenses",
     "type": "mcq",
     "marks": 1,
     "difficulty": "moderate",
     "question": "Choose the correct form: When I reached the station, the train ___.",
     "options": [
-      "will leave",
       "leaves",
       "has left",
-      "had left"
+      "had left",
+      "will leave"
     ],
-    "correct": 3
+    "correct": 2
+  },
+  {
+    "id": 63,
+    "subject": "English",
+    "topic": "Language & Skills — Tenses",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "Choose the correct sentence.",
+    "options": [
+      "I am living here since 2020.",
+      "I have been living here since 2020.",
+      "I was living here since 2020.",
+      "I live here since 2020."
+    ],
+    "correct": 1
+  },
+  {
+    "id": 64,
+    "subject": "English",
+    "topic": "Language & Skills — Modals",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "You ___ obey the traffic rules.",
+    "options": [
+      "must",
+      "might",
+      "would",
+      "could"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 65,
+    "subject": "English",
+    "topic": "Language & Skills — Modals",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "___ I borrow your pen for a minute?",
+    "options": [
+      "Must",
+      "May",
+      "Need",
+      "Ought"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 66,
+    "subject": "English",
+    "topic": "Language & Skills — Modals",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "You ___ have informed me earlier; the meeting is already over.",
+    "options": [
+      "should",
+      "can",
+      "may",
+      "will"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 67,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "Complete the series: A, C, E, G, __",
+    "options": [
+      "H",
+      "I",
+      "J",
+      "K"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 68,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "Complete the series: Z, X, V, T, __",
+    "options": [
+      "R",
+      "S",
+      "Q",
+      "P"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 69,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "Complete the series: B, E, H, K, __",
+    "options": [
+      "M",
+      "N",
+      "O",
+      "P"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 70,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "Complete the series: D, H, L, P, __",
+    "options": [
+      "T",
+      "U",
+      "V",
+      "S"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 71,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "Complete the series: AZ, BY, CX, DW, __",
+    "options": [
+      "EV",
+      "FU",
+      "EW",
+      "FV"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 72,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "Complete the series: A, D, H, M, __",
+    "options": [
+      "Q",
+      "R",
+      "S",
+      "T"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 73,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "Complete the series: C, F, J, O, __",
+    "options": [
+      "T",
+      "U",
+      "V",
+      "W"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 74,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "Complete the series: B, G, M, T, __",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 75,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "If A=1, B=2, …, then the value of C + F is—",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 76,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "Which letter is 5 places after H in the English alphabet?",
+    "options": [
+      "L",
+      "M",
+      "N",
+      "O"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 77,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "Which letter is 4 places before P?",
+    "options": [
+      "K",
+      "L",
+      "M",
+      "N"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 78,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "In the series B, D, G, K, P, __, each term moves forward by increasing steps. What comes next?",
+    "options": [
+      "V",
+      "W",
+      "X",
+      "Y"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 79,
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "Complete the series: Y, V, R, M, __",
+    "options": [
+      "H",
+      "I",
+      "J",
+      "K"
+    ],
+    "correct": 0
   },
   {
     "id": 80,
-    "subject": "English",
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
-    "question": "Choose the correct passive voice of: “The teacher praised the student.”",
+    "difficulty": "easy",
+    "question": "Complete the series: M, O, Q, S, __",
     "options": [
-      "The student has praised the teacher.",
-      "The student praised by the teacher.",
-      "The student was praised by the teacher.",
-      "The student is praised by the teacher."
+      "T",
+      "U",
+      "V",
+      "W"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 81,
-    "subject": "English",
+    "subject": "तर्कशक्ति",
+    "topic": "तर्कशक्ति — Alphabet Series",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "easy",
-    "question": "Choose the synonym of “brave”.",
+    "difficulty": "moderate",
+    "question": "Complete the series: AB, DE, GH, JK, __",
     "options": [
-      "Courageous",
-      "Cowardly",
-      "Quiet",
-      "Clever"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 82,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "Choose the correctly spelt word.",
-    "options": [
-      "seperete",
-      "separate",
-      "seperate",
-      "seprate"
+      "LM",
+      "MN",
+      "NO",
+      "OP"
     ],
     "correct": 1
-  },
-  {
-    "id": 83,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "Choose the correct modal auxiliary: You ___ wear a helmet while riding a bicycle.",
-    "options": [
-      "might",
-      "would",
-      "could",
-      "must"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 84,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "Choose the correctly arranged sentence.",
-    "options": [
-      "Always school I on time reach.",
-      "I always reach school on time.",
-      "I reach always on time school.",
-      "On school I always time reach."
-    ],
-    "correct": 1
-  },
-  {
-    "id": 85,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "challenging",
-    "question": "Choose the correct indirect speech: He said, “I am tired.”",
-    "options": [
-      "He said that he is tired.",
-      "He said that I am tired.",
-      "He said that he has tired.",
-      "He said that he was tired."
-    ],
-    "correct": 3
-  },
-  {
-    "id": 86,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "गद्यांश के अनुसार पेड़ हमें क्या देते हैं?",
-    "options": [
-      "केवल छाया",
-      "ऑक्सीजन, फल, छाया और लकड़ी",
-      "केवल फल",
-      "केवल लकड़ी"
-    ],
-    "correct": 1,
-    "passage": "पेड़ हमारे जीवन के लिए बहुत महत्वपूर्ण हैं। वे हमें ऑक्सीजन, फल, छाया और लकड़ी देते हैं। पेड़ मिट्टी के कटाव को रोकने में भी सहायता करते हैं। इसलिए हमें अधिक से अधिक पेड़ लगाकर उनकी रक्षा करनी चाहिए।"
-  },
-  {
-    "id": 87,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "उपरोक्त गद्यांश का मुख्य संदेश क्या है?",
-    "options": [
-      "पेड़ काटने चाहिए",
-      "पेड़ों की कोई आवश्यकता नहीं है",
-      "पेड़ों को लगाना और उनकी रक्षा करना चाहिए",
-      "केवल फल देने वाले पेड़ लगाने चाहिए"
-    ],
-    "correct": 2,
-    "passage": "पेड़ हमारे जीवन के लिए बहुत महत्वपूर्ण हैं। वे हमें ऑक्सीजन, फल, छाया और लकड़ी देते हैं। पेड़ मिट्टी के कटाव को रोकने में भी सहायता करते हैं। इसलिए हमें अधिक से अधिक पेड़ लगाकर उनकी रक्षा करनी चाहिए।"
-  },
-  {
-    "id": 88,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "‘प्रसन्न’ शब्द का विलोम क्या है?",
-    "options": [
-      "उदास",
-      "हर्षित",
-      "खुश",
-      "आनंदित"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 89,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "‘सूर्य’ का पर्यायवाची शब्द कौन-सा है?",
-    "options": [
-      "रवि",
-      "पवन",
-      "जलद",
-      "धरती"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 90,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "question": "निम्नलिखित में से शुद्ध वर्तनी वाला शब्द कौन-सा है?",
-    "options": [
-      "अवश्यक",
-      "आवश्यक",
-      "आवसयक",
-      "आवशयक"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 91,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "‘सुंदर फूल खिला है।’ इस वाक्य में ‘सुंदर’ कौन-सा शब्द-भेद है?",
-    "options": [
-      "विशेषण",
-      "सर्वनाम",
-      "क्रिया",
-      "संज्ञा"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 92,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "challenging",
-    "question": "‘राम ने आम खाया।’ वाक्य में ‘आम’ का पद-परिचय क्या है?",
-    "options": [
-      "विशेषण, पुल्लिंग, बहुवचन, करणकारक",
-      "संज्ञा, पुल्लिंग, एकवचन, कर्मकारक",
-      "सर्वनाम, स्त्रीलिंग, एकवचन, कर्ताकारक",
-      "क्रिया, पुल्लिंग, एकवचन, अधिकरणकारक"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 93,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "‘राम ने आम खाया।’ वाक्य में ‘राम’ कौन-सा कारक है?",
-    "options": [
-      "कर्ता कारक",
-      "कर्म कारक",
-      "अधिकरण कारक",
-      "करण कारक"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 94,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "निम्नलिखित में से शुद्ध वाक्य कौन-सा है?",
-    "options": [
-      "मुझे हिंदी पढ़ना अच्छा लगती है।",
-      "मुझे हिंदी पढ़ना अच्छी लगता है।",
-      "मुझे हिंदी पढ़ना अच्छे लगता है।",
-      "मुझे हिंदी पढ़ना अच्छा लगता है।"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 95,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "‘आँखों का तारा’ मुहावरे का सही अर्थ क्या है?",
-    "options": [
-      "बहुत कमजोर व्यक्ति",
-      "बहुत प्रिय व्यक्ति",
-      "बहुत दूर की वस्तु",
-      "बहुत क्रोधित व्यक्ति"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 96,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "‘जो मेहनत करता है, वही सफल होता है।’ यह किस प्रकार का वाक्य है?",
-    "options": [
-      "सरल वाक्य",
-      "विस्मयादिबोधक वाक्य",
-      "मिश्र वाक्य",
-      "संयुक्त वाक्य"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 97,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "‘राम आया और बैठ गया।’ इस वाक्य का सरल रूप कौन-सा है?",
-    "options": [
-      "राम आया क्योंकि वह बैठ गया।",
-      "जब राम आया तब वह बैठ गया।",
-      "राम आकर बैठ गया।",
-      "राम आया, इसलिए वह बैठ गया।"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 98,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "‘अधजल गगरी छलकत जाए’ लोकोक्ति का सही अर्थ क्या है?",
-    "options": [
-      "बहुत मेहनत करने वाला व्यक्ति सफल होता है।",
-      "खाली बर्तन हमेशा भारी होता है।",
-      "जल्दी काम करने से काम बिगड़ जाता है।",
-      "कम ज्ञान वाला व्यक्ति अधिक दिखावा करता है।"
-    ],
-    "correct": 3
-  },
-  {
-    "id": 99,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "‘वह बाजार गया और फल खरीद लाया।’ यह किस प्रकार का वाक्य है?",
-    "options": [
-      "मिश्र वाक्य",
-      "सरल वाक्य",
-      "संयुक्त वाक्य",
-      "प्रश्नवाचक वाक्य"
-    ],
-    "correct": 2
-  },
-  {
-    "id": 100,
-    "subject": "हिंदी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "question": "‘यदि तुम नियमित अभ्यास करोगे, तो तुम्हारे अंक बेहतर होंगे।’ वाक्य में ‘यदि’ किस प्रकार का अव्यय है?",
-    "options": [
-      "समुच्चयबोधक अव्यय",
-      "विस्मयादिबोधक अव्यय",
-      "क्रियाविशेषण",
-      "संबंधबोधक अव्यय"
-    ],
-    "correct": 0
   }
 ];
