@@ -1,10 +1,3 @@
-// TEST 02 — ClassTime 9 | BSEB Class 9 Practice CBT
-// 100-question final bank.
-// MCQ option order is randomized; correct-answer positions are balanced and anti-pattern constrained
-// so students cannot exploit A-A, B-B, A-B-C-D, repeating-pair, or cyclic-position patterns.
-// Maths/Science retain expanded coverage; Sanskrit remains unchanged.
-// Hindi and English retain passage-based comprehension.
-// Exactly 2 written-copy subjective questions remain per subject; no typed answer field is used.
 const QUESTIONS = [
   {
     "id": 1,
@@ -1050,15 +1043,15 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "Reader — The eyes are not here",
-    "question": "Where does the young traveller sit at the beginning of the passage?",
+    "question": "कथावाचक ने युवती से अपनी दृष्टिहीनता क्यों छिपाने की कोशिश की?",
     "options": [
-      "In the dining car",
-      "Near the window",
-      "Near the door",
-      "On the platform"
+      "वह बातचीत में सामान्य दिखना चाहता था",
+      "उसे स्टेशन पर उतरने में डर लग रहा था",
+      "वह अपना टिकट छिपाना चाहता था",
+      "उसे यात्रा के बारे में जानकारी नहीं थी"
     ],
-    "correct": 1,
-    "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
+    "correct": 0,
+    "passage": "एक रेलयात्रा में कथावाचक की मुलाकात एक युवती से होती है। कथावाचक स्वयं दृष्टिहीन है, लेकिन वह अपनी स्थिति छिपाने की कोशिश करता है और युवती से बातचीत करता है। वह उसके बारे में केवल आवाज़ और बातचीत से अनुमान लगाता है। युवती के उतर जाने के बाद नया सहयात्री बताता है कि वह युवती भी दृष्टिहीन थी।"
   },
   {
     "id": 71,
@@ -1067,15 +1060,15 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "Reader — The eyes are not here",
-    "question": "Why do the two passengers form mistaken impressions of each other?",
+    "question": "कहानी का मुख्य विडंबनात्मक मोड़ क्या है?",
     "options": [
-      "The train stops unexpectedly",
-      "They are reading different books",
-      "They depend on limited clues instead of directly asking everything",
-      "They have never spoken to each other"
+      "दोनों यात्री एक-दूसरे की दृष्टिहीनता पहचान नहीं पाते",
+      "ट्रेन गलत स्टेशन पर पहुँच जाती है",
+      "युवती अपना सामान भूल जाती है",
+      "नया सहयात्री यात्रा रद्द कर देता है"
     ],
-    "correct": 2,
-    "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
+    "correct": 0,
+    "passage": "एक रेलयात्रा में कथावाचक की मुलाकात एक युवती से होती है। कथावाचक स्वयं दृष्टिहीन है, लेकिन वह अपनी स्थिति छिपाने की कोशिश करता है और युवती से बातचीत करता है। वह उसके बारे में केवल आवाज़ और बातचीत से अनुमान लगाता है। युवती के उतर जाने के बाद नया सहयात्री बताता है कि वह युवती भी दृष्टिहीन थी।"
   },
   {
     "id": 72,
@@ -1084,15 +1077,15 @@ const QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "Reader — The eyes are not here",
-    "question": "What makes the ending effective according to the passage?",
+    "question": "कहानी दृष्टि और धारणा के बारे में कौन-सा विचार सबसे स्पष्ट करती है?",
     "options": [
-      "The final discovery exposes how unreliable their earlier assumptions were",
-      "A timetable changes suddenly",
-      "The conversation becomes an argument",
-      "The passengers leave before speaking"
+      "जो व्यक्ति देख सकता है, वह हमेशा सही समझता है",
+      "बाहरी रूप ही व्यक्ति को समझने का सबसे अच्छा साधन है",
+      "सीमित जानकारी के आधार पर बनी धारणाएँ गलत हो सकती हैं",
+      "यात्रा में बातचीत का कोई महत्व नहीं है"
     ],
-    "correct": 0,
-    "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
+    "correct": 2,
+    "passage": "एक रेलयात्रा में कथावाचक की मुलाकात एक युवती से होती है। कथावाचक स्वयं दृष्टिहीन है, लेकिन वह अपनी स्थिति छिपाने की कोशिश करता है और युवती से बातचीत करता है। वह उसके बारे में केवल आवाज़ और बातचीत से अनुमान लगाता है। युवती के उतर जाने के बाद नया सहयात्री बताता है कि वह युवती भी दृष्टिहीन थी।"
   },
   {
     "id": 73,
@@ -1378,11 +1371,11 @@ const QUESTIONS = [
     "question": "Which letter is 5 places before R?",
     "options": [
       "N",
-      "L",
+      "M",
       "O",
-      "M"
+      "L"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 92,
@@ -1393,12 +1386,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Complete the series: C, G, K, O, __",
     "options": [
-      "U",
       "S",
+      "U",
       "R",
       "T"
     ],
-    "correct": 3
+    "correct": 0
   },
   {
     "id": 93,
@@ -1444,7 +1437,7 @@ const QUESTIONS = [
       "J",
       "I",
       "K",
-      "H"
+      "G"
     ],
     "correct": 3
   },
@@ -1458,9 +1451,9 @@ const QUESTIONS = [
     "question": "Complete the series: B, G, M, T, __ (continue cyclically after Z)",
     "options": [
       "D",
-      "C",
+      "B",
       "A",
-      "B"
+      "C"
     ],
     "correct": 1
   },
