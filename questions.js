@@ -1,3 +1,9 @@
+// TEST 02 — ClassTime 9 | BSEB Class 9 Practice CBT
+// 100-question final bank.
+// MCQ option order is randomized and checked to avoid obvious answer-position patterns.
+// Maths/Science retain expanded coverage; Sanskrit remains unchanged.
+// Hindi and English retain passage-based comprehension.
+// Exactly 2 written-copy subjective questions remain per subject; no typed answer field is used.
 const QUESTIONS = [
   {
     "id": 1,
@@ -1045,12 +1051,12 @@ const QUESTIONS = [
     "topic": "Reader — The eyes are not here",
     "question": "कथावाचक ने युवती से अपनी दृष्टिहीनता क्यों छिपाने की कोशिश की?",
     "options": [
-      "वह बातचीत में सामान्य दिखना चाहता था",
       "उसे स्टेशन पर उतरने में डर लग रहा था",
+      "वह बातचीत में सामान्य दिखना चाहता था",
       "वह अपना टिकट छिपाना चाहता था",
       "उसे यात्रा के बारे में जानकारी नहीं थी"
     ],
-    "correct": 0,
+    "correct": 1,
     "passage": "एक रेलयात्रा में कथावाचक की मुलाकात एक युवती से होती है। कथावाचक स्वयं दृष्टिहीन है, लेकिन वह अपनी स्थिति छिपाने की कोशिश करता है और युवती से बातचीत करता है। वह उसके बारे में केवल आवाज़ और बातचीत से अनुमान लगाता है। युवती के उतर जाने के बाद नया सहयात्री बताता है कि वह युवती भी दृष्टिहीन थी।"
   },
   {
