@@ -29,6 +29,31 @@
         <div class="form-group"><label>मोबाइल नंबर *</label><input type="tel" id="mobileNo" pattern="[0-9]{10}" required /></div>
         <button type="submit" class="btn btn-primary">निर्देश पढ़ें &rarr;</button>
       </form>
+      <div style="margin-top:14px; text-align:center;">
+        <button type="button" class="btn btn-outline" style="font-size:13px;" onclick="openTest03Preview()">TEST 03 Preview (Draft)</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-test03-preview" class="screen">
+    <div class="auth-container">
+      <div class="brand-header">
+        <h1>TEST 03 — Preview</h1>
+        <p class="subtext">Teacher/Draft Preview • यह पेपर अभी प्रकाशित परीक्षा के रूप में उपलब्ध नहीं है।</p>
+      </div>
+      <div class="instruction-card" style="text-align:left;">
+        <strong>Preview Section</strong>
+        <p style="margin-top:8px; line-height:1.6;">
+          यहाँ पूरा TEST 03 question paper, image-based questions, options और बाद में answer key का preview दिखाया जाएगा।
+        </p>
+        <p style="margin-top:8px; line-height:1.6; color:#92400e;">
+          ध्यान दें: GitHub Pages पर client-side preview को पूरी तरह private नहीं माना जा सकता। इसे केवल draft/teacher convenience के लिए उपयोग करें।
+        </p>
+      </div>
+      <div id="test03PreviewContent" style="margin-top:16px;"></div>
+      <div class="btn-row">
+        <button class="btn btn-outline" onclick="goToScreen('screen-registration')">&larr; मुख्य पृष्ठ</button>
+      </div>
     </div>
   </div>
 
