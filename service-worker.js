@@ -5,8 +5,7 @@ const APP_SHELL = [
   "./app.js",
   "./questions.js",
   "./style.css",
-  "./submission-queue.js"
-
+  "./submission-queue.js",
   "./test03-questions-maths.js",
   "./test03-questions-science.js",
   "./test03-questions-hindi.js",
@@ -24,7 +23,8 @@ const APP_SHELL = [
   "./assets/test03/social-relief-1.svg",
   "./assets/test03/social-drainage-1.svg",
   "./assets/test03/english-routine-1.svg",
-  "./assets/test03/reasoning-letters-1.svg",];
+  "./assets/test03/reasoning-letters-1.svg"
+];
 
 self.addEventListener("install", event => {
   event.waitUntil(
