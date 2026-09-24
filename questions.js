@@ -1,9 +1,9 @@
 // TEST 02 — ClassTime 9 | BSEB Class 9 Practice CBT
-// Superior question design: every syllabus component has 1 easy, 1 medium, and 1 hard MCQ.
+// Maths and Science increased to 14 questions each: 12 MCQs + 2 written-copy subjective.
+// Each Maths/Science syllabus topic now has 6 MCQs: 2 easy + 2 moderate + 2 challenging.
+// Sanskrit and all other subjects are unchanged.
 // Hindi and English include dedicated passage-based comprehension questions.
-// Maths and Science use balanced answer positions and varied concept/application/calculation demands.
-// Exactly 2 written-copy subjective questions remain per subject; each is designed for ~2–3 minutes.
-// No typed answer field is used.
+// Exactly 2 written-copy subjective questions remain per subject; no typed answer field is used.
 const QUESTIONS = [
   {
     "id": 1,
@@ -102,7 +102,103 @@ const QUESTIONS = [
     "correct": 3
   },
   {
-    "id": 7,
+    "subject": "गणित",
+    "topic": "निर्देशांक ज्यामिति",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "बिंदु (0, −5) किस अक्ष पर स्थित है?",
+    "options": [
+      "x-अक्ष",
+      "y-अक्ष",
+      "मूलबिंदु",
+      "प्रथम चतुर्थांश"
+    ],
+    "correct": 1,
+    "id": 7
+  },
+  {
+    "subject": "गणित",
+    "topic": "निर्देशांक ज्यामिति",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "बिंदु A(−3, 4) को x-अक्ष के सापेक्ष परावर्तित करने पर नए निर्देशांक क्या होंगे?",
+    "options": [
+      "(3, 4)",
+      "(−3, −4)",
+      "(3, −4)",
+      "(−4, 3)"
+    ],
+    "correct": 1,
+    "id": 8
+  },
+  {
+    "subject": "गणित",
+    "topic": "निर्देशांक ज्यामिति",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "बिंदु P के निर्देशांक (a, −5) हैं और P तृतीय चतुर्थांश में है। a के लिए कौन-सी शर्त सही है?",
+    "options": [
+      "a > 0",
+      "a = 0",
+      "a < 0",
+      "a = 5"
+    ],
+    "correct": 2,
+    "id": 9
+  },
+  {
+    "subject": "गणित",
+    "topic": "दो चरों वाले रैखिक समीकरण",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "समीकरण x + 2y = 10 में x = 0 रखने पर y का मान क्या होगा?",
+    "options": [
+      "2",
+      "5",
+      "8",
+      "10"
+    ],
+    "correct": 1,
+    "id": 10
+  },
+  {
+    "subject": "गणित",
+    "topic": "दो चरों वाले रैखिक समीकरण",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "यदि (2, k), 4x + y = 10 का हल है, तो k का मान क्या है?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct": 2,
+    "id": 11
+  },
+  {
+    "subject": "गणित",
+    "topic": "दो चरों वाले रैखिक समीकरण",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "रेखा 2x + 3y = 12 पर x = 0 और y = 0 के संगत बिंदु क्रमशः कौन-से हैं?",
+    "options": [
+      "(0, 4) और (6, 0)",
+      "(4, 0) और (0, 6)",
+      "(0, 3) और (4, 0)",
+      "(6, 0) और (0, 4)"
+    ],
+    "correct": 0,
+    "id": 12
+  },
+  {
+    "id": 13,
     "subject": "गणित",
     "type": "subjective",
     "marks": 0,
@@ -111,7 +207,7 @@ const QUESTIONS = [
     "question": "निर्देशांक ज्यामिति: कार्तीय तल पर A(3, 2) और B(−2, −3) अंकित कीजिए और दोनों के चतुर्थांश लिखिए।"
   },
   {
-    "id": 8,
+    "id": 14,
     "subject": "गणित",
     "type": "subjective",
     "marks": 0,
@@ -120,7 +216,7 @@ const QUESTIONS = [
     "question": "दो चरों वाले रैखिक समीकरण: 2x + y = 6 के कोई तीन अलग-अलग हल लिखिए और किसी एक हल का सत्यापन कीजिए।"
   },
   {
-    "id": 9,
+    "id": 15,
     "subject": "विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -136,7 +232,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 10,
+    "id": 16,
     "subject": "विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -152,7 +248,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 11,
+    "id": 17,
     "subject": "विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -168,7 +264,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 12,
+    "id": 18,
     "subject": "विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -184,7 +280,7 @@ const QUESTIONS = [
     "correct": 3
   },
   {
-    "id": 13,
+    "id": 19,
     "subject": "विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -200,7 +296,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 14,
+    "id": 20,
     "subject": "विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -216,7 +312,103 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 15,
+    "subject": "विज्ञान",
+    "topic": "परमाणु एवं अणु",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "किसी तत्व के एक परमाणु की द्रव्यमान संख्या किससे प्राप्त होती है?",
+    "options": [
+      "प्रोटॉन + न्यूट्रॉन",
+      "प्रोटॉन + इलेक्ट्रॉन",
+      "न्यूट्रॉन + इलेक्ट्रॉन",
+      "केवल प्रोटॉन"
+    ],
+    "correct": 0,
+    "id": 21
+  },
+  {
+    "subject": "विज्ञान",
+    "topic": "परमाणु एवं अणु",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "CO₂ के एक अणु में कुल कितने परमाणु होते हैं?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correct": 1,
+    "id": 22
+  },
+  {
+    "subject": "विज्ञान",
+    "topic": "परमाणु एवं अणु",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "यदि 12 g कार्बन और 32 g ऑक्सीजन पूरी तरह अभिक्रिया करें, तो बनने वाले CO₂ का द्रव्यमान कितना होगा?",
+    "options": [
+      "20 g",
+      "32 g",
+      "40 g",
+      "44 g"
+    ],
+    "correct": 3,
+    "id": 23
+  },
+  {
+    "subject": "विज्ञान",
+    "topic": "परमाणु की संरचना",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "easy",
+    "question": "परमाणु के केंद्र में स्थित भाग को क्या कहते हैं?",
+    "options": [
+      "कक्षा",
+      "नाभिक",
+      "इलेक्ट्रॉन बादल",
+      "संयोजकता"
+    ],
+    "correct": 1,
+    "id": 24
+  },
+  {
+    "subject": "विज्ञान",
+    "topic": "परमाणु की संरचना",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "moderate",
+    "question": "यदि किसी उदासीन परमाणु में 12 प्रोटॉन हैं, तो उसके इलेक्ट्रॉनों की संख्या कितनी होगी?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "24"
+    ],
+    "correct": 2,
+    "id": 25
+  },
+  {
+    "subject": "विज्ञान",
+    "topic": "परमाणु की संरचना",
+    "type": "mcq",
+    "marks": 1,
+    "difficulty": "challenging",
+    "question": "किसी परमाणु में 20 प्रोटॉन और 20 न्यूट्रॉन हैं। यदि वह 2 इलेक्ट्रॉन खो देता है, तो बने आयन का आवेश और द्रव्यमान संख्या क्रमशः क्या होगी?",
+    "options": [
+      "2− और 40",
+      "2+ और 20",
+      "2+ और 40",
+      "2− और 20"
+    ],
+    "correct": 2,
+    "id": 26
+  },
+  {
+    "id": 27,
     "subject": "विज्ञान",
     "type": "subjective",
     "marks": 0,
@@ -225,7 +417,7 @@ const QUESTIONS = [
     "question": "परमाणु एवं अणु: परमाणु और अणु में कोई दो अंतर लिखिए तथा एक-एक उदाहरण दीजिए।"
   },
   {
-    "id": 16,
+    "id": 28,
     "subject": "विज्ञान",
     "type": "subjective",
     "marks": 0,
@@ -234,7 +426,7 @@ const QUESTIONS = [
     "question": "परमाणु की संरचना: परमाणु संख्या 11 और द्रव्यमान संख्या 23 वाले उदासीन परमाणु में प्रोटॉन, इलेक्ट्रॉन और न्यूट्रॉन की संख्या लिखिए।"
   },
   {
-    "id": 17,
+    "id": 29,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -250,7 +442,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 18,
+    "id": 30,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -266,7 +458,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 19,
+    "id": 31,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -282,7 +474,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 20,
+    "id": 32,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -298,7 +490,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 21,
+    "id": 33,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -314,7 +506,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 22,
+    "id": 34,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -330,7 +522,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 23,
+    "id": 35,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -346,7 +538,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 24,
+    "id": 36,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -362,7 +554,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 25,
+    "id": 37,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -378,7 +570,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 26,
+    "id": 38,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -394,7 +586,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 27,
+    "id": 39,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -410,7 +602,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 28,
+    "id": 40,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -426,7 +618,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 29,
+    "id": 41,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -442,7 +634,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 30,
+    "id": 42,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -458,7 +650,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 31,
+    "id": 43,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -474,7 +666,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 32,
+    "id": 44,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -491,7 +683,7 @@ const QUESTIONS = [
     "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
-    "id": 33,
+    "id": 45,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -508,7 +700,7 @@ const QUESTIONS = [
     "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
-    "id": 34,
+    "id": 46,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -525,7 +717,7 @@ const QUESTIONS = [
     "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
-    "id": 35,
+    "id": 47,
     "subject": "हिन्दी",
     "type": "subjective",
     "marks": 0,
@@ -534,7 +726,7 @@ const QUESTIONS = [
     "question": "‘लाल पान की बेगम’ कहानी के ग्रामीण परिवेश की कोई दो विशेषताएँ 3–4 वाक्यों में लिखिए।"
   },
   {
-    "id": 36,
+    "id": 48,
     "subject": "हिन्दी",
     "type": "subjective",
     "marks": 0,
@@ -543,7 +735,7 @@ const QUESTIONS = [
     "question": "‘गुरु गोविंद सिंह के पद’ में व्यक्त वीरता के भाव को 3–4 वाक्यों में स्पष्ट कीजिए।"
   },
   {
-    "id": 37,
+    "id": 49,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -559,7 +751,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 38,
+    "id": 50,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -575,7 +767,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 39,
+    "id": 51,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -591,7 +783,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 40,
+    "id": 52,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -607,7 +799,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 41,
+    "id": 53,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -623,7 +815,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 42,
+    "id": 54,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -639,7 +831,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 43,
+    "id": 55,
     "subject": "संस्कृत",
     "type": "subjective",
     "marks": 0,
@@ -648,7 +840,7 @@ const QUESTIONS = [
     "question": "‘यक्ष-युधिष्ठिर संवाद’ से मिलने वाली कोई एक नीति-शिक्षा 2–3 वाक्यों में लिखिए।"
   },
   {
-    "id": 44,
+    "id": 56,
     "subject": "संस्कृत",
     "type": "subjective",
     "marks": 0,
@@ -657,7 +849,7 @@ const QUESTIONS = [
     "question": "चारों वेदों के नाम लिखिए और किसी एक वेद के बारे में एक तथ्य लिखिए।"
   },
   {
-    "id": 45,
+    "id": 57,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -673,7 +865,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 46,
+    "id": 58,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -689,7 +881,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 47,
+    "id": 59,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -705,7 +897,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 48,
+    "id": 60,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -721,7 +913,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 49,
+    "id": 61,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -737,7 +929,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 50,
+    "id": 62,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -753,7 +945,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 51,
+    "id": 63,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -769,7 +961,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 52,
+    "id": 64,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -785,7 +977,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 53,
+    "id": 65,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -801,7 +993,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 54,
+    "id": 66,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -817,7 +1009,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 55,
+    "id": 67,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -833,7 +1025,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 56,
+    "id": 68,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -849,7 +1041,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 57,
+    "id": 69,
     "subject": "सामाजिक विज्ञान",
     "type": "subjective",
     "marks": 0,
@@ -858,7 +1050,7 @@ const QUESTIONS = [
     "question": "फ्रांस की क्रांति के कोई दो कारण लिखिए।"
   },
   {
-    "id": 58,
+    "id": 70,
     "subject": "सामाजिक विज्ञान",
     "type": "subjective",
     "marks": 0,
@@ -867,7 +1059,7 @@ const QUESTIONS = [
     "question": "हिमालयी और प्रायद्वीपीय नदियों में कोई दो अंतर लिखिए।"
   },
   {
-    "id": 59,
+    "id": 71,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -883,7 +1075,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 60,
+    "id": 72,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -899,7 +1091,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 61,
+    "id": 73,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -915,7 +1107,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 62,
+    "id": 74,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -932,7 +1124,7 @@ const QUESTIONS = [
     "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
-    "id": 63,
+    "id": 75,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -949,7 +1141,7 @@ const QUESTIONS = [
     "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
-    "id": 64,
+    "id": 76,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -966,7 +1158,7 @@ const QUESTIONS = [
     "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
-    "id": 65,
+    "id": 77,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -982,7 +1174,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 66,
+    "id": 78,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -998,7 +1190,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 67,
+    "id": 79,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1014,7 +1206,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 68,
+    "id": 80,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1030,7 +1222,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 69,
+    "id": 81,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1046,7 +1238,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 70,
+    "id": 82,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1062,7 +1254,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 71,
+    "id": 83,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1078,7 +1270,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 72,
+    "id": 84,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1094,7 +1286,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 73,
+    "id": 85,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1110,7 +1302,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 74,
+    "id": 86,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1126,7 +1318,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 75,
+    "id": 87,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1142,7 +1334,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 76,
+    "id": 88,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1158,7 +1350,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 77,
+    "id": 89,
     "subject": "English",
     "type": "subjective",
     "marks": 0,
@@ -1167,7 +1359,7 @@ const QUESTIONS = [
     "question": "Write the central idea of either ‘Saint Kabir’ or ‘Yayati’ in about 40–50 words."
   },
   {
-    "id": 78,
+    "id": 90,
     "subject": "English",
     "type": "subjective",
     "marks": 0,
@@ -1176,7 +1368,7 @@ const QUESTIONS = [
     "question": "Write four sentences using four different tenses. Underline the verb in each sentence."
   },
   {
-    "id": 79,
+    "id": 91,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1192,7 +1384,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 80,
+    "id": 92,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1208,7 +1400,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 81,
+    "id": 93,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1224,7 +1416,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 82,
+    "id": 94,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1240,7 +1432,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 83,
+    "id": 95,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1256,7 +1448,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 84,
+    "id": 96,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1272,7 +1464,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 85,
+    "id": 97,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1288,7 +1480,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 86,
+    "id": 98,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1304,7 +1496,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 87,
+    "id": 99,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1320,7 +1512,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 88,
+    "id": 100,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1336,7 +1528,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 89,
+    "id": 101,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1352,7 +1544,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 90,
+    "id": 102,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1368,7 +1560,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 91,
+    "id": 103,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1384,7 +1576,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 92,
+    "id": 104,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1400,7 +1592,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 93,
+    "id": 105,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1416,7 +1608,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 94,
+    "id": 106,
     "subject": "तर्कशक्ति",
     "type": "subjective",
     "marks": 0,
@@ -1425,7 +1617,7 @@ const QUESTIONS = [
     "question": "Alphabet Series: एक alphabet series बनाइए जिसमें हर अगला अक्षर 2 स्थान आगे बढ़े और पाँच पद लिखिए।"
   },
   {
-    "id": 95,
+    "id": 107,
     "subject": "तर्कशक्ति",
     "type": "subjective",
     "marks": 0,
