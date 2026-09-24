@@ -13,11 +13,11 @@ const TEST_CONFIGS = {
   }
 };
 let ACTIVE_TEST_ID = "test02";
-let ACTIVE_getActiveQuestions() = getActiveQuestions();
+let ACTIVE_QUESTIONS = QUESTIONS;
 let ACTIVE_TEST_NAME = TEST_CONFIGS.test02.name;
 let ACTIVE_RECOVERY_KEY = TEST_CONFIGS.test02.recoveryKey;
 
-function getActiveQuestions() { return ACTIVE_getActiveQuestions(); }
+function getActiveQuestions() { return ACTIVE_QUESTIONS; }
 function getActiveTestName() { return ACTIVE_TEST_NAME; }
 function getActiveRecoveryKey() { return ACTIVE_RECOVERY_KEY; }
 
@@ -48,19 +48,13 @@ function updateActiveTestUI() {
 function configureActiveTest(testId) {
   const config = TEST_CONFIGS[testId] || TEST_CONFIGS.test02;
   ACTIVE_TEST_ID = config.id;
-  ACTIVE_getActiveQuestions() = config.bank();
+  ACTIVE_QUESTIONS = config.bank();
   ACTIVE_TEST_NAME = config.name;
   ACTIVE_RECOVERY_KEY = config.recoveryKey;
   selectedSubjectFilter = "All";
   updateActiveTestUI();
 }
 
-try {
-  const initialTest = new URLSearchParams(window.location.search).get("test");
-  if (initialTest === "test03") configureActiveTest("test03");
-} catch (error) {
-  console.warn("Could not read test selection:", error);
-}
 // Google Apps Script Web App endpoint.
 // Deploy the supplied google-apps-script.gs as a Web App and paste its /exec URL here.
 const EMAIL_ENDPOINT = "https://script.google.com/macros/s/AKfycbx341brEbkoRCD-vzkrDtUIGH81NvY7xMoHngv82D0pOJv_ozE5iZlgtuwrzbfdUxAQ/exec";
@@ -72,7 +66,6 @@ let currentIndex = 0;
 let studentResponses = [];
 
 // Phase 1: local auto-recovery. This keeps an unfinished exam on the same device.
-const getActiveRecoveryKey() = "class9_cbt_active_exam_v1";
 const RECOVERY_VERSION = 1;
 let examStarted = false;
 let examDeadlineMs = null;
@@ -143,6 +136,14 @@ function restoreExamState(state) {
   examStarted = true;
   recoveryRestored = true;
   return true;
+}
+
+// Select TEST 03 before recovery state is loaded so its bank and recovery key are used.
+try {
+  const initialTest = new URLSearchParams(window.location.search).get("test");
+  if (initialTest === "test03") configureActiveTest("test03");
+} catch (error) {
+  console.warn("Could not read test selection:", error);
 }
 
 // Initialize responses once getActiveQuestions() array is available from questions.js.
