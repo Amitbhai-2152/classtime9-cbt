@@ -120,7 +120,7 @@ if (typeof originalSubmitObjectiveAnswersAutomatically === "function") {
 window.addEventListener("online", () => {
   retryQueuedSubmissions().then(() => {
     if (readSubmissionQueue().length === 0) {
-      updateSubmissionQueueStatus("✓ आपके ऑब्जेक्टिव उत्तर शिक्षक के ईमेल पर भेज दिए गए हैं।", "success");
+      updateSubmissionQueueStatus("✓ आपके ऑब्जेक्टिव उत्तर सबमिशन सर्वर को भेज दिए गए हैं।", "success");
     }
   });
 });
