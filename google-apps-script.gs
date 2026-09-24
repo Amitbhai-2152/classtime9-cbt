@@ -9,7 +9,7 @@
  *    Who has access: Anyone
  * 5. Copy the /exec URL into EMAIL_ENDPOINT in app.js.
  *
- * The browser sends only objective answers to this endpoint.
+ * The browser sends candidate details, objective answers, and subjective written-copy status to this endpoint.
  */
 
 const OWNER_EMAIL = "navodaya2152@gmail.com";
@@ -40,10 +40,12 @@ function doPost(e) {
       body += "Question: " + a.question + "\n";
       var selectedIndex = (typeof a.selectedIndex === "number") ? a.selectedIndex : null;
       var correctIndex = (typeof a.correctIndex === "number") ? a.correctIndex : null;
-      var isCorrect = selectedIndex !== null && correctIndex !== null && selectedIndex === correctIndex;
+      var isAnswered = selectedIndex !== null && selectedIndex !== undefined;
+      var isCorrect = isAnswered && correctIndex !== null && correctIndex !== undefined && selectedIndex === correctIndex;
+      var resultLabel = !isAnswered ? "अनुत्तरित" : (isCorrect ? "सही" : "गलत");
       body += "Candidate Answer: " + (a.selectedText || "Unanswered") + (a.selectedOptionLetter ? " [" + a.selectedOptionLetter + "]" : "") + "\n";
       body += "Correct Answer: " + (a.correctAnswer || "Not available") + (a.correctOptionLetter ? " [" + a.correctOptionLetter + "]" : "") + "\n";
-      body += "Result: " + (isCorrect ? "सही" : "गलत") + "\n";
+      body += "Result: " + resultLabel + "\n";
     });
 
     MailApp.sendEmail({
