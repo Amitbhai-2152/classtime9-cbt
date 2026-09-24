@@ -1473,11 +1473,11 @@ const QUESTIONS = [
     "question": "Find the missing pair: AB, DE, HI, MN, __",
     "options": [
       "TU",
-      "ST",
       "UV",
-      "RS"
+      "RS",
+      "ST"
     ],
-    "correct": 1
+    "correct": 3
   },
   {
     "id": 98,
