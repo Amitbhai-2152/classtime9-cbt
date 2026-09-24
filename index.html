@@ -14,8 +14,8 @@
   <div id="screen-registration" class="screen active">
     <div class="auth-container">
       <div class="brand-header">
-        <h1>ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा</h1>
-        <p class="subtext">BSEB कक्षा 9 • 27 सितम्बर 2026 • अभ्यास CBT</p>
+        <h1 id="registrationTestTitle">ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा</h1>
+        <p id="registrationTestSubtext" class="subtext">BSEB कक्षा 9 • 27 सितम्बर 2026 • अभ्यास CBT</p>
       </div>
       <div id="recoveryNotice" style="display:none; background:#fff7ed; border:1px solid #fed7aa; color:#9a3412; padding:12px 14px; border-radius:8px; margin-bottom:16px; font-size:14px; text-align:left;">
         <strong>↩️ पिछली परीक्षा मिली है</strong><br>
@@ -49,9 +49,9 @@
         <p class="subtext">Teacher/Draft Preview • यह पेपर अभी प्रकाशित परीक्षा के रूप में उपलब्ध नहीं है।</p>
       </div>
       <div class="instruction-card" style="text-align:left;">
-        <strong>Preview Section</strong>
+        <strong>TEST 03 Preview + Student Mode</strong>
         <p style="margin-top:8px; line-height:1.6;">
-          यहाँ पूरा TEST 03 question paper, image-based questions, options और बाद में answer key का preview दिखाया जाएगा।
+          यहाँ पूरा TEST 03 question paper, image-based questions, options और answer key देख सकते हैं और उसी paper को Student Mode में खोलकर वास्तविक उत्तर भी दे सकते हैं।
         </p>
         <p style="margin-top:8px; line-height:1.6; color:#92400e;">
           ध्यान दें: GitHub Pages पर client-side preview को पूरी तरह private नहीं माना जा सकता। इसे केवल draft/teacher convenience के लिए उपयोग करें।
@@ -66,7 +66,10 @@
 
   <div id="screen-instructions" class="screen">
     <div class="auth-container">
-      <div class="brand-header"><h1>सामान्य निर्देश</h1></div>
+      <div class="brand-header">
+        <h1>सामान्य निर्देश</h1>
+        <p id="instructionTestName" class="subtext">ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा</p>
+      </div>
       <div class="instruction-card">
         <strong>परीक्षा का विवरण:</strong>
         <ul class="instruction-list">
@@ -101,7 +104,10 @@
 
   <div id="screen-exam" class="screen">
     <header class="exam-header">
-      <div style="font-size: 15px; font-weight: 700;" id="examHeaderName">छात्र का नाम</div>
+      <div style="min-width:0;">
+        <div style="font-size: 15px; font-weight: 700;" id="examHeaderName">छात्र का नाम</div>
+        <div id="examTestName" style="font-size:10px; opacity:.82; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">ClassTime 9 — TEST 02</div>
+      </div>
       <div id="connectionStatus" style="font-size:12px; font-weight:700; padding:5px 9px; border-radius:999px; background:#dcfce7; color:#166534;">🟢 Online</div>
       <div class="timer-container" id="timerDisplay">02:30:00</div>
     </header>
@@ -133,10 +139,10 @@
 
   <div id="screen-summary" class="screen">
     <div class="auth-container" style="text-align: center;">
-      <h1 style="color: #10b981; font-size: 26px;">🎉 ClassTime 9 — TEST 02 सफलतापूर्वक सबमिट हो गया!</h1>
+      <h1 id="summaryTestTitle" style="color: #10b981; font-size: 26px;">🎉 ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा सफलतापूर्वक सबमिट हो गया!</h1>
       <p class="subtext">100 प्रश्नों का CBT पूरा हुआ — 86 MCQ स्कोर किए जाते हैं और 14 subjective उत्तर कॉपी में लिखे जाते हैं।</p>
       <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:12px; margin:16px 0; font-size:13px; font-weight:700;">
-        📘 परीक्षा: ClassTime 9 — TEST 02 • BSEB कक्षा 9 पाठ्यक्रम आधारित
+        <span id="summaryExamName">📘 परीक्षा: ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा</span>
       </div>
       <div class="stat-row">
         <div class="stat-box"><div class="num" id="statMcqScore">0 / 86</div><div style="font-size: 12px; margin-top:5px;">MCQ स्कोर</div></div>
@@ -170,7 +176,8 @@
     // Fill the registration form from the recovered attempt.
     window.addEventListener('load', () => {
       try {
-        const raw = localStorage.getItem('class9_cbt_active_exam_v1');
+        const recoveryKey = typeof getActiveRecoveryKey === 'function' ? getActiveRecoveryKey() : 'class9_cbt_active_exam_v1';
+        const raw = localStorage.getItem(recoveryKey);
         if (raw) {
           const state = JSON.parse(raw);
           if (state && state.userProfile && state.examDeadlineMs && state.examDeadlineMs > Date.now()) {
