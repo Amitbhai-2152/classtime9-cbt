@@ -1,4 +1,4 @@
-const CACHE_NAME = "test02-cbt-offline-v18";
+const CACHE_NAME = "test02-cbt-offline-v19";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -6,6 +6,17 @@ const APP_SHELL = [
   "./questions.js",
   "./style.css",
   "./submission-queue.js",
+  "./assets/test03/reasoning/reasoning-alphabet-series-01.png",
+  "./assets/test03/english/english-daily-routine-01.png",
+  "./assets/test03/social-science/social-drainage-pattern-01.png",
+  "./assets/test03/social-science/social-physical-divisions-01.png",
+  "./assets/test03/hindi/hindi-gram-geet-01.png",
+  "./assets/test03/science/science-bohr-model-01.png",
+  "./assets/test03/science/science-particle-model-01.png",
+  "./assets/test03/science/science-atomic-structure-01.png",
+  "./assets/test03/maths/maths-linear-equation-graph-02.png",
+  "./assets/test03/maths/maths-linear-equation-graph-01.png",
+  "./assets/test03/maths/maths-coordinate-plane-01.png",
   "./test03-questions-maths.js",
   "./test03-questions-science.js",
   "./test03-questions-hindi.js",
