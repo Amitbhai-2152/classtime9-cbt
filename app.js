@@ -496,19 +496,114 @@ function finalizeSubmission() {
 }
 
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function openTest03Preview() {
   goToScreen('screen-test03-preview');
   const el = document.getElementById('test03PreviewContent');
   if (!el) return;
-  el.innerHTML = `
-    <div class="instruction-card" style="background:#eff6ff; border-color:#bfdbfe;">
-      <strong>TEST 03 draft space ready.</strong>
-      <p style="margin-top:8px; line-height:1.6;">
-        अगला चरण यहाँ पूरा 100-question TEST 03 paper और उसके image questions render करेगा।
-      </p>
-    </div>`;
-}
 
+  const bank = Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS.slice().sort((a,b) => a.id - b.id) : [];
+  if (!bank.length) {
+    el.innerHTML = '<div class="instruction-card"><strong>TEST 03 data नहीं मिला।</strong><p style="margin-top:8px;">Draft question-bank files लोड नहीं हुए हैं।</p></div>';
+    return;
+  }
+
+  const subjects = [...new Set(bank.map(q => q.subject))];
+  const difficulties = ["easy", "moderate", "challenging"];
+  el.innerHTML = `
+    <div class="test03-preview-toolbar">
+      <div class="test03-preview-meta">
+        <strong>TEST 03 — Complete Draft Paper</strong>
+        <span>${bank.length} questions • 86 MCQ • 14 written • 150 minutes</span>
+      </div>
+      <div class="test03-preview-actions">
+        <label>विषय
+          <select id="test03SubjectFilter">
+            <option value="all">सभी विषय</option>
+            ${subjects.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join("")}
+          </select>
+        </label>
+        <label>कठिनाई
+          <select id="test03DifficultyFilter">
+            <option value="all">सभी</option>
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="challenging">Challenging</option>
+          </select>
+        </label>
+        <label class="test03-toggle"><input type="checkbox" id="test03ShowAnswers"> उत्तर दिखाएँ</label>
+        <button type="button" class="btn btn-outline test03-print-btn" onclick="window.print()">🖨️ Print</button>
+      </div>
+    </div>
+    <div class="test03-preview-warning">
+      <strong>Draft only.</strong> यह TEST 03 अभी TEST 02 को नहीं बदलता। पहले पूरे paper, images और answer key की समीक्षा करें।
+    </div>
+    <div id="test03Paper"></div>
+  `;
+
+  const render = () => {
+    const subject = document.getElementById('test03SubjectFilter').value;
+    const difficulty = document.getElementById('test03DifficultyFilter').value;
+    const showAnswers = document.getElementById('test03ShowAnswers').checked;
+    const filtered = bank.filter(q =>
+      (subject === "all" || q.subject === subject) &&
+      (difficulty === "all" || q.difficulty === difficulty)
+    );
+    const paper = document.getElementById('test03Paper');
+    const cards = filtered.map(q => {
+      const options = q.type === "mcq"
+        ? `<div class="test03-options">${q.options.map((opt,i) => `<div class="test03-option"><span class="test03-letter">${String.fromCharCode(65+i)}</span><span>${escapeHtml(opt)}</span></div>`).join("")}</div>`
+        : `<div class="test03-written-note">✍️ लिखित उत्तर: उत्तर अपनी कॉपी में लिखें।</div>`;
+
+      const passage = q.passage
+        ? `<div class="test03-passage"><div class="test03-passage-title">${q.subject === "हिन्दी" ? "अपठित गद्यांश" : "Reading Passage"}</div>${escapeHtml(q.passage)}</div>`
+        : "";
+
+      const image = q.image
+        ? `<div class="test03-image-wrap"><img src="${escapeHtml(q.image)}" alt="Question ${q.id} image" loading="lazy"></div>`
+        : "";
+
+      const answer = showAnswers
+        ? `<div class="test03-answer">सही उत्तर: ${q.type === "mcq" ? `<strong>${String.fromCharCode(65+q.correct)}. ${escapeHtml(q.options[q.correct])}</strong>` : "<strong>Written answer — teacher evaluation</strong>"}</div>`
+        : "";
+
+      return `
+        <article class="test03-question-card">
+          <div class="test03-question-top">
+            <span class="test03-qid">Q${q.id}</span>
+            <span class="test03-subject">${escapeHtml(q.subject)}</span>
+            <span class="test03-difficulty difficulty-${q.difficulty}">${escapeHtml(q.difficulty)}</span>
+            <span class="test03-topic">${escapeHtml(q.topic)}</span>
+          </div>
+          <div class="test03-question-text">${escapeHtml(q.question)}</div>
+          ${passage}
+          ${image}
+          ${options}
+          ${answer}
+        </article>`;
+    }).join("");
+
+    const mcqCount = filtered.filter(q => q.type === "mcq").length;
+    const writtenCount = filtered.filter(q => q.type === "subjective").length;
+    paper.innerHTML = `
+      <div class="test03-filter-summary">Showing <strong>${filtered.length}</strong> questions — ${mcqCount} MCQ, ${writtenCount} written</div>
+      ${cards || '<div class="instruction-card">इस filter में कोई प्रश्न नहीं मिला।</div>'}
+    `;
+  };
+
+  document.getElementById('test03SubjectFilter').onchange = render;
+  document.getElementById('test03DifficultyFilter').onchange = render;
+  document.getElementById('test03ShowAnswers').onchange = render;
+  render();
+}
 
 window.addEventListener("load", () => {
   try {
