@@ -42,6 +42,7 @@ function updateActiveTestUI() {
   if (summaryTitle) summaryTitle.innerText = `🎉 ${config.name} सफलतापूर्वक सबमिट हो गया!`;
   if (summaryExamName) summaryExamName.innerText = `📘 परीक्षा: ${config.name}`;
   if (examTestName) examTestName.innerText = config.name;
+  document.title = config.name;
   if (previewEntry) previewEntry.style.display = config.id === "test03" ? "none" : "";
 }
 
@@ -150,6 +151,17 @@ try {
 // Initialize responses once getActiveQuestions() array is available from questions.js.
 // If an unfinished exam exists, restore it instead of creating a blank attempt.
 window.onload = () => {
+  let isTeacherPreview = false;
+  try {
+    isTeacherPreview = new URLSearchParams(window.location.search).get("preview") === "test03";
+  } catch (error) {
+    console.warn("Could not read preview state:", error);
+  }
+  if (isTeacherPreview) {
+    studentResponses = [];
+    return;
+  }
+
   const savedState = readExamRecovery();
   if (savedState && restoreExamState(savedState)) {
     document.getElementById('examHeaderName').innerText = userProfile.name || "छात्र का नाम";
@@ -332,6 +344,18 @@ function loadQuestion(index) {
     questionText.appendChild(prompt);
   } else {
     questionText.innerText = q.question;
+  }
+
+  if (q.image) {
+    const imageWrap = document.createElement("div");
+    imageWrap.className = "question-image-wrap";
+    const image = document.createElement("img");
+    image.src = q.image;
+    image.alt = `प्रश्न ${q.id} का चित्र`;
+    image.loading = "eager";
+    image.decoding = "async";
+    imageWrap.appendChild(image);
+    questionText.appendChild(imageWrap);
   }
 
   const area = document.getElementById('answerInteractionArea');
