@@ -1,8 +1,7 @@
 // TEST 02 — ClassTime 9 | BSEB Class 9 Practice CBT
 // Superior question design: every syllabus component has 1 easy, 1 medium, and 1 hard MCQ.
 // Hindi and English include dedicated passage-based comprehension questions.
-// Maths and Science use balanced question-number answer positions.
-// Sanskrit and all other subjects retain their existing answer distribution.
+// Maths and Science use balanced answer positions and varied concept/application/calculation demands.
 // Exactly 2 written-copy subjective questions remain per subject; each is designed for ~2–3 minutes.
 // No typed answer field is used.
 const QUESTIONS = [
@@ -48,11 +47,11 @@ const QUESTIONS = [
     "question": "किस बिंदु के लिए x-अक्ष से दूरी 6 इकाई, y-अक्ष से दूरी 2 इकाई और वह द्वितीय चतुर्थांश में स्थित हो?",
     "options": [
       "(2, 6)",
-      "(−6, 2)",
       "(−2, 6)",
+      "(−6, 2)",
       "(6, −2)"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 4,
@@ -96,11 +95,11 @@ const QUESTIONS = [
     "question": "एक रेखा x-अक्ष को (5, 0) और y-अक्ष को (0, 5) पर काटती है। उस रेखा का समीकरण कौन-सा है?",
     "options": [
       "x − y = 5",
-      "x + y = 5",
       "5x + y = 5",
-      "x + 5y = 5"
+      "x + 5y = 5",
+      "x + y = 5"
     ],
-    "correct": 1
+    "correct": 3
   },
   {
     "id": 7,
@@ -210,11 +209,11 @@ const QUESTIONS = [
     "question": "किसी उदासीन परमाणु में 17 प्रोटॉन और 18 न्यूट्रॉन हैं। यदि वह एक इलेक्ट्रॉन ग्रहण कर ऋणायन बनाता है, तो बने आयन में इलेक्ट्रॉनों की संख्या और उसकी द्रव्यमान संख्या क्रमशः क्या होंगी?",
     "options": [
       "17 और 35",
-      "18 और 35",
       "18 और 34",
+      "18 और 35",
       "17 और 18"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 15,
