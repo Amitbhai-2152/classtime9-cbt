@@ -1,8 +1,8 @@
 // TEST 02 — ClassTime 9 | BSEB Class 9 Practice CBT
-// Maths and Science increased to 14 questions each: 12 MCQs + 2 written-copy subjective.
-// Each Maths/Science syllabus topic now has 6 MCQs: 2 easy + 2 moderate + 2 challenging.
-// Sanskrit and all other subjects are unchanged.
-// Hindi and English include dedicated passage-based comprehension questions.
+// Final 100-question structure: Maths 14, Science 14, Hindi 18, Sanskrit 8,
+// Social Science 14, English 18, Reasoning 14.
+// Maths/Science retain 12 MCQs + 2 written-copy subjective questions.
+// Hindi/English retain passage-based comprehension; Sanskrit remains unchanged.
 // Exactly 2 written-copy subjective questions remain per subject; no typed answer field is used.
 const QUESTIONS = [
   {
@@ -430,22 +430,6 @@ const QUESTIONS = [
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "easy",
-    "topic": "ग्राम-गीत का मर्म",
-    "question": "‘ग्राम-गीत का मर्म’ के लेखक कौन हैं?",
-    "options": [
-      "फणीश्वरनाथ रेणु",
-      "लक्ष्मीनारायण सुधांशु",
-      "प्रेमचंद",
-      "रामधारी सिंह दिनकर"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 30,
-    "subject": "हिन्दी",
-    "type": "mcq",
-    "marks": 1,
     "difficulty": "moderate",
     "topic": "ग्राम-गीत का मर्म",
     "question": "पाठ के विचारों के अनुसार ग्राम-गीतों का सबसे महत्वपूर्ण साहित्यिक आधार क्या है?",
@@ -458,7 +442,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 31,
+    "id": 30,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -474,7 +458,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 32,
+    "id": 31,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -490,7 +474,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 33,
+    "id": 32,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -506,23 +490,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 34,
-    "subject": "हिन्दी",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "challenging",
-    "topic": "लाल पान की बेगम",
-    "question": "‘लाल पान की बेगम’ शीर्षक की सार्थकता मुख्यतः किस कारण दिखाई देती है?",
-    "options": [
-      "यह ग्रामीण जीवन, व्यक्तित्व और सामाजिक भावनाओं को एक प्रतीकात्मक नाम में बाँधता है",
-      "यह कहानी के स्थान का वास्तविक सरकारी नाम है",
-      "यह केवल पान की दुकान का वर्णन है",
-      "यह कहानी के लेखक का उपनाम है"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 35,
+    "id": 33,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -538,7 +506,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 36,
+    "id": 34,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -554,7 +522,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 37,
+    "id": 35,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -570,7 +538,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 38,
+    "id": 36,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -586,7 +554,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 39,
+    "id": 37,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -602,7 +570,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 40,
+    "id": 38,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -618,7 +586,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 41,
+    "id": 39,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -634,7 +602,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 42,
+    "id": 40,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -650,7 +618,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 43,
+    "id": 41,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -666,7 +634,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 44,
+    "id": 42,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -683,7 +651,7 @@ const QUESTIONS = [
     "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
-    "id": 45,
+    "id": 43,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -700,7 +668,7 @@ const QUESTIONS = [
     "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
-    "id": 46,
+    "id": 44,
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
@@ -717,7 +685,7 @@ const QUESTIONS = [
     "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
-    "id": 47,
+    "id": 45,
     "subject": "हिन्दी",
     "type": "subjective",
     "marks": 0,
@@ -726,7 +694,7 @@ const QUESTIONS = [
     "question": "‘लाल पान की बेगम’ कहानी के ग्रामीण परिवेश की कोई दो विशेषताएँ 3–4 वाक्यों में लिखिए।"
   },
   {
-    "id": 48,
+    "id": 46,
     "subject": "हिन्दी",
     "type": "subjective",
     "marks": 0,
@@ -735,7 +703,7 @@ const QUESTIONS = [
     "question": "‘गुरु गोविंद सिंह के पद’ में व्यक्त वीरता के भाव को 3–4 वाक्यों में स्पष्ट कीजिए।"
   },
   {
-    "id": 49,
+    "id": 47,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -751,7 +719,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 50,
+    "id": 48,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -767,7 +735,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 51,
+    "id": 49,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -783,7 +751,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 52,
+    "id": 50,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -799,7 +767,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 53,
+    "id": 51,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -815,7 +783,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 54,
+    "id": 52,
     "subject": "संस्कृत",
     "type": "mcq",
     "marks": 1,
@@ -831,7 +799,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 55,
+    "id": 53,
     "subject": "संस्कृत",
     "type": "subjective",
     "marks": 0,
@@ -840,7 +808,7 @@ const QUESTIONS = [
     "question": "‘यक्ष-युधिष्ठिर संवाद’ से मिलने वाली कोई एक नीति-शिक्षा 2–3 वाक्यों में लिखिए।"
   },
   {
-    "id": 56,
+    "id": 54,
     "subject": "संस्कृत",
     "type": "subjective",
     "marks": 0,
@@ -849,7 +817,7 @@ const QUESTIONS = [
     "question": "चारों वेदों के नाम लिखिए और किसी एक वेद के बारे में एक तथ्य लिखिए।"
   },
   {
-    "id": 57,
+    "id": 55,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -865,7 +833,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 58,
+    "id": 56,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -881,7 +849,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 59,
+    "id": 57,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -897,7 +865,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 60,
+    "id": 58,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -913,7 +881,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 61,
+    "id": 59,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -929,7 +897,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 62,
+    "id": 60,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -945,7 +913,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 63,
+    "id": 61,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -961,7 +929,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 64,
+    "id": 62,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -977,7 +945,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 65,
+    "id": 63,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -993,7 +961,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 66,
+    "id": 64,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -1009,7 +977,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 67,
+    "id": 65,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -1025,7 +993,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 68,
+    "id": 66,
     "subject": "सामाजिक विज्ञान",
     "type": "mcq",
     "marks": 1,
@@ -1041,7 +1009,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 69,
+    "id": 67,
     "subject": "सामाजिक विज्ञान",
     "type": "subjective",
     "marks": 0,
@@ -1050,7 +1018,7 @@ const QUESTIONS = [
     "question": "फ्रांस की क्रांति के कोई दो कारण लिखिए।"
   },
   {
-    "id": 70,
+    "id": 68,
     "subject": "सामाजिक विज्ञान",
     "type": "subjective",
     "marks": 0,
@@ -1059,23 +1027,7 @@ const QUESTIONS = [
     "question": "हिमालयी और प्रायद्वीपीय नदियों में कोई दो अंतर लिखिए।"
   },
   {
-    "id": 71,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "easy",
-    "topic": "Reader — Saint Kabir",
-    "question": "Kabir’s teachings most strongly emphasise—",
-    "options": [
-      "outer show",
-      "inner truth and devotion",
-      "wealth",
-      "political power"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 72,
+    "id": 69,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1091,23 +1043,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 73,
-    "subject": "English",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "challenging",
-    "topic": "Reader — Saint Kabir",
-    "question": "If two people follow different outward traditions but share compassion, humility and devotion, Kabir’s teaching would most likely view them as—",
-    "options": [
-      "fundamentally divided by ritual",
-      "sharing a deeper spiritual common ground",
-      "unrelated to spiritual life",
-      "competing for social status"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 74,
+    "id": 70,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1124,7 +1060,7 @@ const QUESTIONS = [
     "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
-    "id": 75,
+    "id": 71,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1141,7 +1077,7 @@ const QUESTIONS = [
     "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
-    "id": 76,
+    "id": 72,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1158,7 +1094,7 @@ const QUESTIONS = [
     "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
-    "id": 77,
+    "id": 73,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1174,7 +1110,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 78,
+    "id": 74,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1190,7 +1126,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 79,
+    "id": 75,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1206,7 +1142,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 80,
+    "id": 76,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1222,7 +1158,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 81,
+    "id": 77,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1238,7 +1174,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 82,
+    "id": 78,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1254,7 +1190,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 83,
+    "id": 79,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1270,7 +1206,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 84,
+    "id": 80,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1286,7 +1222,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 85,
+    "id": 81,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1302,7 +1238,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 86,
+    "id": 82,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1318,7 +1254,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 87,
+    "id": 83,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1334,7 +1270,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 88,
+    "id": 84,
     "subject": "English",
     "type": "mcq",
     "marks": 1,
@@ -1350,7 +1286,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 89,
+    "id": 85,
     "subject": "English",
     "type": "subjective",
     "marks": 0,
@@ -1359,7 +1295,7 @@ const QUESTIONS = [
     "question": "Write the central idea of either ‘Saint Kabir’ or ‘Yayati’ in about 40–50 words."
   },
   {
-    "id": 90,
+    "id": 86,
     "subject": "English",
     "type": "subjective",
     "marks": 0,
@@ -1368,7 +1304,7 @@ const QUESTIONS = [
     "question": "Write four sentences using four different tenses. Underline the verb in each sentence."
   },
   {
-    "id": 91,
+    "id": 87,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1384,7 +1320,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 92,
+    "id": 88,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1400,7 +1336,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 93,
+    "id": 89,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1416,7 +1352,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 94,
+    "id": 90,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1432,7 +1368,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 95,
+    "id": 91,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1448,39 +1384,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 96,
-    "subject": "तर्कशक्ति",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "topic": "Alphabet Series",
-    "question": "Complete the series: A, C, F, J, O, __",
-    "options": [
-      "T",
-      "U",
-      "V",
-      "W"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 97,
-    "subject": "तर्कशक्ति",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "moderate",
-    "topic": "Alphabet Series",
-    "question": "Complete the series: AZ, BY, CX, DW, __",
-    "options": [
-      "EV",
-      "FU",
-      "EW",
-      "FV"
-    ],
-    "correct": 0
-  },
-  {
-    "id": 98,
+    "id": 92,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1496,7 +1400,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 99,
+    "id": 93,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1512,7 +1416,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 100,
+    "id": 94,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1528,23 +1432,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 101,
-    "subject": "तर्कशक्ति",
-    "type": "mcq",
-    "marks": 1,
-    "difficulty": "challenging",
-    "topic": "Alphabet Series",
-    "question": "Complete the series: D, H, M, S, __",
-    "options": [
-      "X",
-      "Y",
-      "Z",
-      "W"
-    ],
-    "correct": 1
-  },
-  {
-    "id": 102,
+    "id": 95,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1560,7 +1448,7 @@ const QUESTIONS = [
     "correct": 0
   },
   {
-    "id": 103,
+    "id": 96,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1576,7 +1464,7 @@ const QUESTIONS = [
     "correct": 2
   },
   {
-    "id": 104,
+    "id": 97,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1592,7 +1480,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 105,
+    "id": 98,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
@@ -1608,7 +1496,7 @@ const QUESTIONS = [
     "correct": 1
   },
   {
-    "id": 106,
+    "id": 99,
     "subject": "तर्कशक्ति",
     "type": "subjective",
     "marks": 0,
@@ -1617,7 +1505,7 @@ const QUESTIONS = [
     "question": "Alphabet Series: एक alphabet series बनाइए जिसमें हर अगला अक्षर 2 स्थान आगे बढ़े और पाँच पद लिखिए।"
   },
   {
-    "id": 107,
+    "id": 100,
     "subject": "तर्कशक्ति",
     "type": "subjective",
     "marks": 0,
