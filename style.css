@@ -153,3 +153,190 @@ input { min-height: 44px; }
   border-radius: 10px;
   text-align: center;
 }
+
+
+.test03-preview-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.test03-preview-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.test03-preview-meta span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+.test03-preview-actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 8px;
+  align-items: end;
+}
+.test03-preview-actions label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+.test03-preview-actions select {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  min-height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  padding: 8px;
+}
+.test03-toggle {
+  display: flex !important;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+.test03-toggle input { min-height: auto; }
+.test03-print-btn { min-height: 42px !important; }
+.test03-preview-warning {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.test03-filter-summary {
+  margin-bottom: 10px;
+  color: #475569;
+  font-size: 12px;
+}
+.test03-question-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+  break-inside: avoid;
+}
+.test03-question-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 9px;
+}
+.test03-qid {
+  font-weight: 800;
+  color: var(--primary);
+}
+.test03-subject, .test03-difficulty, .test03-topic {
+  font-size: 11px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+}
+.test03-difficulty { font-weight: 700; }
+.difficulty-easy { background: #ecfdf5; color: #166534; }
+.difficulty-moderate { background: #eff6ff; color: #1d4ed8; }
+.difficulty-challenging { background: #fff7ed; color: #9a3412; }
+.test03-question-text {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+.test03-passage {
+  background: #f8fafc;
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+.test03-passage-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+.test03-image-wrap {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  margin: 10px 0;
+  background: #fff;
+  text-align: center;
+}
+.test03-image-wrap img {
+  display: block;
+  max-width: 100%;
+  width: min(100%, 620px);
+  height: auto;
+  margin: 0 auto;
+}
+.test03-options {
+  display: grid;
+  gap: 7px;
+}
+.test03-option {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  padding: 9px 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.test03-letter {
+  min-width: 23px;
+  height: 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f1f5f9;
+  font-weight: 800;
+  color: #334155;
+}
+.test03-answer {
+  margin-top: 10px;
+  border-left: 4px solid #16a34a;
+  padding: 8px 10px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 12px;
+}
+.test03-written-note {
+  padding: 10px;
+  border: 1px dashed #22c55e;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 12px;
+}
+@media (max-width: 767px) {
+  .test03-preview-actions { grid-template-columns: 1fr 1fr; }
+}
+@media print {
+  body { background: #fff !important; }
+  .screen:not(#screen-test03-preview), .test03-preview-toolbar, .test03-preview-warning,
+  #screen-test03-preview > .auth-container > .brand-header + .instruction-card,
+  #screen-test03-preview > .auth-container > .btn-row { display: none !important; }
+  #screen-test03-preview { display: block !important; }
+  #screen-test03-preview .auth-container { box-shadow: none; max-width: none; width: 100%; margin: 0; padding: 0; }
+  .test03-question-card { border: 0; margin-bottom: 18px; padding: 0 0 10px; }
+  .test03-question-text { font-size: 12px; }
+  .test03-option, .test03-passage, .test03-written-note { font-size: 11px; }
+}
