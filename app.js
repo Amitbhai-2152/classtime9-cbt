@@ -67,6 +67,7 @@ let studentResponses = [];
 
 // Phase 1: local auto-recovery. This keeps an unfinished exam on the same device.
 const RECOVERY_VERSION = 1;
+let selectedSubjectFilter = "All";
 let examStarted = false;
 let examDeadlineMs = null;
 let recoverySaveTimer = null;
@@ -172,7 +173,6 @@ const TEST_DURATION_SECONDS = 2.5 * 60 * 60; // 02:30:00
 let totalSeconds = TEST_DURATION_SECONDS;
 let timerInterval = null;
 let timeElapsedSeconds = 0;
-let selectedSubjectFilter = "All";
 
 const subjectsList = ["All", "गणित", "विज्ञान", "हिन्दी", "संस्कृत", "सामाजिक विज्ञान", "English", "तर्कशक्ति"];
 
