@@ -1473,11 +1473,11 @@ const QUESTIONS = [
     "question": "Find the missing pair: AB, DE, HI, MN, __",
     "options": [
       "TU",
+      "ST",
       "UV",
-      "RS",
-      "ST"
+      "RS"
     ],
-    "correct": 3
+    "correct": 1
   },
   {
     "id": 98,
@@ -1489,11 +1489,11 @@ const QUESTIONS = [
     "question": "In the series C, F, J, O, __, each step increases by one letter more than the previous step. What is the next letter?",
     "options": [
       "T",
-      "U",
       "V",
-      "W"
+      "W",
+      "U"
     ],
-    "correct": 1
+    "correct": 3
   },
   {
     "id": 99,
