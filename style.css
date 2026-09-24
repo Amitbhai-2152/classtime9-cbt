@@ -452,3 +452,24 @@ input { min-height: 44px; }
     max-height: none;
   }
 }
+
+
+/* TEST 03 student-response mode */
+.test03-student-start {
+  background: #0f766e !important;
+  border-color: #0f766e !important;
+}
+#screen-registration[data-active-test="test03"] .preview-entry {
+  display: none !important;
+}
+.student-mode-active .exam-header {
+  box-shadow: 0 2px 12px rgba(15, 118, 110, .16);
+}
+#examTestName {
+  color: rgba(255,255,255,.86);
+}
+@media (max-width: 600px) {
+  #examTestName {
+    max-width: 44vw;
+  }
+}
