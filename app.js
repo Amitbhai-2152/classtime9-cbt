@@ -483,7 +483,7 @@ function finalizeSubmission() {
     if (!statusEl) return;
 
     if (emailSubmissionStatus === "sent") {
-      statusEl.innerText = "✓ आपके सभी ऑब्जेक्टिव उत्तर शिक्षक के ईमेल पर भेज दिए गए हैं।";
+      statusEl.innerText = "✓ आपके ऑब्जेक्टिव उत्तर सबमिशन सर्वर को भेज दिए गए हैं।";
       statusEl.className = "email-status success";
     } else if (emailSubmissionStatus === "not-configured") {
       statusEl.innerText = "⚠️ ईमेल डिलीवरी अभी कॉन्फ़िगर नहीं है। प्रश्नों का परिणाम स्क्रीन पर सुरक्षित है।";
