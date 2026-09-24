@@ -1,4 +1,4 @@
-const CACHE_NAME = "test02-cbt-offline-v12";
+const CACHE_NAME = "test02-cbt-offline-v13";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -6,7 +6,25 @@ const APP_SHELL = [
   "./questions.js",
   "./style.css",
   "./submission-queue.js"
-];
+
+  "./test03-questions-maths.js",
+  "./test03-questions-science.js",
+  "./test03-questions-hindi.js",
+  "./test03-questions-sanskrit.js",
+  "./test03-questions-social.js",
+  "./test03-questions-english.js",
+  "./test03-questions-reasoning.js",
+  "./assets/test03/maths-coordinate-1.svg",
+  "./assets/test03/maths-line-1.svg",
+  "./assets/test03/maths-line-2.svg",
+  "./assets/test03/science-atom-1.svg",
+  "./assets/test03/science-particles-1.svg",
+  "./assets/test03/science-bohr-1.svg",
+  "./assets/test03/hindi-village-song-1.svg",
+  "./assets/test03/social-relief-1.svg",
+  "./assets/test03/social-drainage-1.svg",
+  "./assets/test03/english-routine-1.svg",
+  "./assets/test03/reasoning-letters-1.svg",];
 
 self.addEventListener("install", event => {
   event.waitUntil(
