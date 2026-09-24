@@ -1376,12 +1376,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Which letter is 5 places before R?",
     "options": [
-      "N",
       "M",
+      "N",
       "O",
       "L"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 92,
@@ -1392,12 +1392,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Complete the series: C, G, K, O, __",
     "options": [
-      "S",
       "U",
       "R",
-      "T"
+      "T",
+      "S"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 93,
@@ -1408,12 +1408,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Complete the series: B, E, I, N, __",
     "options": [
-      "U",
       "T",
+      "U",
       "S",
       "V"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 94,
@@ -1424,12 +1424,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "If the first letter moves 2 places forward, the next 3 places, the next 4 places and so on, then A, C, F, J, __ gives—",
     "options": [
-      "O",
       "M",
-      "P",
-      "N"
+      "N",
+      "O",
+      "P"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 95,
@@ -1440,12 +1440,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Complete the series: Y, V, R, M, __",
     "options": [
+      "G",
       "J",
       "I",
-      "K",
-      "G"
+      "K"
     ],
-    "correct": 3
+    "correct": 0
   },
   {
     "id": 96,
@@ -1457,11 +1457,11 @@ const QUESTIONS = [
     "question": "Complete the series: B, G, M, T, __ (continue cyclically after Z)",
     "options": [
       "D",
-      "B",
       "A",
-      "C"
+      "C",
+      "B"
     ],
-    "correct": 1
+    "correct": 3
   },
   {
     "id": 97,
@@ -1473,11 +1473,11 @@ const QUESTIONS = [
     "question": "Find the missing pair: AB, DE, HI, MN, __",
     "options": [
       "TU",
-      "UV",
       "ST",
+      "UV",
       "RS"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 98,
@@ -1488,12 +1488,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "In the series C, F, J, O, __, each step increases by one letter more than the previous step. What is the next letter?",
     "options": [
-      "U",
       "T",
+      "U",
       "V",
       "W"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 99,
