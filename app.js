@@ -1,16 +1,78 @@
-const TEST_NAME = "ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा";
+const TEST_CONFIGS = {
+  test02: {
+    id: "test02",
+    name: "ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा",
+    recoveryKey: "class9_cbt_active_exam_v1",
+    bank: () => QUESTIONS
+  },
+  test03: {
+    id: "test03",
+    name: "ClassTime 9 — TEST 03 — BSEB कक्षा 9 अभ्यास परीक्षा",
+    recoveryKey: "class9_cbt_test03_active_exam_v1",
+    bank: () => Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS : []
+  }
+};
+let ACTIVE_TEST_ID = "test02";
+let ACTIVE_getActiveQuestions() = getActiveQuestions();
+let ACTIVE_TEST_NAME = TEST_CONFIGS.test02.name;
+let ACTIVE_RECOVERY_KEY = TEST_CONFIGS.test02.recoveryKey;
+
+function getActiveQuestions() { return ACTIVE_getActiveQuestions(); }
+function getActiveTestName() { return ACTIVE_TEST_NAME; }
+function getActiveRecoveryKey() { return ACTIVE_RECOVERY_KEY; }
+
+function updateActiveTestUI() {
+  const config = TEST_CONFIGS[ACTIVE_TEST_ID];
+  if (!config) return;
+  const registrationTitle = document.getElementById("registrationTestTitle");
+  const registrationSubtext = document.getElementById("registrationTestSubtext");
+  const instructionTestName = document.getElementById("instructionTestName");
+  const summaryTitle = document.getElementById("summaryTestTitle");
+  const summaryExamName = document.getElementById("summaryExamName");
+  const examTestName = document.getElementById("examTestName");
+  const previewEntry = document.querySelector(".preview-entry");
+
+  if (registrationTitle) registrationTitle.innerText = config.name;
+  if (registrationSubtext) {
+    registrationSubtext.innerText = config.id === "test03"
+      ? "BSEB कक्षा 9 • नया अभ्यास पेपर • 150 मिनट"
+      : "BSEB कक्षा 9 • 27 सितम्बर 2026 • अभ्यास CBT";
+  }
+  if (instructionTestName) instructionTestName.innerText = config.name;
+  if (summaryTitle) summaryTitle.innerText = `🎉 ${config.name} सफलतापूर्वक सबमिट हो गया!`;
+  if (summaryExamName) summaryExamName.innerText = `📘 परीक्षा: ${config.name}`;
+  if (examTestName) examTestName.innerText = config.name;
+  if (previewEntry) previewEntry.style.display = config.id === "test03" ? "none" : "";
+}
+
+function configureActiveTest(testId) {
+  const config = TEST_CONFIGS[testId] || TEST_CONFIGS.test02;
+  ACTIVE_TEST_ID = config.id;
+  ACTIVE_getActiveQuestions() = config.bank();
+  ACTIVE_TEST_NAME = config.name;
+  ACTIVE_RECOVERY_KEY = config.recoveryKey;
+  selectedSubjectFilter = "All";
+  updateActiveTestUI();
+}
+
+try {
+  const initialTest = new URLSearchParams(window.location.search).get("test");
+  if (initialTest === "test03") configureActiveTest("test03");
+} catch (error) {
+  console.warn("Could not read test selection:", error);
+}
 // Google Apps Script Web App endpoint.
 // Deploy the supplied google-apps-script.gs as a Web App and paste its /exec URL here.
 const EMAIL_ENDPOINT = "https://script.google.com/macros/s/AKfycbx341brEbkoRCD-vzkrDtUIGH81NvY7xMoHngv82D0pOJv_ozE5iZlgtuwrzbfdUxAQ/exec";
 let emailSubmissionStatus = "pending";
 
-// यह कोड QUESTIONS एरे के लोड होने के बाद काम करेगा
+// यह कोड getActiveQuestions() एरे के लोड होने के बाद काम करेगा
 const userProfile = { name: "", parent: "", location: "", roll: "", mobile: "" };
 let currentIndex = 0;
 let studentResponses = [];
 
 // Phase 1: local auto-recovery. This keeps an unfinished exam on the same device.
-const RECOVERY_KEY = "class9_cbt_active_exam_v1";
+const getActiveRecoveryKey() = "class9_cbt_active_exam_v1";
 const RECOVERY_VERSION = 1;
 let examStarted = false;
 let examDeadlineMs = null;
@@ -30,7 +92,7 @@ function saveExamRecovery() {
       examDeadlineMs,
       timeElapsedSeconds
     };
-    localStorage.setItem(RECOVERY_KEY, JSON.stringify(state));
+    localStorage.setItem(getActiveRecoveryKey(), JSON.stringify(state));
   } catch (error) {
     console.warn("Could not save exam recovery state:", error);
   }
@@ -38,7 +100,7 @@ function saveExamRecovery() {
 
 function readExamRecovery() {
   try {
-    const raw = localStorage.getItem(RECOVERY_KEY);
+    const raw = localStorage.getItem(getActiveRecoveryKey());
     if (!raw) return null;
     const state = JSON.parse(raw);
     if (!state || state.version !== RECOVERY_VERSION || !state.examStarted || !state.examDeadlineMs) return null;
@@ -53,7 +115,7 @@ function readExamRecovery() {
 
 function clearExamRecovery() {
   try {
-    localStorage.removeItem(RECOVERY_KEY);
+    localStorage.removeItem(getActiveRecoveryKey());
   } catch (error) {
     console.warn("Could not clear exam recovery state:", error);
   }
@@ -65,16 +127,16 @@ function scheduleRecoverySave() {
 }
 
 function restoreExamState(state) {
-  if (!state || !Array.isArray(state.studentResponses) || state.studentResponses.length !== QUESTIONS.length) return false;
+  if (!state || !Array.isArray(state.studentResponses) || state.studentResponses.length !== getActiveQuestions().length) return false;
 
   Object.assign(userProfile, state.userProfile || {});
   studentResponses = state.studentResponses.map((resp, idx) => ({
-    id: QUESTIONS[idx].id,
+    id: getActiveQuestions()[idx].id,
     selectedOption: resp.selectedOption ?? null,
     writtenInCopy: Boolean(resp.writtenInCopy),
     status: resp.status || "not-visited"
   }));
-  currentIndex = Math.min(Math.max(Number(state.currentIndex) || 0, 0), QUESTIONS.length - 1);
+  currentIndex = Math.min(Math.max(Number(state.currentIndex) || 0, 0), getActiveQuestions().length - 1);
   examDeadlineMs = Number(state.examDeadlineMs);
   timeElapsedSeconds = Math.max(0, Number(state.timeElapsedSeconds) || 0);
   totalSeconds = Math.max(0, Math.ceil((examDeadlineMs - Date.now()) / 1000));
@@ -83,7 +145,7 @@ function restoreExamState(state) {
   return true;
 }
 
-// Initialize responses once QUESTIONS array is available from questions.js.
+// Initialize responses once getActiveQuestions() array is available from questions.js.
 // If an unfinished exam exists, restore it instead of creating a blank attempt.
 window.onload = () => {
   const savedState = readExamRecovery();
@@ -100,7 +162,7 @@ window.onload = () => {
     const recoveryNotice = document.getElementById('recoveryNotice');
     if (recoveryNotice) recoveryNotice.style.display = 'block';
   } else {
-    studentResponses = QUESTIONS.map(q => ({ id: q.id, selectedOption: null, writtenInCopy: false, status: 'not-visited' }));
+    studentResponses = getActiveQuestions().map(q => ({ id: q.id, selectedOption: null, writtenInCopy: false, status: 'not-visited' }));
   }
 };
 
@@ -144,7 +206,7 @@ function startTest() {
     return;
   }
 
-  studentResponses = QUESTIONS.map(q => ({ id: q.id, selectedOption: null, writtenInCopy: false, status: 'not-visited' }));
+  studentResponses = getActiveQuestions().map(q => ({ id: q.id, selectedOption: null, writtenInCopy: false, status: 'not-visited' }));
   currentIndex = 0;
   timeElapsedSeconds = 0;
   totalSeconds = TEST_DURATION_SECONDS;
@@ -210,7 +272,7 @@ function buildSubjectPills() {
     btn.onclick = () => {
       selectedSubjectFilter = sub;
       buildSubjectPills(); buildPaletteGrid();
-      if(sub !== "All") loadQuestion(QUESTIONS.findIndex(q => q.subject === sub));
+      if(sub !== "All") loadQuestion(getActiveQuestions().findIndex(q => q.subject === sub));
     };
     container.appendChild(btn);
   });
@@ -219,7 +281,7 @@ function buildSubjectPills() {
 function buildPaletteGrid() {
   const grid = document.getElementById('paletteGrid');
   grid.innerHTML = "";
-  QUESTIONS.forEach((q, idx) => {
+  getActiveQuestions().forEach((q, idx) => {
     if (selectedSubjectFilter !== "All" && q.subject !== selectedSubjectFilter) return;
     const btn = document.createElement('button');
     btn.className = `palette-btn status-${studentResponses[idx].status} ${q.type === 'subjective' ? 'palette-subjective' : ''} ${idx === currentIndex ? 'active-q' : ''}`;
@@ -232,7 +294,7 @@ function buildPaletteGrid() {
 function loadQuestion(index) {
   if (studentResponses[currentIndex].status === 'not-visited') studentResponses[currentIndex].status = 'unanswered';
   currentIndex = index;
-  const q = QUESTIONS[currentIndex];
+  const q = getActiveQuestions()[currentIndex];
   const resp = studentResponses[currentIndex];
   if (resp.status === 'not-visited') resp.status = 'unanswered';
 
@@ -317,18 +379,18 @@ function toggleWrittenInCopy(isChecked) {
 
 function saveAndNext() {
   scheduleRecoverySave();
-  if (currentIndex < QUESTIONS.length - 1) loadQuestion(currentIndex + 1);
+  if (currentIndex < getActiveQuestions().length - 1) loadQuestion(currentIndex + 1);
 }
 
 function navigateQuestion(delta) {
   scheduleRecoverySave();
-  if (currentIndex + delta >= 0 && currentIndex + delta < QUESTIONS.length) loadQuestion(currentIndex + delta);
+  if (currentIndex + delta >= 0 && currentIndex + delta < getActiveQuestions().length) loadQuestion(currentIndex + delta);
 }
 
 function markForReview() {
   studentResponses[currentIndex].status = 'review';
   scheduleRecoverySave();
-  if (currentIndex < QUESTIONS.length - 1) loadQuestion(currentIndex + 1);
+  if (currentIndex < getActiveQuestions().length - 1) loadQuestion(currentIndex + 1);
   else buildPaletteGrid();
 }
 
@@ -345,9 +407,9 @@ function confirmSubmitTest() {
 }
 
 function buildSubmissionPayload() {
-  const objectiveQuestions = QUESTIONS.filter(q => q.type === "mcq");
+  const objectiveQuestions = getActiveQuestions().filter(q => q.type === "mcq");
   const answers = objectiveQuestions.map(q => {
-    const idx = QUESTIONS.findIndex(item => item.id === q.id);
+    const idx = getActiveQuestions().findIndex(item => item.id === q.id);
     const selected = studentResponses[idx]?.selectedOption;
     return {
       id: q.id,
@@ -369,7 +431,7 @@ function buildSubmissionPayload() {
   const score = answers.reduce((sum, a) => sum + (a.isCorrect ? a.marks : 0), 0);
 
   return {
-    testName: TEST_NAME,
+    testName: getActiveTestName(),
     submittedAt: new Date().toISOString(),
     candidate: {
       name: userProfile.name,
@@ -379,7 +441,7 @@ function buildSubmissionPayload() {
       mobile: userProfile.mobile
     },
     timeSpentSeconds: timeElapsedSeconds,
-    subjectiveMarked: QUESTIONS.filter(q => q.type === "subjective").reduce((sum, q) => { const i = QUESTIONS.findIndex(item => item.id === q.id); return sum + (studentResponses[i]?.writtenInCopy ? 1 : 0); }, 0),
+    subjectiveMarked: getActiveQuestions().filter(q => q.type === "subjective").reduce((sum, q) => { const i = getActiveQuestions().findIndex(item => item.id === q.id); return sum + (studentResponses[i]?.writtenInCopy ? 1 : 0); }, 0),
     objective: {
       score,
       totalMarks: objectiveQuestions.reduce((sum, q) => sum + q.marks, 0),
@@ -415,9 +477,9 @@ function finalizeSubmission() {
   clearInterval(timerInterval);
   clearTimeout(recoverySaveTimer);
 
-  const objectiveQuestions = QUESTIONS.filter(q => q.type === "mcq");
+  const objectiveQuestions = getActiveQuestions().filter(q => q.type === "mcq");
   let mcqScore = 0;
-  QUESTIONS.forEach((q, i) => {
+  getActiveQuestions().forEach((q, i) => {
     if (q.type === "mcq" && studentResponses[i].selectedOption === q.correct) {
       mcqScore += q.marks;
     }
@@ -432,12 +494,12 @@ function finalizeSubmission() {
 
   const totalMcqMarks = objectiveQuestions.reduce((sum, q) => sum + q.marks, 0);
   const attempted = objectiveQuestions.reduce((sum, q) => {
-    const i = QUESTIONS.findIndex(item => item.id === q.id);
+    const i = getActiveQuestions().findIndex(item => item.id === q.id);
     return sum + (studentResponses[i].selectedOption !== null && studentResponses[i].selectedOption !== undefined ? 1 : 0);
   }, 0);
-  const wrong = QUESTIONS.reduce((sum, q, i) => sum + (q.type === "mcq" && studentResponses[i].selectedOption !== null && studentResponses[i].selectedOption !== undefined && studentResponses[i].selectedOption !== q.correct ? 1 : 0), 0);
-  const subjectiveQuestions = QUESTIONS.filter(q => q.type === "subjective");
-  const subjectiveMarked = subjectiveQuestions.reduce((sum, q) => { const i = QUESTIONS.findIndex(item => item.id === q.id); return sum + (studentResponses[i]?.writtenInCopy ? 1 : 0); }, 0);
+  const wrong = getActiveQuestions().reduce((sum, q, i) => sum + (q.type === "mcq" && studentResponses[i].selectedOption !== null && studentResponses[i].selectedOption !== undefined && studentResponses[i].selectedOption !== q.correct ? 1 : 0), 0);
+  const subjectiveQuestions = getActiveQuestions().filter(q => q.type === "subjective");
+  const subjectiveMarked = subjectiveQuestions.reduce((sum, q) => { const i = getActiveQuestions().findIndex(item => item.id === q.id); return sum + (studentResponses[i]?.writtenInCopy ? 1 : 0); }, 0);
   const unanswered = objectiveQuestions.length - attempted;
   const percentage = totalMcqMarks ? ((mcqScore / totalMcqMarks) * 100).toFixed(1).replace(/\.0$/, "") : "0";
 
@@ -454,7 +516,7 @@ function finalizeSubmission() {
     subjectScoreBreakdown.innerHTML = "";
     const subjectTotals = {};
     const subjectScores = {};
-    QUESTIONS.forEach((q, i) => {
+    getActiveQuestions().forEach((q, i) => {
       subjectTotals[q.subject] = (subjectTotals[q.subject] || 0) + q.marks;
       if (q.type === "mcq" && studentResponses[i].selectedOption === q.correct) {
         subjectScores[q.subject] = (subjectScores[q.subject] || 0) + q.marks;
@@ -496,6 +558,24 @@ function finalizeSubmission() {
 }
 
 
+
+
+function openTest03StudentMode() {
+  configureActiveTest("test03");
+  try {
+    const url = new URL(window.location.href);
+    url.searchParams.set("test", "test03");
+    url.searchParams.delete("preview");
+    window.history.replaceState({}, "", url.toString());
+  } catch (error) {
+    console.warn("Could not update TEST 03 student-mode URL:", error);
+  }
+  goToScreen("screen-registration");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  const nameInput = document.getElementById("candidateName");
+  if (nameInput) setTimeout(() => nameInput.focus(), 100);
+}
+
 function escapeHtml(value) {
   return String(value ?? "")
     .replace(/&/g, "&amp;")
@@ -510,7 +590,7 @@ function openTest03Preview() {
   const el = document.getElementById('test03PreviewContent');
   if (!el) return;
 
-  const bank = Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS.slice().sort((a,b) => a.id - b.id) : [];
+  const bank = Array.isArray(window.TEST03_getActiveQuestions()) ? window.TEST03_getActiveQuestions().slice().sort((a,b) => a.id - b.id) : [];
   if (!bank.length) {
     el.innerHTML = '<div class="instruction-card"><strong>TEST 03 data नहीं मिला।</strong><p style="margin-top:8px;">Draft question-bank files लोड नहीं हुए हैं।</p></div>';
     return;
@@ -540,6 +620,7 @@ function openTest03Preview() {
           </select>
         </label>
         <label class="test03-toggle"><input type="checkbox" id="test03ShowAnswers"> उत्तर दिखाएँ</label>
+        <button type="button" class="btn btn-primary test03-student-start" onclick="openTest03StudentMode()">🎓 Student Mode शुरू करें</button>
         <button type="button" class="btn btn-outline test03-print-btn" onclick="window.print()">🖨️ Print</button>
       </div>
     </div>
@@ -608,7 +689,12 @@ function openTest03Preview() {
 window.addEventListener("load", () => {
   try {
     const params = new URLSearchParams(window.location.search);
-    if (params.get("preview") === "test03") openTest03Preview();
+    if (params.get("test") === "test03") {
+      // Student mode has its own selectable response flow.
+      configureActiveTest("test03");
+      updateActiveTestUI();
+      goToScreen("screen-registration");
+    } else if (params.get("preview") === "test03") openTest03Preview();
   } catch (error) {
     console.warn("Could not open requested preview:", error);
   }
