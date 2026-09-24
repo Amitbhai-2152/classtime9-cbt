@@ -494,3 +494,17 @@ function finalizeSubmission() {
     }
   });
 }
+
+
+function openTest03Preview() {
+  goToScreen('screen-test03-preview');
+  const el = document.getElementById('test03PreviewContent');
+  if (!el) return;
+  el.innerHTML = `
+    <div class="instruction-card" style="background:#eff6ff; border-color:#bfdbfe;">
+      <strong>TEST 03 draft space ready.</strong>
+      <p style="margin-top:8px; line-height:1.6;">
+        अगला चरण यहाँ पूरा 100-question TEST 03 paper और उसके image questions render करेगा।
+      </p>
+    </div>`;
+}
