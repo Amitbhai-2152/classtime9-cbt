@@ -1,8 +1,9 @@
 // TEST 02 — ClassTime 9 | BSEB Class 9 Practice CBT
-// Final 100-question structure: Maths 14, Science 14, Hindi 18, Sanskrit 8,
-// Social Science 14, English 18, Reasoning 14.
-// Maths/Science retain 12 MCQs + 2 written-copy subjective questions.
-// Hindi/English retain passage-based comprehension; Sanskrit remains unchanged.
+// 100-question final bank.
+// MCQ option order is randomized; correct-answer positions are balanced and anti-pattern constrained
+// so students cannot exploit A-A, B-B, A-B-C-D, repeating-pair, or cyclic-position patterns.
+// Maths/Science retain expanded coverage; Sanskrit remains unchanged.
+// Hindi and English retain passage-based comprehension.
 // Exactly 2 written-copy subjective questions remain per subject; no typed answer field is used.
 const QUESTIONS = [
   {
@@ -14,12 +15,12 @@ const QUESTIONS = [
     "topic": "निर्देशांक ज्यामिति",
     "question": "बिंदु P(−4, −3) किस चतुर्थांश में स्थित है?",
     "options": [
-      "तृतीय",
       "प्रथम",
-      "द्वितीय",
-      "चतुर्थ"
+      "तृतीय",
+      "चतुर्थ",
+      "द्वितीय"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 2,
@@ -31,11 +32,11 @@ const QUESTIONS = [
     "question": "बिंदु A(3, −5) की x-अक्ष से दूरी और y-अक्ष से दूरी क्रमशः कितनी हैं?",
     "options": [
       "3 और 5",
-      "5 और 3",
       "−5 और 3",
-      "5 और −3"
+      "5 और −3",
+      "5 और 3"
     ],
-    "correct": 1
+    "correct": 3
   },
   {
     "id": 3,
@@ -46,12 +47,12 @@ const QUESTIONS = [
     "topic": "निर्देशांक ज्यामिति",
     "question": "किस बिंदु के लिए x-अक्ष से दूरी 6 इकाई, y-अक्ष से दूरी 2 इकाई और वह द्वितीय चतुर्थांश में स्थित हो?",
     "options": [
-      "(2, 6)",
       "(−2, 6)",
+      "(6, −2)",
       "(−6, 2)",
-      "(6, −2)"
+      "(2, 6)"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 4,
@@ -64,10 +65,10 @@ const QUESTIONS = [
     "options": [
       "2",
       "4",
-      "5",
-      "3"
+      "3",
+      "5"
     ],
-    "correct": 3
+    "correct": 2
   },
   {
     "id": 5,
@@ -78,12 +79,12 @@ const QUESTIONS = [
     "topic": "दो चरों वाले रैखिक समीकरण",
     "question": "3x − 2y = 6 में x = 4 होने पर y का मान है—",
     "options": [
-      "3",
-      "2",
+      "1",
       "4",
-      "1"
+      "2",
+      "3"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 6,
@@ -95,11 +96,11 @@ const QUESTIONS = [
     "question": "एक रेखा x-अक्ष को (5, 0) और y-अक्ष को (0, 5) पर काटती है। उस रेखा का समीकरण कौन-सा है?",
     "options": [
       "x − y = 5",
-      "5x + y = 5",
+      "x + y = 5",
       "x + 5y = 5",
-      "x + y = 5"
+      "5x + y = 5"
     ],
-    "correct": 3
+    "correct": 1
   },
   {
     "subject": "गणित",
@@ -109,12 +110,12 @@ const QUESTIONS = [
     "difficulty": "easy",
     "question": "बिंदु (0, −5) किस अक्ष पर स्थित है?",
     "options": [
-      "x-अक्ष",
       "y-अक्ष",
-      "मूलबिंदु",
-      "प्रथम चतुर्थांश"
+      "x-अक्ष",
+      "प्रथम चतुर्थांश",
+      "मूलबिंदु"
     ],
-    "correct": 1,
+    "correct": 0,
     "id": 7
   },
   {
@@ -125,12 +126,12 @@ const QUESTIONS = [
     "difficulty": "moderate",
     "question": "बिंदु A(−3, 4) को x-अक्ष के सापेक्ष परावर्तित करने पर नए निर्देशांक क्या होंगे?",
     "options": [
-      "(3, 4)",
-      "(−3, −4)",
+      "(−4, 3)",
       "(3, −4)",
-      "(−4, 3)"
+      "(−3, −4)",
+      "(3, 4)"
     ],
-    "correct": 1,
+    "correct": 2,
     "id": 8
   },
   {
@@ -141,12 +142,12 @@ const QUESTIONS = [
     "difficulty": "challenging",
     "question": "बिंदु P के निर्देशांक (a, −5) हैं और P तृतीय चतुर्थांश में है। a के लिए कौन-सी शर्त सही है?",
     "options": [
-      "a > 0",
-      "a = 0",
+      "a = 5",
       "a < 0",
-      "a = 5"
+      "a > 0",
+      "a = 0"
     ],
-    "correct": 2,
+    "correct": 1,
     "id": 9
   },
   {
@@ -157,12 +158,12 @@ const QUESTIONS = [
     "difficulty": "easy",
     "question": "समीकरण x + 2y = 10 में x = 0 रखने पर y का मान क्या होगा?",
     "options": [
-      "2",
       "5",
+      "2",
       "8",
       "10"
     ],
-    "correct": 1,
+    "correct": 0,
     "id": 10
   },
   {
@@ -189,12 +190,12 @@ const QUESTIONS = [
     "difficulty": "challenging",
     "question": "रेखा 2x + 3y = 12 पर x = 0 और y = 0 के संगत बिंदु क्रमशः कौन-से हैं?",
     "options": [
-      "(0, 4) और (6, 0)",
       "(4, 0) और (0, 6)",
+      "(6, 0) और (0, 4)",
       "(0, 3) और (4, 0)",
-      "(6, 0) और (0, 4)"
+      "(0, 4) और (6, 0)"
     ],
-    "correct": 0,
+    "correct": 3,
     "id": 12
   },
   {
@@ -224,12 +225,12 @@ const QUESTIONS = [
     "topic": "परमाणु एवं अणु",
     "question": "किस नियम के अनुसार किसी शुद्ध यौगिक में उसके अवयवी तत्व सदैव निश्चित द्रव्यमान अनुपात में पाए जाते हैं?",
     "options": [
+      "ऊर्जा संरक्षण का नियम",
       "निश्चित अनुपात का नियम",
-      "द्रव्यमान संरक्षण का नियम",
       "गुणकों का नियम",
-      "ऊर्जा संरक्षण का नियम"
+      "द्रव्यमान संरक्षण का नियम"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 16,
@@ -240,12 +241,12 @@ const QUESTIONS = [
     "topic": "परमाणु एवं अणु",
     "question": "H₂SO₄ का आणविक द्रव्यमान कितना है? (H = 1, S = 32, O = 16)",
     "options": [
-      "96 u",
-      "98 u",
+      "102 u",
       "100 u",
-      "102 u"
+      "96 u",
+      "98 u"
     ],
-    "correct": 1
+    "correct": 3
   },
   {
     "id": 17,
@@ -256,12 +257,12 @@ const QUESTIONS = [
     "topic": "परमाणु एवं अणु",
     "question": "एक यौगिक में Ca, C और O का द्रव्यमान प्रतिशत क्रमशः 40%, 12% और 48% है। इसका सरलतम सूत्र कौन-सा होगा? (Ca = 40, C = 12, O = 16)",
     "options": [
-      "CaCO",
-      "CaCO₂",
       "CaCO₃",
-      "Ca₂CO₃"
+      "Ca₂CO₃",
+      "CaCO",
+      "CaCO₂"
     ],
-    "correct": 2
+    "correct": 0
   },
   {
     "id": 18,
@@ -272,12 +273,12 @@ const QUESTIONS = [
     "topic": "परमाणु की संरचना",
     "question": "इलेक्ट्रॉन पर किस प्रकार का आवेश होता है?",
     "options": [
-      "धनात्मक",
-      "उदासीन",
       "परिवर्ती",
-      "ऋणात्मक"
+      "धनात्मक",
+      "ऋणात्मक",
+      "उदासीन"
     ],
-    "correct": 3
+    "correct": 2
   },
   {
     "id": 19,
@@ -288,12 +289,12 @@ const QUESTIONS = [
     "topic": "परमाणु की संरचना",
     "question": "किसी उदासीन परमाणु की परमाणु संख्या 8 है। उसके नाभिक के बाहर इलेक्ट्रॉनों की संख्या कितनी होगी?",
     "options": [
+      "10",
       "8",
       "6",
-      "10",
       "16"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 20,
@@ -304,12 +305,12 @@ const QUESTIONS = [
     "topic": "परमाणु की संरचना",
     "question": "किसी उदासीन परमाणु में 17 प्रोटॉन और 18 न्यूट्रॉन हैं। यदि वह एक इलेक्ट्रॉन ग्रहण कर ऋणायन बनाता है, तो बने आयन में इलेक्ट्रॉनों की संख्या और उसकी द्रव्यमान संख्या क्रमशः क्या होंगी?",
     "options": [
-      "17 और 35",
       "18 और 34",
-      "18 और 35",
-      "17 और 18"
+      "17 और 35",
+      "17 और 18",
+      "18 और 35"
     ],
-    "correct": 2
+    "correct": 3
   },
   {
     "subject": "विज्ञान",
@@ -320,9 +321,9 @@ const QUESTIONS = [
     "question": "किसी तत्व के एक परमाणु की द्रव्यमान संख्या किससे प्राप्त होती है?",
     "options": [
       "प्रोटॉन + न्यूट्रॉन",
-      "प्रोटॉन + इलेक्ट्रॉन",
+      "केवल प्रोटॉन",
       "न्यूट्रॉन + इलेक्ट्रॉन",
-      "केवल प्रोटॉन"
+      "प्रोटॉन + इलेक्ट्रॉन"
     ],
     "correct": 0,
     "id": 21
@@ -336,11 +337,11 @@ const QUESTIONS = [
     "question": "CO₂ के एक अणु में कुल कितने परमाणु होते हैं?",
     "options": [
       "2",
-      "3",
       "4",
+      "3",
       "5"
     ],
-    "correct": 1,
+    "correct": 2,
     "id": 22
   },
   {
@@ -352,11 +353,11 @@ const QUESTIONS = [
     "question": "यदि 12 g कार्बन और 32 g ऑक्सीजन पूरी तरह अभिक्रिया करें, तो बनने वाले CO₂ का द्रव्यमान कितना होगा?",
     "options": [
       "20 g",
+      "44 g",
       "32 g",
-      "40 g",
-      "44 g"
+      "40 g"
     ],
-    "correct": 3,
+    "correct": 1,
     "id": 23
   },
   {
@@ -367,12 +368,12 @@ const QUESTIONS = [
     "difficulty": "easy",
     "question": "परमाणु के केंद्र में स्थित भाग को क्या कहते हैं?",
     "options": [
+      "संयोजकता",
       "कक्षा",
-      "नाभिक",
       "इलेक्ट्रॉन बादल",
-      "संयोजकता"
+      "नाभिक"
     ],
-    "correct": 1,
+    "correct": 3,
     "id": 24
   },
   {
@@ -383,8 +384,8 @@ const QUESTIONS = [
     "difficulty": "moderate",
     "question": "यदि किसी उदासीन परमाणु में 12 प्रोटॉन हैं, तो उसके इलेक्ट्रॉनों की संख्या कितनी होगी?",
     "options": [
-      "10",
       "11",
+      "10",
       "12",
       "24"
     ],
@@ -399,12 +400,12 @@ const QUESTIONS = [
     "difficulty": "challenging",
     "question": "किसी परमाणु में 20 प्रोटॉन और 20 न्यूट्रॉन हैं। यदि वह 2 इलेक्ट्रॉन खो देता है, तो बने आयन का आवेश और द्रव्यमान संख्या क्रमशः क्या होगी?",
     "options": [
-      "2− और 40",
-      "2+ और 20",
       "2+ और 40",
-      "2− और 20"
+      "2+ और 20",
+      "2− और 20",
+      "2− और 40"
     ],
-    "correct": 2,
+    "correct": 0,
     "id": 26
   },
   {
@@ -435,11 +436,11 @@ const QUESTIONS = [
     "question": "पाठ के विचारों के अनुसार ग्राम-गीतों का सबसे महत्वपूर्ण साहित्यिक आधार क्या है?",
     "options": [
       "कृत्रिम अलंकार",
-      "जनजीवन के सहज अनुभव और भाव",
       "केवल राजदरबार",
+      "जनजीवन के सहज अनुभव और भाव",
       "केवल धार्मिक अनुष्ठान"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 30,
@@ -452,8 +453,8 @@ const QUESTIONS = [
     "options": [
       "वह ग्राम-गीत की व्यापक जीवन-संबद्धता को दर्शाता है",
       "वह ग्राम-गीत नहीं हो सकता क्योंकि उसमें कई भाव हैं",
-      "लोकगीत में केवल मनोरंजन होना चाहिए",
-      "ऐसे गीत साहित्यिक दृष्टि से निरर्थक होते हैं"
+      "ऐसे गीत साहित्यिक दृष्टि से निरर्थक होते हैं",
+      "लोकगीत में केवल मनोरंजन होना चाहिए"
     ],
     "correct": 0
   },
@@ -466,12 +467,12 @@ const QUESTIONS = [
     "topic": "लाल पान की बेगम",
     "question": "‘लाल पान की बेगम’ कहानी के लेखक कौन हैं?",
     "options": [
-      "फणीश्वरनाथ रेणु",
       "लक्ष्मीनारायण सुधांशु",
-      "प्रेमचंद",
-      "अमृतलाल नागर"
+      "फणीश्वरनाथ रेणु",
+      "अमृतलाल नागर",
+      "प्रेमचंद"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 32,
@@ -482,12 +483,12 @@ const QUESTIONS = [
     "topic": "लाल पान की बेगम",
     "question": "कहानी में बिरजू की माँ के मन की बेचैनी का तत्काल कारण क्या था?",
     "options": [
-      "बैलगाड़ी के देर से आने की चिंता",
       "फसल खराब होना",
+      "गाँव छोड़ने की तैयारी",
       "बच्चों का विद्यालय न जाना",
-      "गाँव छोड़ने की तैयारी"
+      "बैलगाड़ी के देर से आने की चिंता"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 33,
@@ -498,12 +499,12 @@ const QUESTIONS = [
     "topic": "मंझन के पद",
     "question": "मंझन किस काव्य-परंपरा से जुड़े कवि हैं?",
     "options": [
-      "सूफी काव्य-परंपरा",
       "छायावाद",
       "रीतिकालीन दरबारी काव्य",
+      "सूफी काव्य-परंपरा",
       "प्रगतिवाद"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 34,
@@ -514,10 +515,10 @@ const QUESTIONS = [
     "topic": "मंझन के पद",
     "question": "मंझन के पदों में प्रेम की अभिव्यक्ति को सबसे उपयुक्त रूप में कैसे समझा जा सकता है?",
     "options": [
-      "केवल हास्य के रूप में",
+      "केवल प्रकृति-वर्णन के रूप में",
       "मानवीय प्रेम और आध्यात्मिक अनुभूति के मेल के रूप में",
       "केवल राजनीतिक भावना के रूप में",
-      "केवल प्रकृति-वर्णन के रूप में"
+      "केवल हास्य के रूप में"
     ],
     "correct": 1
   },
@@ -530,12 +531,12 @@ const QUESTIONS = [
     "topic": "मंझन के पद",
     "question": "मंझन की प्रेम-दृष्टि को ‘मानवीय से आध्यात्मिक’ बनाने वाला तत्व कौन-सा है?",
     "options": [
-      "प्रेम को आत्मिक मिलन और व्यापक अनुभूति से जोड़ना",
-      "प्रेम को केवल सामाजिक प्रतिष्ठा से जोड़ना",
       "प्रेम को धन प्राप्ति का साधन बनाना",
-      "प्रेम को केवल युद्ध से जोड़ना"
+      "प्रेम को केवल सामाजिक प्रतिष्ठा से जोड़ना",
+      "प्रेम को केवल युद्ध से जोड़ना",
+      "प्रेम को आत्मिक मिलन और व्यापक अनुभूति से जोड़ना"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 36,
@@ -546,12 +547,12 @@ const QUESTIONS = [
     "topic": "गुरु गोविंद सिंह के पद",
     "question": "गुरु गोविंद सिंह सिख परंपरा के कौन-से गुरु थे?",
     "options": [
-      "आठवें",
-      "नवें",
       "दसवें",
-      "ग्यारहवें"
+      "आठवें",
+      "ग्यारहवें",
+      "नवें"
     ],
-    "correct": 2
+    "correct": 0
   },
   {
     "id": 37,
@@ -562,12 +563,12 @@ const QUESTIONS = [
     "topic": "गुरु गोविंद सिंह के पद",
     "question": "इन पदों की प्रमुख भाव-धारा कौन-सी है?",
     "options": [
+      "केवल करुणा",
       "वीरता, आत्मबल और उत्साह",
       "केवल हास्य",
-      "केवल करुणा",
       "केवल प्रकृति-सौंदर्य"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 38,
@@ -578,12 +579,12 @@ const QUESTIONS = [
     "topic": "गुरु गोविंद सिंह के पद",
     "question": "किसी कविता में कठिन परिस्थितियों के सामने निर्भय रहने, संघर्ष करने और उच्च आदर्श के लिए समर्पित होने की प्रेरणा हो, तो वह पाठ के किस केंद्रीय भाव से सबसे अधिक मेल खाती है?",
     "options": [
-      "वीर और ओजपूर्ण जीवन-दृष्टि",
       "भोग-विलास",
+      "निष्क्रियता",
       "निराशा",
-      "निष्क्रियता"
+      "वीर और ओजपूर्ण जीवन-दृष्टि"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 39,
@@ -594,12 +595,12 @@ const QUESTIONS = [
     "topic": "बिहार की संगीत साधना",
     "question": "‘बिहार की संगीत साधना’ किस पुस्तक से संबंधित पाठ है?",
     "options": [
-      "गोधूली",
-      "वर्णिका",
+      "Panorama",
       "पीयूषम्",
-      "Panorama"
+      "वर्णिका",
+      "गोधूली"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 40,
@@ -611,8 +612,8 @@ const QUESTIONS = [
     "question": "समुद्रगुप्त किस वाद्य को बजाने में निपुण माने गए हैं?",
     "options": [
       "वीणा",
-      "शहनाई",
       "तबला",
+      "शहनाई",
       "बाँसुरी"
     ],
     "correct": 0
@@ -626,12 +627,12 @@ const QUESTIONS = [
     "topic": "बिहार की संगीत साधना",
     "question": "पाठ में अलग-अलग कालों के संगीत-साधकों का उल्लेख किस व्यापक तथ्य को रेखांकित करता है?",
     "options": [
-      "बिहार की संगीत परंपरा में ऐतिहासिक निरंतरता और विविधता",
       "संगीत केवल आधुनिक काल में विकसित हुआ",
+      "बिहार में वाद्य-संगीत का कोई इतिहास नहीं है",
       "संगीत का संबंध केवल राजाओं से था",
-      "बिहार में वाद्य-संगीत का कोई इतिहास नहीं है"
+      "बिहार की संगीत परंपरा में ऐतिहासिक निरंतरता और विविधता"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 42,
@@ -642,12 +643,12 @@ const QUESTIONS = [
     "topic": "अपठित गद्यांश",
     "question": "गद्यांश के अनुसार तालाब की स्थिति खराब होने का एक प्रमुख कारण क्या था?",
     "options": [
-      "किनारे कचरा डालना",
       "अधिक वर्षा होना",
+      "किनारे कचरा डालना",
       "खेतों में कम काम होना",
       "विद्यार्थियों का अभियान"
     ],
-    "correct": 0,
+    "correct": 1,
     "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
@@ -659,12 +660,12 @@ const QUESTIONS = [
     "topic": "अपठित गद्यांश",
     "question": "विद्यार्थियों ने तालाब की स्थिति सुधारने के लिए कौन-सा कदम नहीं उठाया?",
     "options": [
-      "सफाई अभियान चलाया",
-      "कचरा डालने पर रोक की अपील की",
+      "तालाब को पूरी तरह पाट दिया",
       "वर्षा जल की नालियों की सफाई की",
-      "तालाब को पूरी तरह पाट दिया"
+      "कचरा डालने पर रोक की अपील की",
+      "सफाई अभियान चलाया"
     ],
-    "correct": 3,
+    "correct": 0,
     "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
@@ -676,12 +677,12 @@ const QUESTIONS = [
     "topic": "अपठित गद्यांश",
     "question": "अगले वर्ष तालाब में अधिक पानी जमा होने से कौन-सा निष्कर्ष सबसे उचित है?",
     "options": [
-      "सामूहिक प्रयास और जल-प्रबंधन से स्थानीय जल-स्रोत सुधर सकते हैं",
-      "केवल गर्मी कम होने से तालाब सुधरा",
       "तालाब का पानी अपने-आप शुद्ध हो गया",
+      "केवल गर्मी कम होने से तालाब सुधरा",
+      "सामूहिक प्रयास और जल-प्रबंधन से स्थानीय जल-स्रोत सुधर सकते हैं",
       "कचरा डालने से जल-संग्रह बढ़ता है"
     ],
-    "correct": 0,
+    "correct": 2,
     "passage": "हमारे गाँव के पास एक छोटा-सा तालाब था। बरसात के दिनों में वह पानी से भर जाता, और आसपास के खेतों के लिए उपयोगी बन जाता। कुछ वर्षों बाद लोगों ने तालाब के किनारे कचरा डालना शुरू कर दिया। धीरे-धीरे पानी कम साफ रहने लगा और गर्मियों में तालाब जल्दी सूखने लगा। तब गाँव के विद्यार्थियों ने सफाई अभियान चलाया, कचरा डालने पर रोक लगाने की अपील की और वर्षा जल को तालाब तक पहुँचाने के लिए छोटी नालियों की सफाई की। अगले वर्ष तालाब में पहले से अधिक पानी जमा हुआ।"
   },
   {
@@ -711,12 +712,12 @@ const QUESTIONS = [
     "topic": "यक्ष-युधिष्ठिर संवाद",
     "question": "यक्ष के प्रश्नों का उत्तर कौन देता है?",
     "options": [
-      "भीम",
+      "नकुल",
       "अर्जुन",
-      "युधिष्ठिर",
-      "नकुल"
+      "भीम",
+      "युधिष्ठिर"
     ],
-    "correct": 2
+    "correct": 3
   },
   {
     "id": 48,
@@ -727,12 +728,12 @@ const QUESTIONS = [
     "topic": "यक्ष-युधिष्ठिर संवाद",
     "question": "‘यक्ष-युधिष्ठिर संवाद’ की प्रश्नोत्तर शैली का मुख्य उद्देश्य किसे परखना है?",
     "options": [
-      "युधिष्ठिर की नीति-बुद्धि और जीवन-दृष्टि",
-      "युधिष्ठिर की धन-संपत्ति",
       "उनकी युद्ध-कौशल",
+      "युधिष्ठिर की धन-संपत्ति",
+      "युधिष्ठिर की नीति-बुद्धि और जीवन-दृष्टि",
       "उनकी संगीत-प्रतिभा"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 49,
@@ -745,8 +746,8 @@ const QUESTIONS = [
     "options": [
       "नीतिपरक विवेक",
       "अहंकार",
-      "आलस्य",
-      "उतावली"
+      "उतावली",
+      "आलस्य"
     ],
     "correct": 0
   },
@@ -759,12 +760,12 @@ const QUESTIONS = [
     "topic": "चत्वारो वेदाः",
     "question": "‘चत्वारो वेदाः’ का शाब्दिक आशय क्या है?",
     "options": [
+      "पाँच वेद",
       "दो वेद",
       "तीन वेद",
-      "चार वेद",
-      "पाँच वेद"
+      "चार वेद"
     ],
-    "correct": 2
+    "correct": 3
   },
   {
     "id": 51,
@@ -775,12 +776,12 @@ const QUESTIONS = [
     "topic": "चत्वारो वेदाः",
     "question": "निम्न में से कौन-सा चार वेदों में सम्मिलित है?",
     "options": [
+      "इतिहासवेद",
       "ऋग्वेद",
       "पुराणवेद",
-      "इतिहासवेद",
       "नाट्यवेद"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 52,
@@ -791,12 +792,12 @@ const QUESTIONS = [
     "topic": "चत्वारो वेदाः",
     "question": "निम्न में से कौन-सा विकल्प चार वेदों के नामों का सही समूह देता है?",
     "options": [
-      "ऋग्वेद, यजुर्वेद, सामवेद, अथर्ववेद",
+      "अथर्ववेद, नाट्यवेद, ऋग्वेद, इतिहासवेद",
       "ऋग्वेद, पुराणवेद, सामवेद, नाट्यवेद",
-      "यजुर्वेद, इतिहासवेद, सामवेद, पुराणवेद",
-      "अथर्ववेद, नाट्यवेद, ऋग्वेद, इतिहासवेद"
+      "ऋग्वेद, यजुर्वेद, सामवेद, अथर्ववेद",
+      "यजुर्वेद, इतिहासवेद, सामवेद, पुराणवेद"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 53,
@@ -826,11 +827,11 @@ const QUESTIONS = [
     "question": "फ्रांस की क्रांति का आरंभ किस वर्ष हुआ?",
     "options": [
       "1776",
-      "1789",
       "1815",
+      "1789",
       "1848"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 56,
@@ -843,8 +844,8 @@ const QUESTIONS = [
     "options": [
       "निरंकुश राजसत्ता के विरुद्ध जनविद्रोह का प्रतीक बनना",
       "फ्रांस के औद्योगीकरण का आरंभ",
-      "नेपोलियन का राज्याभिषेक",
-      "प्रथम विश्व युद्ध का आरंभ"
+      "प्रथम विश्व युद्ध का आरंभ",
+      "नेपोलियन का राज्याभिषेक"
     ],
     "correct": 0
   },
@@ -857,12 +858,12 @@ const QUESTIONS = [
     "topic": "इतिहास — फ्रांस की क्रांति",
     "question": "यदि किसी समाज में एक वर्ग करों का अधिकांश भार उठाए, जबकि विशेषाधिकार प्राप्त वर्ग करों से अपेक्षाकृत मुक्त रहे, तो फ्रांस की क्रांति के संदर्भ में यह स्थिति किस समस्या को दर्शाती है?",
     "options": [
+      "औद्योगिक शांति",
       "सामाजिक और आर्थिक असमानता",
-      "धार्मिक एकता",
       "वैज्ञानिक प्रगति",
-      "औद्योगिक शांति"
+      "धार्मिक एकता"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 58,
@@ -873,12 +874,12 @@ const QUESTIONS = [
     "topic": "इतिहास — विश्व युद्धों का इतिहास",
     "question": "प्रथम विश्व युद्ध किस वर्ष शुरू हुआ?",
     "options": [
-      "1914",
-      "1918",
       "1939",
-      "1945"
+      "1918",
+      "1945",
+      "1914"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 59,
@@ -889,12 +890,12 @@ const QUESTIONS = [
     "topic": "इतिहास — विश्व युद्धों का इतिहास",
     "question": "द्वितीय विश्व युद्ध के यूरोपीय मोर्चे पर आरंभ से कौन-सी घटना जुड़ी है?",
     "options": [
-      "जर्मनी का पोलैंड पर आक्रमण",
       "भारत का गणतंत्र बनना",
-      "फ्रांस की क्रांति",
-      "औद्योगिक क्रांति"
+      "औद्योगिक क्रांति",
+      "जर्मनी का पोलैंड पर आक्रमण",
+      "फ्रांस की क्रांति"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 60,
@@ -905,12 +906,12 @@ const QUESTIONS = [
     "topic": "इतिहास — विश्व युद्धों का इतिहास",
     "question": "दोनों विश्व युद्धों के अनुभव से अंतरराष्ट्रीय सहयोग की आवश्यकता क्यों अधिक स्पष्ट हुई?",
     "options": [
-      "विनाश, मानवीय क्षति और आर्थिक संकट ने सामूहिक शांति-व्यवस्था की आवश्यकता बढ़ाई",
       "युद्धों ने सभी देशों को आर्थिक रूप से समृद्ध कर दिया",
-      "युद्धों से सीमाओं पर कोई प्रभाव नहीं पड़ा",
-      "युद्धों ने राष्ट्रों के बीच सभी विवाद समाप्त कर दिए"
+      "विनाश, मानवीय क्षति और आर्थिक संकट ने सामूहिक शांति-व्यवस्था की आवश्यकता बढ़ाई",
+      "युद्धों ने राष्ट्रों के बीच सभी विवाद समाप्त कर दिए",
+      "युद्धों से सीमाओं पर कोई प्रभाव नहीं पड़ा"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 61,
@@ -921,12 +922,12 @@ const QUESTIONS = [
     "topic": "भूगोल — भौतिक स्वरूप : संरचना एवं उच्चावच",
     "question": "भारत के उत्तरी सीमा क्षेत्र में कौन-सी प्रमुख पर्वत प्रणाली है?",
     "options": [
-      "अरावली",
-      "हिमालय",
       "सतपुड़ा",
-      "नीलगिरि"
+      "नीलगिरि",
+      "अरावली",
+      "हिमालय"
     ],
-    "correct": 1
+    "correct": 3
   },
   {
     "id": 62,
@@ -938,8 +939,8 @@ const QUESTIONS = [
     "question": "उत्तरी मैदान मुख्यतः किस प्रकार के निक्षेपों से निर्मित हैं?",
     "options": [
       "जलोढ़",
-      "लावा",
       "ग्रेनाइट",
+      "लावा",
       "बलुआ पत्थर"
     ],
     "correct": 0
@@ -953,12 +954,12 @@ const QUESTIONS = [
     "topic": "भूगोल — भौतिक स्वरूप : संरचना एवं उच्चावच",
     "question": "किस संयोजन में भारत की तीन प्रमुख भौतिक इकाइयों का सही संबंध दिया गया है?",
     "options": [
-      "हिमालय—नवीन वलित पर्वत; उत्तरी मैदान—जलोढ़ निक्षेप; प्रायद्वीपीय पठार—प्राचीन कठोर चट्टानें",
       "हिमालय—जलोढ़ मैदान; उत्तरी मैदान—प्राचीन पठार; प्रायद्वीपीय पठार—नवीन वलित पर्वत",
+      "हिमालय—नवीन वलित पर्वत; उत्तरी मैदान—जलोढ़ निक्षेप; प्रायद्वीपीय पठार—प्राचीन कठोर चट्टानें",
       "हिमालय—रेगिस्तान; उत्तरी मैदान—लावा; पठार—समुद्री द्वीप",
       "तीनों इकाइयाँ समान प्रकार की चट्टानों से बनी हैं"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 64,
@@ -969,12 +970,12 @@ const QUESTIONS = [
     "topic": "भूगोल — अपवाह स्वरूप",
     "question": "‘अपवाह तंत्र’ से क्या तात्पर्य है?",
     "options": [
-      "नदियों और उनकी सहायक नदियों के जाल से",
-      "सड़कों के जाल से",
       "नहरों के समूह से",
-      "केवल वर्षा की मात्रा से"
+      "सड़कों के जाल से",
+      "केवल वर्षा की मात्रा से",
+      "नदियों और उनकी सहायक नदियों के जाल से"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 65,
@@ -986,9 +987,9 @@ const QUESTIONS = [
     "question": "हिमालयी नदियाँ सामान्यतः बारहमासी क्यों होती हैं?",
     "options": [
       "उन्हें वर्षा के साथ हिमनदों और बर्फ पिघलने से भी जल मिलता है",
-      "वे केवल भूमिगत जल पर निर्भर हैं",
       "उनमें वर्षा कभी नहीं होती",
-      "वे केवल समुद्री जल से बनती हैं"
+      "वे केवल समुद्री जल से बनती हैं",
+      "वे केवल भूमिगत जल पर निर्भर हैं"
     ],
     "correct": 0
   },
@@ -1001,12 +1002,12 @@ const QUESTIONS = [
     "topic": "भूगोल — अपवाह स्वरूप",
     "question": "यदि कोई नदी वर्ष भर बहती रहे और उसके प्रवाह को मानसूनी वर्षा के साथ हिम-पिघलाव से भी जल मिलता रहे, तो वह किस प्रकार की नदी के अधिक निकट होगी?",
     "options": [
-      "हिमालयी नदी",
       "केवल मौसमी नदी",
       "केवल मरुस्थलीय नदी",
+      "हिमालयी नदी",
       "केवल तटीय धारा"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 67,
@@ -1035,12 +1036,12 @@ const QUESTIONS = [
     "topic": "Reader — Saint Kabir",
     "question": "Kabir’s criticism of ritualism suggests that he valued—",
     "options": [
+      "material success",
       "mechanical custom over understanding",
-      "sincere inner realisation",
       "social status",
-      "material success"
+      "sincere inner realisation"
     ],
-    "correct": 1
+    "correct": 3
   },
   {
     "id": 70,
@@ -1051,12 +1052,12 @@ const QUESTIONS = [
     "topic": "Reader — The eyes are not here",
     "question": "Where does the young traveller sit at the beginning of the passage?",
     "options": [
+      "In the dining car",
       "Near the window",
       "Near the door",
-      "In the dining car",
       "On the platform"
     ],
-    "correct": 0,
+    "correct": 1,
     "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
@@ -1068,12 +1069,12 @@ const QUESTIONS = [
     "topic": "Reader — The eyes are not here",
     "question": "Why do the two passengers form mistaken impressions of each other?",
     "options": [
-      "They have never spoken to each other",
-      "They depend on limited clues instead of directly asking everything",
       "The train stops unexpectedly",
-      "They are reading different books"
+      "They are reading different books",
+      "They depend on limited clues instead of directly asking everything",
+      "They have never spoken to each other"
     ],
-    "correct": 1,
+    "correct": 2,
     "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
@@ -1085,12 +1086,12 @@ const QUESTIONS = [
     "topic": "Reader — The eyes are not here",
     "question": "What makes the ending effective according to the passage?",
     "options": [
-      "A timetable changes suddenly",
       "The final discovery exposes how unreliable their earlier assumptions were",
-      "The passengers leave before speaking",
-      "The conversation becomes an argument"
+      "A timetable changes suddenly",
+      "The conversation becomes an argument",
+      "The passengers leave before speaking"
     ],
-    "correct": 1,
+    "correct": 0,
     "passage": "The young traveller entered the train compartment and found a quiet seat near the window. He began a conversation with another passenger and relied on small clues rather than asking direct questions. Each person formed a picture of the other from voice, movement and carefully chosen words. Because neither wanted to reveal too much, several ordinary details were misunderstood. The conversation remained polite, but the final discovery made the earlier assumptions seem amusing and unexpected."
   },
   {
@@ -1102,12 +1103,12 @@ const QUESTIONS = [
     "topic": "Panorama — Prose — Yayati",
     "question": "Who is Yayati in the lesson?",
     "options": [
-      "A king",
-      "A merchant",
       "A farmer",
-      "A soldier"
+      "A king",
+      "A soldier",
+      "A merchant"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 74,
@@ -1118,12 +1119,12 @@ const QUESTIONS = [
     "topic": "Panorama — Prose — Yayati",
     "question": "Why does Yayati seek another person’s youth?",
     "options": [
-      "He wants to escape old age and continue satisfying his desires",
-      "He wants to become a soldier",
       "He wants to leave his kingdom immediately",
+      "He wants to become a soldier",
+      "He wants to escape old age and continue satisfying his desires",
       "He wants to become a scholar"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 75,
@@ -1134,12 +1135,12 @@ const QUESTIONS = [
     "topic": "Panorama — Prose — Yayati",
     "question": "Yayati’s later realisation that desire cannot be satisfied simply by feeding it supports which interpretation?",
     "options": [
-      "More possessions necessarily remove desire",
       "Uncontrolled desire can keep generating further desire",
-      "Old age is only a physical problem",
-      "Duty has no value"
+      "Duty has no value",
+      "More possessions necessarily remove desire",
+      "Old age is only a physical problem"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 76,
@@ -1150,12 +1151,12 @@ const QUESTIONS = [
     "topic": "Panorama — Poetry — On His Blindness",
     "question": "Who wrote ‘On His Blindness’?",
     "options": [
-      "John Milton",
-      "John Keats",
       "William Wordsworth",
-      "Robert Frost"
+      "John Keats",
+      "Robert Frost",
+      "John Milton"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 77,
@@ -1166,12 +1167,12 @@ const QUESTIONS = [
     "topic": "Panorama — Poetry — On His Blindness",
     "question": "What does Milton’s loss of eyesight make him question?",
     "options": [
-      "Whether he can still serve God through his abilities",
       "Whether he should become a king",
-      "Whether poetry is enjoyable",
-      "Whether travel is possible"
+      "Whether he can still serve God through his abilities",
+      "Whether travel is possible",
+      "Whether poetry is enjoyable"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 78,
@@ -1183,11 +1184,11 @@ const QUESTIONS = [
     "question": "The poem moves from anxiety about usefulness toward acceptance. What idea best explains this change?",
     "options": [
       "Worth is measured only by physical ability",
+      "Only public recognition matters",
       "Patient service and faith can have value even without visible activity",
-      "A person must avoid all work",
-      "Only public recognition matters"
+      "A person must avoid all work"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 79,
@@ -1198,12 +1199,12 @@ const QUESTIONS = [
     "topic": "Language & Skills — Tenses",
     "question": "Choose the correct form: Riya ___ her homework every evening.",
     "options": [
-      "do",
       "does",
+      "doing",
       "did",
-      "doing"
+      "do"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 80,
@@ -1214,12 +1215,12 @@ const QUESTIONS = [
     "topic": "Language & Skills — Tenses",
     "question": "Choose the correct form: By the time we reached the cinema, the film ___.",
     "options": [
-      "starts",
-      "has started",
+      "will start",
       "had started",
-      "will start"
+      "has started",
+      "starts"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 81,
@@ -1230,12 +1231,12 @@ const QUESTIONS = [
     "topic": "Language & Skills — Tenses",
     "question": "Choose the sentence that correctly shows an action continuing from the past up to the present.",
     "options": [
-      "I live here since 2020.",
+      "I lived here since 2020.",
       "I am living here since 2020.",
-      "I have been living here since 2020.",
-      "I lived here since 2020."
+      "I live here since 2020.",
+      "I have been living here since 2020."
     ],
-    "correct": 2
+    "correct": 3
   },
   {
     "id": 82,
@@ -1262,12 +1263,12 @@ const QUESTIONS = [
     "topic": "Language & Skills — Modals",
     "question": "___ I use your dictionary for a few minutes?",
     "options": [
+      "Need",
       "Must",
       "May",
-      "Need",
       "Ought"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 84,
@@ -1278,12 +1279,12 @@ const QUESTIONS = [
     "topic": "Language & Skills — Modals",
     "question": "The sentence ‘You ___ have informed me earlier’ expresses—",
     "options": [
-      "past obligation or criticism",
-      "future possibility only",
       "present ability",
-      "permission"
+      "permission",
+      "future possibility only",
+      "past obligation or criticism"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 85,
@@ -1313,11 +1314,11 @@ const QUESTIONS = [
     "question": "Complete the series: B, D, F, H, __",
     "options": [
       "I",
+      "L",
       "J",
-      "K",
-      "L"
+      "K"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 88,
@@ -1328,12 +1329,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Complete the series: Z, W, T, Q, __",
     "options": [
-      "O",
-      "N",
       "P",
-      "M"
+      "O",
+      "M",
+      "N"
     ],
-    "correct": 1
+    "correct": 3
   },
   {
     "id": 89,
@@ -1344,12 +1345,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "If A=1, B=2, …, what is the value of G − C?",
     "options": [
-      "2",
       "3",
       "4",
-      "5"
+      "5",
+      "2"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 90,
@@ -1360,12 +1361,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Which letter is 6 places after F?",
     "options": [
-      "K",
-      "L",
       "M",
-      "N"
+      "N",
+      "L",
+      "K"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 91,
@@ -1376,12 +1377,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Which letter is 5 places before R?",
     "options": [
-      "L",
-      "M",
       "N",
-      "O"
+      "L",
+      "O",
+      "M"
     ],
-    "correct": 2
+    "correct": 0
   },
   {
     "id": 92,
@@ -1392,12 +1393,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Complete the series: C, G, K, O, __",
     "options": [
-      "R",
+      "U",
       "S",
-      "T",
-      "U"
+      "R",
+      "T"
     ],
-    "correct": 2
+    "correct": 3
   },
   {
     "id": 93,
@@ -1408,9 +1409,9 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Complete the series: B, E, I, N, __",
     "options": [
-      "S",
-      "T",
       "U",
+      "T",
+      "S",
       "V"
     ],
     "correct": 1
@@ -1424,12 +1425,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "If the first letter moves 2 places forward, the next 3 places, the next 4 places and so on, then A, C, F, J, __ gives—",
     "options": [
-      "M",
-      "N",
       "O",
-      "P"
+      "M",
+      "P",
+      "N"
     ],
-    "correct": 2
+    "correct": 0
   },
   {
     "id": 95,
@@ -1440,12 +1441,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Complete the series: Y, V, R, M, __",
     "options": [
-      "H",
-      "I",
       "J",
-      "K"
+      "I",
+      "K",
+      "H"
     ],
-    "correct": 0
+    "correct": 3
   },
   {
     "id": 96,
@@ -1456,12 +1457,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Complete the series: B, G, M, T, __ (continue cyclically after Z)",
     "options": [
-      "A",
-      "B",
+      "D",
       "C",
-      "D"
+      "A",
+      "B"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 97,
@@ -1472,12 +1473,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "Find the missing pair: AB, DE, HI, MN, __",
     "options": [
-      "RS",
-      "ST",
       "TU",
-      "UV"
+      "UV",
+      "ST",
+      "RS"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 98,
@@ -1488,12 +1489,12 @@ const QUESTIONS = [
     "topic": "Alphabet Series",
     "question": "In the series C, F, J, O, __, each step increases by one letter more than the previous step. What is the next letter?",
     "options": [
-      "T",
       "U",
+      "T",
       "V",
       "W"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 99,
