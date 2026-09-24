@@ -20,7 +20,9 @@
    `const EMAIL_ENDPOINT = "YOUR_WEB_APP_EXEC_URL";`
 7. Upload the project to your hosting service.
 
-Important: the ZIP intentionally leaves `EMAIL_ENDPOINT` blank until you deploy the backend. Do not claim email delivery is active until the URL is configured.
+Current repository status: `EMAIL_ENDPOINT` is already configured in `app.js`. The endpoint is therefore configured for this test. The browser can confirm only that the submission request was handed off; cross-origin `no-cors` prevents the frontend from verifying the final email delivery response.
+
+After changing `google-apps-script.gs`, redeploy the Google Apps Script Web App before the exam. The repository file change alone does not update an already deployed `/exec` version.
 
 
 ## Important after backend changes
