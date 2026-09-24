@@ -508,3 +508,13 @@ function openTest03Preview() {
       </p>
     </div>`;
 }
+
+
+window.addEventListener("load", () => {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("preview") === "test03") openTest03Preview();
+  } catch (error) {
+    console.warn("Could not open requested preview:", error);
+  }
+});
