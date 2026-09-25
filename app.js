@@ -229,6 +229,13 @@ function handleRegistration(e) {
 }
 
 function startTest() {
+  const integrity = window.TEST_PAPER_INTEGRITY?.validateBank(ACTIVE_TEST_ID);
+  if (integrity && !integrity.valid) {
+    console.error("Test start blocked by paper integrity guard:", integrity.errors);
+    alert("यह परीक्षा-पेपर release lock से match नहीं करता। परीक्षा शुरू नहीं की जा सकती।");
+    return;
+  }
+
   if (recoveryRestored && examStarted) {
     resumeTest();
     return;
