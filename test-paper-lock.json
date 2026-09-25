@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "papers": {
+    "test02": {
+      "id": "test02",
+      "count": 100,
+      "mcq": 86,
+      "subjective": 14,
+      "hash": "7c36b2ac",
+      "recoveryKey": "class9_cbt_active_exam_v2",
+      "subjects": {
+        "गणित": 14,
+        "विज्ञान": 14,
+        "हिन्दी": 18,
+        "संस्कृत": 8,
+        "सामाजिक विज्ञान": 14,
+        "English": 18,
+        "तर्कशक्ति": 14
+      }
+    },
+    "test03": {
+      "id": "test03",
+      "count": 100,
+      "mcq": 86,
+      "subjective": 14,
+      "hash": "17b9a0b6",
+      "recoveryKey": "class9_cbt_test03_active_exam_v2",
+      "subjects": {
+        "गणित": 14,
+        "विज्ञान": 14,
+        "English": 18,
+        "हिन्दी": 18,
+        "सामाजिक विज्ञान": 14,
+        "संस्कृत": 8,
+        "तर्कशक्ति": 14
+      }
+    }
+  },
+  "test03SourceFiles": [
+    "test03-questions-maths.js",
+    "test03-questions-science.js",
+    "test03-questions-hindi.js",
+    "test03-questions-sanskrit.js",
+    "test03-questions-social.js",
+    "test03-questions-english.js",
+    "test03-questions-reasoning.js"
+  ],
+  "expectedCrossPaperDuplicates": 0
+}
