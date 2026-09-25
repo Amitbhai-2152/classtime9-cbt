@@ -20,9 +20,10 @@ function doPost(e) {
     const c = data.candidate || {};
     const o = data.objective || {};
     const answers = o.answers || [];
+    const testName = data.testName || "ClassTime 9 — BSEB Class 9 Practice CBT";
 
     let body = "";
-    body += "CLASSTIME 9 — TEST 02 — BSEB CLASS 9 PRACTICE CBT\n\n";
+    body += testName + "\n\n";
     body += "Candidate: " + (c.name || "") + "\n";
     body += "Parent: " + (c.parent || "") + "\n";
     body += "Location: " + (c.location || "") + "\n";
