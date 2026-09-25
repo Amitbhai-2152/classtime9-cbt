@@ -1,5 +1,5 @@
 /**
- * ClassTime 9 — TEST 02 — BSEB Class 9 Practice CBT — Google Apps Script email receiver
+ * ClassTime 9 — BSEB Class 9 Practice CBT — Google Apps Script email receiver
  *
  * 1. Create a new Google Apps Script project.
  * 2. Paste this file.
@@ -9,7 +9,7 @@
  *    Who has access: Anyone
  * 5. Copy the /exec URL into EMAIL_ENDPOINT in app.js.
  *
- * The browser sends candidate details, objective answers, and subjective written-copy status to this endpoint.
+ * The browser sends candidate details, test name, objective answers, and subjective written-copy status to this endpoint.
  */
 
 const OWNER_EMAIL = "navodaya2152@gmail.com";
@@ -50,7 +50,7 @@ function doPost(e) {
 
     MailApp.sendEmail({
       to: OWNER_EMAIL,
-      subject: "Class 9 Test — " + (c.name || "Candidate") + " — Roll " + (c.roll || ""),
+      subject: (testName || "Class 9 Test") + " — " + (c.name || "Candidate") + " — Roll " + (c.roll || ""),
       body: body
     });
 
