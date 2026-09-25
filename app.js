@@ -4,14 +4,14 @@ const TEST_CONFIGS = {
     name: "ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा",
     recoveryKey: "class9_cbt_active_exam_v2",
     bank: () => Array.isArray(window.TEST02_QUESTIONS) ? window.TEST02_QUESTIONS : [],
-    paperHash: "7c36b2ac"
+    paperHash: "4a67342c"
   },
   test03: {
     id: "test03",
     name: "ClassTime 9 — TEST 03 — BSEB कक्षा 9 अभ्यास परीक्षा",
     recoveryKey: "class9_cbt_test03_active_exam_v2",
     bank: () => Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS : [],
-    paperHash: "17b9a0b6"
+    paperHash: "c8dd56b6"
   }
 };
 let ACTIVE_TEST_ID = "test02";
