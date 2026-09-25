@@ -2,14 +2,16 @@ const TEST_CONFIGS = {
   test02: {
     id: "test02",
     name: "ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा",
-    recoveryKey: "class9_cbt_active_exam_v1",
-    bank: () => QUESTIONS
+    recoveryKey: "class9_cbt_active_exam_v2",
+    bank: () => Array.isArray(window.TEST02_QUESTIONS) ? window.TEST02_QUESTIONS : [],
+    paperHash: "7c36b2ac"
   },
   test03: {
     id: "test03",
     name: "ClassTime 9 — TEST 03 — BSEB कक्षा 9 अभ्यास परीक्षा",
-    recoveryKey: "class9_cbt_test03_active_exam_v1",
-    bank: () => Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS : []
+    recoveryKey: "class9_cbt_test03_active_exam_v2",
+    bank: () => Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS : [],
+    paperHash: "17b9a0b6"
   }
 };
 let ACTIVE_TEST_ID = "test02";
@@ -48,12 +50,22 @@ function updateActiveTestUI() {
 
 function configureActiveTest(testId) {
   const config = TEST_CONFIGS[testId] || TEST_CONFIGS.test02;
+  if (examStarted && ACTIVE_TEST_ID !== config.id) {
+    console.warn("Test switch blocked while an exam is active.");
+    return false;
+  }
+  if (window.TEST_PAPER_INTEGRITY && !window.TEST_PAPER_INTEGRITY.validateBank(config.id).valid) {
+    console.error("Blocked test start because the locked paper integrity check failed:", config.id);
+    alert("यह परीक्षा-पेपर release lock से match नहीं करता। परीक्षा शुरू नहीं की जा सकती।");
+    return false;
+  }
   ACTIVE_TEST_ID = config.id;
   ACTIVE_QUESTIONS = config.bank();
   ACTIVE_TEST_NAME = config.name;
   ACTIVE_RECOVERY_KEY = config.recoveryKey;
   selectedSubjectFilter = "All";
   updateActiveTestUI();
+  return true;
 }
 
 // Google Apps Script Web App endpoint.
@@ -67,7 +79,7 @@ let currentIndex = 0;
 let studentResponses = [];
 
 // Phase 1: local auto-recovery. This keeps an unfinished exam on the same device.
-const RECOVERY_VERSION = 1;
+const RECOVERY_VERSION = 2;
 let selectedSubjectFilter = "All";
 let examStarted = false;
 let examDeadlineMs = null;
@@ -79,6 +91,8 @@ function saveExamRecovery() {
   try {
     const state = {
       version: RECOVERY_VERSION,
+      testId: ACTIVE_TEST_ID,
+      paperHash: TEST_CONFIGS[ACTIVE_TEST_ID]?.paperHash || "",
       savedAt: Date.now(),
       userProfile: { ...userProfile },
       currentIndex,
@@ -122,7 +136,8 @@ function scheduleRecoverySave() {
 }
 
 function restoreExamState(state) {
-  if (!state || !Array.isArray(state.studentResponses) || state.studentResponses.length !== getActiveQuestions().length) return false;
+  if (!state || state.version !== RECOVERY_VERSION || state.testId !== ACTIVE_TEST_ID || state.paperHash !== TEST_CONFIGS[ACTIVE_TEST_ID]?.paperHash) return false;
+  if (!Array.isArray(state.studentResponses) || state.studentResponses.length !== getActiveQuestions().length) return false;
 
   Object.assign(userProfile, state.userProfile || {});
   studentResponses = state.studentResponses.map((resp, idx) => ({
@@ -456,7 +471,9 @@ function buildSubmissionPayload() {
   const score = answers.reduce((sum, a) => sum + (a.isCorrect ? a.marks : 0), 0);
 
   return {
+    testId: ACTIVE_TEST_ID,
     testName: getActiveTestName(),
+    paperHash: TEST_CONFIGS[ACTIVE_TEST_ID]?.paperHash || "",
     submittedAt: new Date().toISOString(),
     candidate: {
       name: userProfile.name,
