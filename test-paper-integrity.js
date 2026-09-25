@@ -1,7 +1,7 @@
 (function () {
   const lock = {
-    test02: { id: "test02", count: 100, mcq: 86, subjective: 14, hash: "7c36b2ac" },
-    test03: { id: "test03", count: 100, mcq: 86, subjective: 14, hash: "17b9a0b6" }
+    test02: { id: "test02", count: 100, mcq: 86, subjective: 14, hash: "4a67342c" },
+    test03: { id: "test03", count: 100, mcq: 86, subjective: 14, hash: "c8dd56b6" }
   };
 
   const normalize = value => String(value ?? "")
