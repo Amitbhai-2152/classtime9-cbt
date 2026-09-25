@@ -509,3 +509,16 @@ input { min-height: 44px; }
     max-height: 300px;
   }
 }
+
+.test03-release-card {
+  background: linear-gradient(180deg, #f0fdfa 0%, #eff6ff 100%);
+  border-color: #5eead4;
+}
+.test03-release-card .btn-primary {
+  background: #0f766e;
+}
+@media (max-width: 600px) {
+  .test03-release-card .btn-row {
+    flex-direction: column;
+  }
+}
