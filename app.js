@@ -5,7 +5,8 @@ const TEST_CONFIGS = {
     recoveryKey: "class9_cbt_active_exam_v2",
     bank: () => Array.isArray(window.TEST02_QUESTIONS) ? window.TEST02_QUESTIONS : [],
     paperHash: "4a67342c",
-    durationSeconds: 150 * 60
+    durationSeconds: 150 * 60,
+    studentReleased: false
   },
   test03: {
     id: "test03",
@@ -50,6 +51,8 @@ function updateActiveTestUI() {
   const summaryExamName = document.getElementById("summaryExamName");
   const summaryExamNameEl = document.getElementById("summaryExamName");
   const examTestName = document.getElementById("examTestName");
+  const test2InstructionsBtn = document.getElementById("test2InstructionsBtn");
+  const test2LockNotice = document.getElementById("test2LockNotice");
   const test03Card = document.getElementById("test03ReleaseCard");
   const practiceCard = document.getElementById("practice50LaunchCard");
   const activeQuestions = getActiveQuestions();
@@ -105,6 +108,20 @@ function updateActiveTestUI() {
   if (statSubjectiveMarked) statSubjectiveMarked.innerText = `0 / ${subjectiveCount}`;
   if (statMaxMarks) statMaxMarks.innerText = `${totalMarks} / ${totalMarks}`;
   document.title = config.name;
+
+  const canEnterTest02 = config.id !== "test02" && TEST_CONFIGS.test02.studentReleased;
+  if (test2InstructionsBtn) {
+    test2InstructionsBtn.disabled = !canEnterTest02;
+    test2InstructionsBtn.setAttribute("aria-disabled", String(!canEnterTest02));
+    test2InstructionsBtn.innerText = canEnterTest02 ? "निर्देश पढ़ें →" : "🔒 TEST 02 लॉक है";
+  }
+  if (test2LockNotice) {
+    test2LockNotice.style.display = canEnterTest02 ? "none" : "block";
+    test2LockNotice.innerHTML = canEnterTest02
+      ? ""
+      : "🔐 <strong>TEST 02 अभी लॉक है</strong> — छात्र इस परीक्षा में प्रवेश नहीं कर सकते।";
+  }
+
   if (test03Card) test03Card.style.display = config.id === "test03" ? "none" : "";
   if (practiceCard) practiceCard.style.display = config.id === "practice50" ? "none" : "";
 }
@@ -222,8 +239,10 @@ function restoreExamState(state) {
 try {
   const initialTest = new URLSearchParams(window.location.search).get("test");
   if (initialTest && TEST_CONFIGS[initialTest]) {
-    if (initialTest === "test03" && !TEST_CONFIGS.test03.studentReleased) {
-      console.info("TEST 03 is currently locked; keeping TEST 02 as the default student test.");
+    if (initialTest === "test02" && !TEST_CONFIGS.test02.studentReleased) {
+      console.info("TEST 02 is currently locked; keeping the locked TEST 02 landing state.");
+    } else if (initialTest === "test03" && !TEST_CONFIGS.test03.studentReleased) {
+      console.info("TEST 03 is currently locked; keeping the locked TEST 02 landing state.");
     } else {
       configureActiveTest(initialTest);
     }
@@ -277,6 +296,16 @@ function goToScreen(screenId) {
 
 function handleRegistration(e) {
   e.preventDefault();
+
+  if (ACTIVE_TEST_ID === "test02" && !TEST_CONFIGS.test02.studentReleased) {
+    const notice = document.getElementById("test2LockNotice");
+    if (notice) {
+      notice.style.display = "block";
+      notice.innerHTML = "🔐 <strong>TEST 02 अभी लॉक है</strong> — छात्र इस परीक्षा में प्रवेश नहीं कर सकते।";
+    }
+    return false;
+  }
+
   userProfile.name = document.getElementById('candidateName').value;
   userProfile.parent = document.getElementById('parentName').value;
   userProfile.location = document.getElementById('liveLocation').value;
@@ -296,6 +325,11 @@ function handleRegistration(e) {
 }
 
 function startTest() {
+  if (ACTIVE_TEST_ID === "test02" && !TEST_CONFIGS.test02.studentReleased) {
+    alert("TEST 02 अभी लॉक है।");
+    return;
+  }
+
   const integrity = window.TEST_PAPER_INTEGRITY?.validateBank(ACTIVE_TEST_ID);
   if (integrity && !integrity.valid) {
     console.error("Test start blocked by paper integrity guard:", integrity.errors);
@@ -837,7 +871,14 @@ window.addEventListener("load", () => {
   try {
     const params = new URLSearchParams(window.location.search);
     const requestedTest = params.get("test");
-    if (requestedTest === "test03") {
+    if (requestedTest === "test02" && !TEST_CONFIGS.test02.studentReleased) {
+      params.delete("test");
+      const cleanQuery = params.toString();
+      window.history.replaceState({}, "", window.location.pathname + (cleanQuery ? "?" + cleanQuery : "") + window.location.hash);
+      configureActiveTest("test02");
+      updateActiveTestUI();
+      goToScreen("screen-registration");
+    } else if (requestedTest === "test03") {
       // TEST 03 stays locked for students until explicitly released.
       if (!TEST_CONFIGS.test03.studentReleased) {
         params.delete("test");
