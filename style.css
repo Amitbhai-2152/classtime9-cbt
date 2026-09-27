@@ -510,6 +510,21 @@ input { min-height: 44px; }
   }
 }
 
+.test2-lock-notice {
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  padding: 9px 11px;
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+#test2InstructionsBtn:disabled {
+  opacity: 0.68;
+  cursor: not-allowed;
+  background: #64748b;
+}
 .practice50-launch-card {
   margin-top: 14px;
   padding: 14px;
