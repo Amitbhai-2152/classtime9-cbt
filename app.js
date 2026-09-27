@@ -52,7 +52,6 @@ function updateActiveTestUI() {
   const summaryExamNameEl = document.getElementById("summaryExamName");
   const examTestName = document.getElementById("examTestName");
   const test2InstructionsBtn = document.getElementById("test2InstructionsBtn");
-  const test2LockNotice = document.getElementById("test2LockNotice");
   const test03Card = document.getElementById("test03ReleaseCard");
   const practiceCard = document.getElementById("practice50LaunchCard");
   const activeQuestions = getActiveQuestions();
@@ -109,22 +108,10 @@ function updateActiveTestUI() {
   if (statMaxMarks) statMaxMarks.innerText = `${totalMarks} / ${totalMarks}`;
   document.title = config.name;
 
-  const canProceedFromRegistration =
-    config.id === "practice50" ||
-    (config.id === "test02" && TEST_CONFIGS.test02.studentReleased);
-  const showTest02Lock =
-    config.id === "test02" && !TEST_CONFIGS.test02.studentReleased;
-
   if (test2InstructionsBtn) {
-    test2InstructionsBtn.disabled = !canProceedFromRegistration;
-    test2InstructionsBtn.setAttribute("aria-disabled", String(!canProceedFromRegistration));
-    test2InstructionsBtn.innerText = canProceedFromRegistration ? "निर्देश पढ़ें →" : "🔒 TEST 02 लॉक है";
-  }
-  if (test2LockNotice) {
-    test2LockNotice.style.display = showTest02Lock ? "block" : "none";
-    test2LockNotice.innerHTML = showTest02Lock
-      ? "🔐 <strong>TEST 02 अभी लॉक है</strong> — छात्र इस परीक्षा में प्रवेश नहीं कर सकते।"
-      : "";
+    test2InstructionsBtn.disabled = false;
+    test2InstructionsBtn.removeAttribute("aria-disabled");
+    test2InstructionsBtn.innerText = "निर्देश पढ़ें →";
   }
 
   if (test03Card) test03Card.style.display = config.id === "test03" ? "none" : "";
@@ -302,15 +289,6 @@ function goToScreen(screenId) {
 function handleRegistration(e) {
   e.preventDefault();
 
-  if (ACTIVE_TEST_ID === "test02" && !TEST_CONFIGS.test02.studentReleased) {
-    const notice = document.getElementById("test2LockNotice");
-    if (notice) {
-      notice.style.display = "block";
-      notice.innerHTML = "🔐 <strong>TEST 02 अभी लॉक है</strong> — छात्र इस परीक्षा में प्रवेश नहीं कर सकते।";
-    }
-    return false;
-  }
-
   userProfile.name = document.getElementById('candidateName').value;
   userProfile.parent = document.getElementById('parentName').value;
   userProfile.location = document.getElementById('liveLocation').value;
@@ -330,11 +308,6 @@ function handleRegistration(e) {
 }
 
 function startTest() {
-  if (ACTIVE_TEST_ID === "test02" && !TEST_CONFIGS.test02.studentReleased) {
-    alert("TEST 02 अभी लॉक है।");
-    return;
-  }
-
   const integrity = window.TEST_PAPER_INTEGRITY?.validateBank(ACTIVE_TEST_ID);
   if (integrity && !integrity.valid) {
     console.error("Test start blocked by paper integrity guard:", integrity.errors);
@@ -720,14 +693,6 @@ function finalizeSubmission() {
 
 
 function openTest03StudentMode() {
-  if (!TEST_CONFIGS.test03.studentReleased) {
-    const notice = document.getElementById("test03LockNotice");
-    if (notice) {
-      notice.innerHTML = "🔐 <strong>TEST 03 अभी लॉक है</strong> — इसे छात्र तब तक शुरू नहीं कर सकते जब तक शिक्षक इसे प्रकाशित न करें।";
-    }
-    return false;
-  }
-
   if (!configureActiveTest("test03")) return false;
 
   try {
@@ -876,31 +841,10 @@ window.addEventListener("load", () => {
   try {
     const params = new URLSearchParams(window.location.search);
     const requestedTest = params.get("test");
-    if (requestedTest === "test02" && !TEST_CONFIGS.test02.studentReleased) {
-      params.delete("test");
-      const cleanQuery = params.toString();
-      window.history.replaceState({}, "", window.location.pathname + (cleanQuery ? "?" + cleanQuery : "") + window.location.hash);
-      configureActiveTest("test02");
+    if (requestedTest === "test03") {
+      configureActiveTest("test03");
       updateActiveTestUI();
       goToScreen("screen-registration");
-    } else if (requestedTest === "test03") {
-      // TEST 03 stays locked for students until explicitly released.
-      if (!TEST_CONFIGS.test03.studentReleased) {
-        params.delete("test");
-        const cleanQuery = params.toString();
-        window.history.replaceState({}, "", window.location.pathname + (cleanQuery ? "?" + cleanQuery : "") + window.location.hash);
-        configureActiveTest("test02");
-        updateActiveTestUI();
-        const notice = document.getElementById("test03LockNotice");
-        if (notice) {
-          notice.innerHTML = "🔐 <strong>TEST 03 अभी लॉक है</strong> — शिक्षक के प्रकाशित करने तक यह परीक्षा शुरू नहीं की जा सकती।";
-        }
-        goToScreen("screen-registration");
-      } else {
-        configureActiveTest("test03");
-        updateActiveTestUI();
-        goToScreen("screen-registration");
-      }
     } else if (requestedTest === "practice50") {
       configureActiveTest("practice50");
       updateActiveTestUI();
