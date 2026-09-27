@@ -109,17 +109,22 @@ function updateActiveTestUI() {
   if (statMaxMarks) statMaxMarks.innerText = `${totalMarks} / ${totalMarks}`;
   document.title = config.name;
 
-  const canEnterTest02 = config.id !== "test02" && TEST_CONFIGS.test02.studentReleased;
+  const canProceedFromRegistration =
+    config.id === "practice50" ||
+    (config.id === "test02" && TEST_CONFIGS.test02.studentReleased);
+  const showTest02Lock =
+    config.id === "test02" && !TEST_CONFIGS.test02.studentReleased;
+
   if (test2InstructionsBtn) {
-    test2InstructionsBtn.disabled = !canEnterTest02;
-    test2InstructionsBtn.setAttribute("aria-disabled", String(!canEnterTest02));
-    test2InstructionsBtn.innerText = canEnterTest02 ? "निर्देश पढ़ें →" : "🔒 TEST 02 लॉक है";
+    test2InstructionsBtn.disabled = !canProceedFromRegistration;
+    test2InstructionsBtn.setAttribute("aria-disabled", String(!canProceedFromRegistration));
+    test2InstructionsBtn.innerText = canProceedFromRegistration ? "निर्देश पढ़ें →" : "🔒 TEST 02 लॉक है";
   }
   if (test2LockNotice) {
-    test2LockNotice.style.display = canEnterTest02 ? "none" : "block";
-    test2LockNotice.innerHTML = canEnterTest02
-      ? ""
-      : "🔐 <strong>TEST 02 अभी लॉक है</strong> — छात्र इस परीक्षा में प्रवेश नहीं कर सकते।";
+    test2LockNotice.style.display = showTest02Lock ? "block" : "none";
+    test2LockNotice.innerHTML = showTest02Lock
+      ? "🔐 <strong>TEST 02 अभी लॉक है</strong> — छात्र इस परीक्षा में प्रवेश नहीं कर सकते।"
+      : "";
   }
 
   if (test03Card) test03Card.style.display = config.id === "test03" ? "none" : "";
