@@ -11,7 +11,8 @@ const TEST_CONFIGS = {
     name: "ClassTime 9 — TEST 03 — BSEB कक्षा 9 अभ्यास परीक्षा",
     recoveryKey: "class9_cbt_test03_active_exam_v2",
     bank: () => Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS : [],
-    paperHash: "c8dd56b6"
+    paperHash: "c8dd56b6",
+    studentReleased: false
   }
 };
 let ACTIVE_TEST_ID = "test02";
@@ -610,7 +611,16 @@ function finalizeSubmission() {
 
 
 function openTest03StudentMode() {
-  configureActiveTest("test03");
+  if (!TEST_CONFIGS.test03.studentReleased) {
+    const notice = document.getElementById("test03LockNotice");
+    if (notice) {
+      notice.innerHTML = "🔐 <strong>TEST 03 अभी लॉक है</strong> — इसे छात्र तब तक शुरू नहीं कर सकते जब तक शिक्षक इसे प्रकाशित न करें।";
+    }
+    return false;
+  }
+
+  if (!configureActiveTest("test03")) return false;
+
   try {
     const url = new URL(window.location.href);
     url.searchParams.set("test", "test03");
@@ -623,6 +633,7 @@ function openTest03StudentMode() {
   window.scrollTo({ top: 0, behavior: "smooth" });
   const nameInput = document.getElementById("candidateName");
   if (nameInput) setTimeout(() => nameInput.focus(), 100);
+  return true;
 }
 
 function escapeHtml(value) {
@@ -739,10 +750,24 @@ window.addEventListener("load", () => {
   try {
     const params = new URLSearchParams(window.location.search);
     if (params.get("test") === "test03") {
-      // Student mode has its own selectable response flow.
-      configureActiveTest("test03");
-      updateActiveTestUI();
-      goToScreen("screen-registration");
+      // TEST 03 stays locked for students until explicitly released.
+      if (!TEST_CONFIGS.test03.studentReleased) {
+        params.delete("test");
+        const cleanQuery = params.toString();
+        window.history.replaceState({}, "", window.location.pathname + (cleanQuery ? "?" + cleanQuery : "") + window.location.hash);
+        configureActiveTest("test02");
+        updateActiveTestUI();
+        const notice = document.getElementById("test03LockNotice");
+        if (notice) {
+          notice.innerHTML = "🔐 <strong>TEST 03 अभी लॉक है</strong> — शिक्षक के प्रकाशित करने तक यह परीक्षा शुरू नहीं की जा सकती।";
+        }
+        goToScreen("screen-registration");
+      } else {
+        // Student mode has its own selectable response flow.
+        configureActiveTest("test03");
+        updateActiveTestUI();
+        goToScreen("screen-registration");
+      }
     } else if (params.get("preview") === "test03") openTest03Preview();
   } catch (error) {
     console.warn("Could not open requested preview:", error);
