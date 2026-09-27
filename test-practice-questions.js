@@ -1,5 +1,5 @@
 // ClassTime 9 — 50 Question Confidence Practice Test
-// Based on the question style and response flow used by TEST 02 and TEST 03.
+// Questions intentionally kept distinct from TEST 02 and TEST 03 while following their style.
 // 43 MCQ + 7 written-copy subjective questions • 75 minutes.
 window.TESTPRACTICE_QUESTIONS = [
   {
@@ -9,14 +9,14 @@ window.TESTPRACTICE_QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "निर्देशांक ज्यामिति",
-    "question": "बिंदु (−4, 3) किस चतुर्थांश में स्थित है?",
+    "question": "किस बिंदु के दोनों निर्देशांकों के चिह्न विपरीत होंगे?",
     "options": [
-      "प्रथम",
-      "द्वितीय",
-      "तृतीय",
-      "चतुर्थ"
+      "(−3, 5)",
+      "(4, 7)",
+      "(−2, −6)",
+      "(6, 3)"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 2,
@@ -25,14 +25,14 @@ window.TESTPRACTICE_QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "निर्देशांक ज्यामिति",
-    "question": "निम्न में से कौन-सा बिंदु x-अक्ष पर स्थित है?",
+    "question": "बिंदु Q(5, −2) का y-निर्देशांक (ordinate) क्या है?",
     "options": [
-      "(0, 5)",
-      "(−3, 2)",
-      "(4, 0)",
-      "(2, −4)"
+      "5",
+      "−2",
+      "2",
+      "−5"
     ],
-    "correct": 2
+    "correct": 1
   },
   {
     "id": 3,
@@ -41,12 +41,12 @@ window.TESTPRACTICE_QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "निर्देशांक ज्यामिति",
-    "question": "A(1, 2) और B(4, 6) के बीच की दूरी कितनी है?",
+    "question": "यदि किसी बिंदु का x-निर्देशांक 7 और y-निर्देशांक −4 है, तो उसके निर्देशांक कौन-से होंगे?",
     "options": [
-      "4",
-      "5",
-      "6",
-      "7"
+      "(−4, 7)",
+      "(7, −4)",
+      "(4, −7)",
+      "(−7, 4)"
     ],
     "correct": 1
   },
@@ -105,7 +105,7 @@ window.TESTPRACTICE_QUESTIONS = [
     "marks": 0,
     "difficulty": "moderate",
     "topic": "निर्देशांक ज्यामिति",
-    "question": "A(−2, 4) और B(3, −1) को कार्तीय तल पर अंकित कीजिए और दोनों बिंदुओं के चतुर्थांश लिखिए।"
+    "question": "कार्तीय तल पर ऐसे चार बिंदुओं के उदाहरण लिखिए जिनमें प्रत्येक बिंदु अलग-अलग चतुर्थांश में हो।"
   },
   {
     "id": 8,
@@ -251,14 +251,14 @@ window.TESTPRACTICE_QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "मंझन के पद",
-    "question": "मंझन किस काव्य-परंपरा से जुड़े कवि माने जाते हैं?",
+    "question": "मंझन के पदों में प्रेम को किस प्रकार के भाव से जोड़ा गया है?",
     "options": [
-      "छायावाद",
-      "प्रगतिवाद",
-      "सूफी काव्य-परंपरा",
-      "प्रयोगवाद"
+      "आध्यात्मिक उन्मुखता",
+      "केवल हास्य",
+      "देशभक्ति",
+      "केवल प्रकृति-वर्णन"
     ],
-    "correct": 2
+    "correct": 0
   },
   {
     "id": 18,
@@ -511,7 +511,7 @@ window.TESTPRACTICE_QUESTIONS = [
     "marks": 0,
     "difficulty": "moderate",
     "topic": "भौतिक स्वरूप : संरचना एवं उच्चावच",
-    "question": "हिमालयी नदियों और प्रायद्वीपीय नदियों में कोई दो अंतर लिखिए।"
+    "question": "भारत में नदियों के अपवाह तंत्र का मानव जीवन पर कोई दो प्रभाव लिखिए।"
   },
   {
     "id": 35,
@@ -673,14 +673,14 @@ window.TESTPRACTICE_QUESTIONS = [
     "marks": 1,
     "difficulty": "moderate",
     "topic": "Alphabet Series",
-    "question": "Complete the series: C, F, J, O, U, __",
+    "question": "A=1, B=2, C=3, ... मानते हुए M और F के मानों का योग कितना होगा?",
     "options": [
-      "B",
-      "A",
-      "C",
-      "D"
+      "17",
+      "18",
+      "19",
+      "20"
     ],
-    "correct": 0
+    "correct": 2
   },
   {
     "id": 46,
@@ -703,30 +703,30 @@ window.TESTPRACTICE_QUESTIONS = [
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "moderate",
+    "difficulty": "easy",
     "topic": "Alphabet Series",
-    "question": "Complete the series: B, G, M, T, __",
+    "question": "F से 8 स्थान आगे कौन-सा अक्षर आएगा?",
     "options": [
-      "B",
-      "C",
-      "A",
-      "D"
+      "M",
+      "N",
+      "O",
+      "P"
     ],
-    "correct": 0
+    "correct": 1
   },
   {
     "id": 48,
     "subject": "तर्कशक्ति",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "challenging",
+    "difficulty": "moderate",
     "topic": "Alphabet Series",
-    "question": "Complete the series: D, H, M, S, __",
+    "question": "यदि अंग्रेजी वर्णमाला को उल्टे क्रम में लिखा जाए, तो 9वाँ अक्षर कौन-सा होगा?",
     "options": [
-      "Y",
-      "Z",
-      "A",
-      "B"
+      "R",
+      "S",
+      "T",
+      "U"
     ],
     "correct": 1
   },
