@@ -29,7 +29,17 @@
         <div class="form-group"><label>मोबाइल नंबर *</label><input type="tel" id="mobileNo" pattern="[0-9]{10}" required /></div>
         <button type="submit" class="btn btn-primary">निर्देश पढ़ें &rarr;</button>
       </form>
-      <div class="preview-entry test03-release-card is-locked">
+      <div id="practice50LaunchCard" class="practice50-launch-card">
+        <div style="font-weight:800; margin-bottom:5px;">🎯 50 प्रश्न Confidence Practice Test</div>
+        <div style="font-size:12px; line-height:1.5; color:#475569; margin-bottom:9px;">
+          TEST 02 + TEST 03 जैसी question style में 50 प्रश्न • 43 MCQ + 7 written • 75 मिनट
+        </div>
+        <div class="btn-row" style="margin-top:0;">
+          <button type="button" class="btn btn-primary" onclick="openPractice50StudentMode()">🚀 Practice Test शुरू करें</button>
+        </div>
+      </div>
+
+      <div id="test03ReleaseCard" class="preview-entry test03-release-card is-locked">
         <div style="font-weight:800; margin-bottom:5px;">🔒 TEST 03 — दूसरा अभ्यास पेपर</div>
         <div style="font-size:12px; line-height:1.5; color:#475569; margin-bottom:9px;">
           TEST 03 अभी लॉक है। इसे छात्र तब तक शुरू नहीं कर सकते जब तक शिक्षक इसे प्रकाशित न करें।
@@ -75,7 +85,7 @@
       </div>
       <div class="instruction-card">
         <strong>परीक्षा का विवरण:</strong>
-        <ul class="instruction-list">
+        <ul id="instructionList" class="instruction-list">
           <li><strong>कुल समय:</strong> 2 घंटे 30 मिनट (150 मिनट)</li>
           <li><strong>कुल प्रश्न:</strong> 100 प्रश्न — 86 बहुविकल्पीय + 14 लिखित-उत्तर</li>
           <li><strong>कुल स्कोर:</strong> 86 अंक (केवल बहुविकल्पीय प्रश्न)</li>
@@ -143,7 +153,7 @@
   <div id="screen-summary" class="screen">
     <div class="auth-container" style="text-align: center;">
       <h1 id="summaryTestTitle" style="color: #10b981; font-size: 26px;">🎉 ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा सफलतापूर्वक सबमिट हो गया!</h1>
-      <p class="subtext">100 प्रश्नों का CBT पूरा हुआ — 86 MCQ स्कोर किए जाते हैं और 14 subjective उत्तर कॉपी में लिखे जाते हैं।</p>
+      <p id="summarySubtext" class="subtext">100 प्रश्नों का CBT पूरा हुआ — 86 MCQ स्कोर किए जाते हैं और 14 subjective उत्तर कॉपी में लिखे जाते हैं।</p>
       <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:12px; margin:16px 0; font-size:13px; font-weight:700;">
         <span id="summaryExamName">📘 परीक्षा: ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा</span>
       </div>
@@ -159,7 +169,7 @@
         <div class="stat-box"><div class="num" id="statWrong">0</div><div style="font-size: 12px; margin-top:5px;">गलत MCQ</div></div>
         <div class="stat-box"><div class="num" id="statTimeSpent">--:--</div><div style="font-size: 12px; margin-top:5px;">लिया गया समय</div></div>
       </div>
-      <div class="stat-row"><div class="stat-box"><div class="num" id="statSubjectiveMarked">0 / 14</div><div style="font-size: 12px; margin-top:5px;">कॉपी में लिखे चिन्हित</div></div><div class="stat-box"><div class="num">86 / 86</div><div style="font-size: 12px; margin-top:5px;">MCQ अधिकतम अंक</div></div></div><div id="subjectScoreBreakdown" style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 20px; text-align:center;"></div>
+      <div class="stat-row"><div class="stat-box"><div class="num" id="statSubjectiveMarked">0 / 14</div><div style="font-size: 12px; margin-top:5px;">कॉपी में लिखे चिन्हित</div></div><div class="stat-box"><div class="num" id="statMaxMarks">86 / 86</div><div style="font-size: 12px; margin-top:5px;">MCQ अधिकतम अंक</div></div></div><div id="subjectScoreBreakdown" style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 20px; text-align:center;"></div>
       <div style="text-align: left; background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 14px;">⚠️ <strong>महत्वपूर्ण निर्देश:</strong><br>अपने परिणाम की समीक्षा करें और गलत प्रश्नों को दोबारा हल करें।</div>
       <div id="emailStatus" class="email-status">आपके उत्तर शिक्षक के ईमेल पर स्वचालित रूप से भेजे जाएँगे।</div>
     </div>
@@ -173,6 +183,7 @@
   <script src="test03-questions-social.js"></script>
   <script src="test03-questions-english.js"></script>
   <script src="test03-questions-reasoning.js"></script>
+  <script src="test-practice-questions.js"></script>
   <script src="test-paper-integrity.js"></script>
   <script src="app.js"></script>
   <script src="submission-queue.js"></script>
