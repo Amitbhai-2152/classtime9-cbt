@@ -6,7 +6,7 @@ const TEST_CONFIGS = {
     bank: () => Array.isArray(window.TEST02_QUESTIONS) ? window.TEST02_QUESTIONS : [],
     paperHash: "4a67342c",
     durationSeconds: 150 * 60,
-    studentReleased: true
+    studentReleased: false
   },
   test03: {
     id: "test03",
@@ -22,7 +22,7 @@ const TEST_CONFIGS = {
     name: "ClassTime 9 — 50 प्रश्न Confidence Practice Test",
     recoveryKey: "class9_cbt_practice50_active_exam_v1",
     bank: () => Array.isArray(window.TESTPRACTICE_QUESTIONS) ? window.TESTPRACTICE_QUESTIONS : [],
-    paperHash: "056a8870",
+    paperHash: "cbecb040",
     durationSeconds: 75 * 60,
     studentReleased: true
   }
