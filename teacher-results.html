@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ClassTime 9 — Teacher Results</title>
+<style>
+:root{--p:#2563eb;--border:#e2e8f0;--muted:#64748b;--bg:#f8fafc;--good:#15803d;--bad:#b91c1c;--warn:#b45309}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#0f172a;font-family:Arial,"Noto Sans Devanagari",sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:24px 14px}.header{background:#0f172a;color:white;border-radius:14px;padding:20px;margin-bottom:16px}.header h1{margin:0 0 5px;font-size:24px}.header p{margin:0;color:#cbd5e1;font-size:13px}
+.card{background:white;border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.04)}
+.auth{display:grid;grid-template-columns:1fr auto;gap:10px}.input,.select{width:100%;min-height:44px;border:1px solid #cbd5e1;border-radius:8px;padding:9px 11px;font-size:14px}
+button{border:0;border-radius:8px;min-height:44px;padding:9px 15px;font-weight:700;cursor:pointer}.primary{background:var(--p);color:white}.outline{background:white;border:1px solid #cbd5e1;color:#334155}
+.status{margin-top:10px;padding:10px;border-radius:8px;font-size:13px}.status.error{background:#fef2f2;color:#991b1b}.status.ok{background:#ecfdf5;color:#166534}
+.toolbar{display:grid;grid-template-columns:1.5fr 1fr auto;gap:10px;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:10px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}th{background:#f8fafc;color:#475569}
+.pill{display:inline-block;padding:4px 7px;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-size:11px;font-weight:700}.score{font-weight:800}.result-head{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{background:#f8fafc;border:1px solid var(--border);border-radius:9px;padding:12px;text-align:center}.stat strong{display:block;font-size:20px}.stat span{font-size:11px;color:var(--muted)}
+.q{border:1px solid var(--border);border-radius:11px;padding:14px;margin:12px 0;background:white}.q.correct{border-left:5px solid #22c55e}.q.wrong{border-left:5px solid #ef4444}.q.unanswered{border-left:5px solid #f59e0b}.q.subjective{border-left:5px solid #3b82f6}
+.qtop{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:11px;color:var(--muted);margin-bottom:8px}.qtop span{background:#f1f5f9;padding:4px 7px;border-radius:999px}.qtop b{margin-left:auto}.question{font-size:15px;font-weight:700;line-height:1.6;margin-bottom:9px}.passage{background:#f8fafc;border:1px solid var(--border);padding:11px;border-radius:8px;font-size:13px;line-height:1.7;margin:9px 0}.qimg{text-align:center;margin:10px 0}.qimg img{max-width:100%;max-height:360px;border:1px solid var(--border);border-radius:8px}
+.option{display:flex;gap:9px;padding:9px;border:1px solid var(--border);border-radius:7px;margin:6px 0;font-size:13px;line-height:1.5}.option.correct{background:#f0fdf4;border-color:#86efac}.option.candidate{background:#fef2f2;border-color:#fca5a5}.letter{font-weight:800;min-width:24px}.tag{margin-left:auto;font-size:10px;font-weight:800;white-space:nowrap}
+.meta{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;font-size:13px}.meta div{background:#f8fafc;border-radius:8px;padding:9px}.hidden{display:none}
+@media(max-width:700px){.auth,.toolbar,.result-head,.meta{grid-template-columns:1fr}.toolbar{gap:7px}table{font-size:11px}.table-wrap{overflow:auto}.qtop b{width:100%;margin-left:0}.wrap{padding:12px 9px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header"><h1>👨‍🏫 ClassTime 9 — Teacher Results</h1><p>TEST 02 और TEST 03 की submitted copies का detailed answer analysis.</p></div>
+  <section class="card" id="loginCard">
+    <h3 style="margin-top:0">Teacher Access</h3>
+    <p style="font-size:13px;color:#475569">Private teacher key डालकर submitted results खोलें। यह key केवल teacher को पता होनी चाहिए।</p>
+    <div class="auth"><input id="key" class="input" type="password" placeholder="Private teacher key"><button class="primary" onclick="login()">Open Results</button></div>
+    <div id="loginStatus"></div>
+  </section>
+  <section id="resultsSection" class="hidden">
+    <div class="card">
+      <div class="toolbar">
+        <select id="testFilter" class="select"><option value="all">सभी Tests</option></select>
+        <input id="search" class="input" placeholder="Student name / roll search">
+        <button class="outline" onclick="loadSubmissions()">↻ Refresh</button>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>Student</th><th>Test</th><th>Roll</th><th>Score</th><th>Submitted</th><th></th></tr></thead><tbody id="submissionRows"></tbody></table></div>
+    </div>
+    <div id="detailSection" class="card hidden"></div>
+  </section>
+</div>
+<script>
+const API="https://script.google.com/macros/s/AKfycbx341brEbkoRCD-vzkrDtUIGH81NvY7xMoHngv82D0pOJv_ozE5iZlgtuwrzbfdUxAQ/exec";
+let teacherKey="", submissions=[];
+const esc=v=>String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
+function msg(text,ok=false){document.getElementById("loginStatus").innerHTML='<div class="status '+(ok?"ok":"error")+'">'+esc(text)+'</div>'}
+async function api(params){const r=await fetch(API+"?"+new URLSearchParams(params));return await r.json()}
+async function login(){teacherKey=document.getElementById("key").value.trim();if(!teacherKey)return msg("Teacher key डालें।");try{const d=await api({key:teacherKey,action:"list"});if(!d.ok)throw new Error(d.error||"Access denied");submissions=d.submissions||[];document.getElementById("loginCard").classList.add("hidden");document.getElementById("resultsSection").classList.remove("hidden");renderFilters();renderRows()}catch(e){msg("Access नहीं मिला: "+e.message)}}
+function renderFilters(){const s=document.getElementById("testFilter"), old=s.value;s.innerHTML='<option value="all">सभी Tests</option>'+[...new Set(submissions.map(x=>x.testId))].map(id=>'<option value="'+esc(id)+'">'+esc(id.toUpperCase())+'</option>').join("");if([...s.options].some(o=>o.value===old))s.value=old}
+function renderRows(){const filter=document.getElementById("testFilter").value,q=document.getElementById("search").value.toLowerCase();const rows=submissions.filter(x=>(filter==="all"||x.testId===filter)&&((x.candidateName||"")+" "+(x.roll||"")).toLowerCase().includes(q));document.getElementById("submissionRows").innerHTML=rows.map(x=>'<tr><td><b>'+esc(x.candidateName)+'</b></td><td><span class="pill">'+esc(x.testId)+'</span></td><td>'+esc(x.roll)+'</td><td class="score">'+esc(x.score)+' / '+esc(x.totalMarks)+'</td><td>'+esc(new Date(x.submittedAt).toLocaleString())+'</td><td><button class="primary" onclick="openDetail(\''+esc(x.submissionId)+'\')">Detailed Answer</button></td></tr>').join("")||'<tr><td colspan="6">कोई submission नहीं मिला।</td></tr>'}
+async function loadSubmissions(){try{const d=await api({key:teacherKey,action:"list"});if(!d.ok)throw new Error(d.error);submissions=d.submissions||[];renderFilters();renderRows()}catch(e){alert(e.message)}}
+document.getElementById("testFilter").onchange=renderRows;document.getElementById("search").oninput=renderRows;
+async function openDetail(id){const d=await api({key:teacherKey,action:"get",id:id});if(!d.ok){alert(d.error);return}const x=d.submission,c=x.candidate||{},o=x.objective||{},answers=o.answers||[];const correct=answers.filter(a=>a.isCorrect).length,wrong=answers.filter(a=>a.selectedIndex!==null&&a.selectedIndex!==undefined&&!a.isCorrect).length,unanswered=answers.length-correct-wrong;
+let html='<h2 style="margin-top:0">📘 '+esc(x.testName)+'</h2><div class="meta"><div><b>Student:</b> '+esc(c.name)+'</div><div><b>Parent:</b> '+esc(c.parent)+'</div><div><b>Roll:</b> '+esc(c.roll)+'</div><div><b>Location:</b> '+esc(c.location)+'</div><div><b>Mobile:</b> '+esc(c.mobile)+'</div><div><b>Submitted:</b> '+esc(new Date(x.submittedAt).toLocaleString())+'</div></div><div class="result-head" style="margin:14px 0"><div class="stat"><strong>'+esc(o.score)+' / '+esc(o.totalMarks)+'</strong><span>MCQ Score</span></div><div class="stat"><strong>'+correct+'</strong><span>Correct</span></div><div class="stat"><strong>'+wrong+'</strong><span>Wrong</span></div><div class="stat"><strong>'+unanswered+'</strong><span>Unanswered</span></div></div><p style="font-size:13px;color:#475569">⏱️ Time: '+Math.floor((x.timeSpentSeconds||0)/60)+' min '+((x.timeSpentSeconds||0)%60)+' sec • ✍️ Written marked: '+esc(x.subjectiveMarked||0)+'</p>';
+html+=answers.map(a=>{const has=a.selectedIndex!==null&&a.selectedIndex!==undefined;const st=!has?"unanswered":a.isCorrect?"correct":"wrong";const opts=(a.correctAnswer?'<div class="option correct"><span class="letter">'+esc(a.correctOptionLetter)+'</span><span>'+esc(a.correctAnswer)+'</span><span class="tag" style="color:#166534">CORRECT ANSWER</span></div>':"")+(has&&!a.isCorrect?'<div class="option candidate"><span class="letter">'+esc(a.selectedOptionLetter)+'</span><span>'+esc(a.selectedText)+'</span><span class="tag" style="color:#991b1b">STUDENT ANSWER</span></div>':"");return '<article class="q '+st+'"><div class="qtop"><span>Q'+esc(a.id)+'</span><span>'+esc(a.subject)+'</span><span>'+esc(a.section||"")+'</span><b>'+(!has?"○ Unanswered":a.isCorrect?"✓ Correct":"✗ Wrong")+'</b></div><div class="question">'+esc(a.question)+'</div>'+opts+'<div style="margin-top:9px;font-size:12px;color:#64748b"><b>Topic:</b> '+esc(a.topic||"")+'</div></article>'}).join("");
+document.getElementById("detailSection").innerHTML=html+'<div style="margin-top:12px"><button class="outline" onclick="document.getElementById(\'detailSection\').classList.add(\'hidden\')">← Back to submissions</button></div>';document.getElementById("detailSection").classList.remove("hidden");window.scrollTo({top:document.getElementById("detailSection").offsetTop-10,behavior:"smooth"})}
+</script>
+</body></html>
