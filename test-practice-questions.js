@@ -233,16 +233,16 @@ window.TESTPRACTICE_QUESTIONS = [
     "subject": "हिन्दी",
     "type": "mcq",
     "marks": 1,
-    "difficulty": "easy",
+    "difficulty": "moderate",
     "topic": "लाल पान की बेगम",
-    "question": "‘लाल पान की बेगम’ के लेखक कौन हैं?",
+    "question": "‘लाल पान की बेगम’ जैसी ग्रामीण रचना में संवादों का सबसे प्रमुख प्रभाव क्या होता है?",
     "options": [
-      "प्रेमचंद",
-      "फणीश्वरनाथ रेणु",
-      "रामधारी सिंह दिनकर",
-      "हजारीप्रसाद द्विवेदी"
+      "पात्रों के स्वभाव और बोलचाल को जीवंत बनाना",
+      "केवल ऐतिहासिक तिथियाँ बताना",
+      "वैज्ञानिक नियम समझाना",
+      "केवल नगर-जीवन का वर्णन करना"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 17,
@@ -390,14 +390,14 @@ window.TESTPRACTICE_QUESTIONS = [
     "marks": 1,
     "difficulty": "challenging",
     "topic": "चत्वारो वेदाः",
-    "question": "यजुर्वेद मुख्यतः किससे संबंधित माना जाता है?",
+    "question": "ऋग्वेद मुख्यतः किस प्रकार की सामग्री के लिए प्रसिद्ध है?",
     "options": [
-      "संगीत-गायन",
-      "यज्ञ-विधियों",
-      "केवल गणित",
-      "केवल चिकित्सा"
+      "देवताओं की स्तुति वाले सूक्त",
+      "केवल यज्ञ की क्रिया-विधि",
+      "केवल औषधीय नुस्खे",
+      "केवल खगोलीय तालिकाएँ"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 27,
@@ -657,14 +657,14 @@ window.TESTPRACTICE_QUESTIONS = [
     "marks": 1,
     "difficulty": "easy",
     "topic": "Alphabet Series",
-    "question": "Complete the series: A, C, E, G, __",
+    "question": "Complete the series: B, D, G, K, P, __",
     "options": [
-      "H",
-      "I",
-      "J",
-      "K"
+      "T",
+      "U",
+      "V",
+      "W"
     ],
-    "correct": 1
+    "correct": 2
   },
   {
     "id": 45,
