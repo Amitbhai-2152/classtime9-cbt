@@ -514,8 +514,27 @@ input { min-height: 44px; }
   background: linear-gradient(180deg, #f0fdfa 0%, #eff6ff 100%);
   border-color: #5eead4;
 }
+.test03-release-card.is-locked {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  border-color: #cbd5e1;
+}
 .test03-release-card .btn-primary {
   background: #0f766e;
+}
+.test03-release-card .btn-primary:disabled {
+  opacity: 0.68;
+  cursor: not-allowed;
+  background: #64748b;
+}
+.test03-lock-notice {
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  padding: 9px 11px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.5;
 }
 @media (max-width: 600px) {
   .test03-release-card .btn-row {
