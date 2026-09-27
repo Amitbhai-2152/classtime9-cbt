@@ -6,7 +6,7 @@ const TEST_CONFIGS = {
     bank: () => Array.isArray(window.TEST02_QUESTIONS) ? window.TEST02_QUESTIONS : [],
     paperHash: "4a67342c",
     durationSeconds: 150 * 60,
-    studentReleased: false
+    studentReleased: true
   },
   test03: {
     id: "test03",
