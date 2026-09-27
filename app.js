@@ -4,7 +4,8 @@ const TEST_CONFIGS = {
     name: "ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा",
     recoveryKey: "class9_cbt_active_exam_v2",
     bank: () => Array.isArray(window.TEST02_QUESTIONS) ? window.TEST02_QUESTIONS : [],
-    paperHash: "4a67342c"
+    paperHash: "4a67342c",
+    durationSeconds: 150 * 60
   },
   test03: {
     id: "test03",
@@ -12,17 +13,30 @@ const TEST_CONFIGS = {
     recoveryKey: "class9_cbt_test03_active_exam_v2",
     bank: () => Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS : [],
     paperHash: "c8dd56b6",
+    durationSeconds: 150 * 60,
     studentReleased: false
+  },
+  practice50: {
+    id: "practice50",
+    name: "ClassTime 9 — 50 प्रश्न Confidence Practice Test",
+    recoveryKey: "class9_cbt_practice50_active_exam_v1",
+    bank: () => Array.isArray(window.TESTPRACTICE_QUESTIONS) ? window.TESTPRACTICE_QUESTIONS : [],
+    paperHash: "71712c78",
+    durationSeconds: 75 * 60,
+    studentReleased: true
   }
 };
 let ACTIVE_TEST_ID = "test02";
 let ACTIVE_QUESTIONS = QUESTIONS;
 let ACTIVE_TEST_NAME = TEST_CONFIGS.test02.name;
 let ACTIVE_RECOVERY_KEY = TEST_CONFIGS.test02.recoveryKey;
+let examStartMs = null;
 
 function getActiveQuestions() { return ACTIVE_QUESTIONS; }
 function getActiveTestName() { return ACTIVE_TEST_NAME; }
 function getActiveRecoveryKey() { return ACTIVE_RECOVERY_KEY; }
+function getActiveTestConfig() { return TEST_CONFIGS[ACTIVE_TEST_ID]; }
+function getActiveDurationSeconds() { return Number(TEST_CONFIGS[ACTIVE_TEST_ID]?.durationSeconds || 150 * 60); }
 
 function updateActiveTestUI() {
   const config = TEST_CONFIGS[ACTIVE_TEST_ID];
@@ -30,23 +44,69 @@ function updateActiveTestUI() {
   const registrationTitle = document.getElementById("registrationTestTitle");
   const registrationSubtext = document.getElementById("registrationTestSubtext");
   const instructionTestName = document.getElementById("instructionTestName");
+  const instructionList = document.getElementById("instructionList");
   const summaryTitle = document.getElementById("summaryTestTitle");
+  const summarySubtext = document.getElementById("summarySubtext");
   const summaryExamName = document.getElementById("summaryExamName");
+  const summaryExamNameEl = document.getElementById("summaryExamName");
   const examTestName = document.getElementById("examTestName");
-  const previewEntry = document.querySelector(".preview-entry");
+  const test03Card = document.getElementById("test03ReleaseCard");
+  const practiceCard = document.getElementById("practice50LaunchCard");
+  const activeQuestions = getActiveQuestions();
+  const mcqCount = activeQuestions.filter(q => q.type === "mcq").length;
+  const subjectiveCount = activeQuestions.filter(q => q.type === "subjective").length;
+  const totalMarks = activeQuestions.reduce((sum, q) => sum + Number(q.marks || 0), 0);
+  const durationMinutes = Math.round(getActiveDurationSeconds() / 60);
+  const subjectOrder = ["गणित","विज्ञान","हिन्दी","संस्कृत","सामाजिक विज्ञान","English","तर्कशक्ति"];
+  const seen = new Set();
+  const subjectLines = subjectOrder.concat(activeQuestions.map(q => q.subject))
+    .filter(subject => { if (seen.has(subject)) return false; seen.add(subject); return true; })
+    .map(subject => {
+      const rows = activeQuestions.filter(q => q.subject === subject);
+      const subjectMcq = rows.filter(q => q.type === "mcq").length;
+      const subjectWritten = rows.filter(q => q.type === "subjective").length;
+      return `<li><strong>${subject}:</strong> ${subjectMcq} MCQ + ${subjectWritten} लिखित-उत्तर = ${rows.length} प्रश्न</li>`;
+    }).join("");
 
   if (registrationTitle) registrationTitle.innerText = config.name;
   if (registrationSubtext) {
     registrationSubtext.innerText = config.id === "test03"
       ? "BSEB कक्षा 9 • नया अभ्यास पेपर • 150 मिनट"
-      : "BSEB कक्षा 9 • 27 सितम्बर 2026 • अभ्यास CBT";
+      : config.id === "practice50"
+        ? "BSEB कक्षा 9 • 50 प्रश्न • 75 मिनट • आत्मविश्वास अभ्यास"
+        : "BSEB कक्षा 9 • 27 सितम्बर 2026 • अभ्यास CBT";
   }
   if (instructionTestName) instructionTestName.innerText = config.name;
+  if (instructionList) {
+    instructionList.innerHTML = [
+      `<li><strong>कुल समय:</strong> ${durationMinutes} मिनट</li>`,
+      `<li><strong>कुल प्रश्न:</strong> ${activeQuestions.length} प्रश्न — ${mcqCount} बहुविकल्पीय + ${subjectiveCount} लिखित-उत्तर</li>`,
+      `<li><strong>कुल स्कोर:</strong> ${totalMarks} अंक (केवल MCQ)</li>`,
+      subjectLines,
+      '<li><strong>प्रश्न का प्रकार:</strong> MCQ में एक सही विकल्प चुनें; subjective प्रश्न का उत्तर कॉपी में लिखें और checkbox पर टिक करें।</li>',
+      '<li><strong>नकारात्मक अंकन:</strong> गलत उत्तर के लिए कोई नकारात्मक अंक नहीं है।</li>',
+      '<li><strong>रिव्यू:</strong> संदेह वाले प्रश्न को “रिव्यू के लिए मार्क करें” करके बाद में वापस आ सकते हैं।</li>',
+      '<li><strong>तकनीकी सावधानी:</strong> परीक्षा के दौरान ब्राउज़र टैब बार-बार बंद/रीलोड न करें।</li>',
+      '<li><strong>सबमिशन:</strong> समय पूरा होने पर परीक्षा स्वतः सबमिट हो सकती है।</li>',
+      `<li><strong>लिखित-उत्तर:</strong> ${subjectiveCount} subjective questions के उत्तर स्क्रीन पर टाइप नहीं करने हैं। हर ऐसे प्रश्न का उत्तर अपनी कॉपी में लिखें और “मैंने कॉपी में उत्तर लिख लिया है” पर टिक करें।</li>`,
+      '<li><strong>ईमेल:</strong> केवल objective answers और लिखित-उत्तर के marked status का रिकॉर्ड स्वचालित submission में जाता है।</li>'
+    ].join("");
+  }
   if (summaryTitle) summaryTitle.innerText = `🎉 ${config.name} सफलतापूर्वक सबमिट हो गया!`;
-  if (summaryExamName) summaryExamName.innerText = `📘 परीक्षा: ${config.name}`;
+  if (summarySubtext) summarySubtext.innerText = `${activeQuestions.length} प्रश्नों का CBT पूरा हुआ — ${mcqCount} MCQ स्कोर किए जाते हैं और ${subjectiveCount} subjective उत्तर कॉपी में लिखे जाते हैं।`;
+  if (summaryExamName || summaryExamNameEl) (summaryExamName || summaryExamNameEl).innerText = `📘 परीक्षा: ${config.name}`;
   if (examTestName) examTestName.innerText = config.name;
+  const statMcqScore = document.getElementById("statMcqScore");
+  const statAttempted = document.getElementById("statAttempted");
+  const statSubjectiveMarked = document.getElementById("statSubjectiveMarked");
+  const statMaxMarks = document.getElementById("statMaxMarks");
+  if (statMcqScore) statMcqScore.innerText = `0 / ${totalMarks}`;
+  if (statAttempted) statAttempted.innerText = `0 / ${mcqCount}`;
+  if (statSubjectiveMarked) statSubjectiveMarked.innerText = `0 / ${subjectiveCount}`;
+  if (statMaxMarks) statMaxMarks.innerText = `${totalMarks} / ${totalMarks}`;
   document.title = config.name;
-  if (previewEntry) previewEntry.style.display = config.id === "test03" ? "none" : "";
+  if (test03Card) test03Card.style.display = config.id === "test03" ? "none" : "";
+  if (practiceCard) practiceCard.style.display = config.id === "practice50" ? "none" : "";
 }
 
 function configureActiveTest(testId) {
@@ -99,6 +159,7 @@ function saveExamRecovery() {
       currentIndex,
       studentResponses,
       examStarted: true,
+      examStartMs,
       examDeadlineMs,
       timeElapsedSeconds
     };
@@ -149,6 +210,7 @@ function restoreExamState(state) {
   }));
   currentIndex = Math.min(Math.max(Number(state.currentIndex) || 0, 0), getActiveQuestions().length - 1);
   examDeadlineMs = Number(state.examDeadlineMs);
+  examStartMs = Number(state.examStartMs) || (examDeadlineMs - getActiveDurationSeconds() * 1000);
   timeElapsedSeconds = Math.max(0, Number(state.timeElapsedSeconds) || 0);
   totalSeconds = Math.max(0, Math.ceil((examDeadlineMs - Date.now()) / 1000));
   examStarted = true;
@@ -156,10 +218,16 @@ function restoreExamState(state) {
   return true;
 }
 
-// Select TEST 03 before recovery state is loaded so its bank and recovery key are used.
+// Select the requested student test before recovery state is loaded so the correct bank and recovery key are used.
 try {
   const initialTest = new URLSearchParams(window.location.search).get("test");
-  if (initialTest === "test03") configureActiveTest("test03");
+  if (initialTest && TEST_CONFIGS[initialTest]) {
+    if (initialTest === "test03" && !TEST_CONFIGS.test03.studentReleased) {
+      console.info("TEST 03 is currently locked; keeping TEST 02 as the default student test.");
+    } else {
+      configureActiveTest(initialTest);
+    }
+  }
 } catch (error) {
   console.warn("Could not read test selection:", error);
 }
@@ -196,9 +264,7 @@ window.onload = () => {
   }
 };
 
-// TEST 02 duration: 2 घंटे 30 मिनट = 150 मिनट
-const TEST_DURATION_SECONDS = 2.5 * 60 * 60; // 02:30:00
-let totalSeconds = TEST_DURATION_SECONDS;
+let totalSeconds = getActiveDurationSeconds();
 let timerInterval = null;
 let timeElapsedSeconds = 0;
 
@@ -245,8 +311,9 @@ function startTest() {
   studentResponses = getActiveQuestions().map(q => ({ id: q.id, selectedOption: null, writtenInCopy: false, status: 'not-visited' }));
   currentIndex = 0;
   timeElapsedSeconds = 0;
-  totalSeconds = TEST_DURATION_SECONDS;
-  examDeadlineMs = Date.now() + totalSeconds * 1000;
+  totalSeconds = getActiveDurationSeconds();
+  examStartMs = Date.now();
+  examDeadlineMs = examStartMs + totalSeconds * 1000;
   examStarted = true;
   recoveryRestored = false;
   saveExamRecovery();
@@ -260,6 +327,7 @@ function startTest() {
 
 function resumeTest() {
   if (!examStarted || !examDeadlineMs) return startTest();
+  if (!examStartMs) examStartMs = examDeadlineMs - getActiveDurationSeconds() * 1000;
   totalSeconds = Math.max(0, Math.ceil((examDeadlineMs - Date.now()) / 1000));
   if (totalSeconds <= 0) {
     finalizeSubmission();
@@ -276,11 +344,12 @@ function resumeTest() {
 
 function startTimer() {
   clearInterval(timerInterval);
+  if (!examStartMs) examStartMs = examDeadlineMs - getActiveDurationSeconds() * 1000;
   totalSeconds = Math.max(0, Math.ceil((examDeadlineMs - Date.now()) / 1000));
   updateTimerDisplay();
   timerInterval = setInterval(() => {
     totalSeconds = Math.max(0, Math.ceil((examDeadlineMs - Date.now()) / 1000));
-    timeElapsedSeconds = Math.max(0, Math.floor((Date.now() - (examDeadlineMs - TEST_DURATION_SECONDS * 1000)) / 1000));
+    timeElapsedSeconds = Math.max(0, Math.floor((Date.now() - examStartMs) / 1000));
     updateTimerDisplay();
     saveExamRecovery();
     if (totalSeconds <= 0) {
@@ -538,6 +607,7 @@ function finalizeSubmission() {
   // Mark the attempt as submitted by removing the active recovery state.
   clearExamRecovery();
   examStarted = false;
+  examStartMs = null;
   examDeadlineMs = null;
 
   goToScreen('screen-summary');
@@ -628,6 +698,23 @@ function openTest03StudentMode() {
     window.history.replaceState({}, "", url.toString());
   } catch (error) {
     console.warn("Could not update TEST 03 student-mode URL:", error);
+  }
+  goToScreen("screen-registration");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  const nameInput = document.getElementById("candidateName");
+  if (nameInput) setTimeout(() => nameInput.focus(), 100);
+  return true;
+}
+
+function openPractice50StudentMode() {
+  if (!configureActiveTest("practice50")) return false;
+  try {
+    const url = new URL(window.location.href);
+    url.searchParams.set("test", "practice50");
+    url.searchParams.delete("preview");
+    window.history.replaceState({}, "", url.toString());
+  } catch (error) {
+    console.warn("Could not update practice-test URL:", error);
   }
   goToScreen("screen-registration");
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -749,7 +836,8 @@ function openTest03Preview() {
 window.addEventListener("load", () => {
   try {
     const params = new URLSearchParams(window.location.search);
-    if (params.get("test") === "test03") {
+    const requestedTest = params.get("test");
+    if (requestedTest === "test03") {
       // TEST 03 stays locked for students until explicitly released.
       if (!TEST_CONFIGS.test03.studentReleased) {
         params.delete("test");
@@ -763,13 +851,18 @@ window.addEventListener("load", () => {
         }
         goToScreen("screen-registration");
       } else {
-        // Student mode has its own selectable response flow.
         configureActiveTest("test03");
         updateActiveTestUI();
         goToScreen("screen-registration");
       }
-    } else if (params.get("preview") === "test03") openTest03Preview();
+    } else if (requestedTest === "practice50") {
+      configureActiveTest("practice50");
+      updateActiveTestUI();
+      goToScreen("screen-registration");
+    } else if (params.get("preview") === "test03") {
+      openTest03Preview();
+    }
   } catch (error) {
-    console.warn("Could not open requested preview:", error);
+    console.warn("Could not open requested test:", error);
   }
 });
