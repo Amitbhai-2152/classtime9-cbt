@@ -559,6 +559,32 @@ function buildSubmissionPayload() {
 
   const score = answers.reduce((sum, a) => sum + (a.isCorrect ? a.marks : 0), 0);
 
+  const allQuestions = getActiveQuestions().map((q, i) => {
+    const response = studentResponses[i] || {};
+    return {
+      id: q.id,
+      subject: q.subject,
+      section: q.section || "",
+      topic: q.topic || "",
+      difficulty: q.difficulty || "",
+      type: q.type,
+      question: q.question,
+      passage: q.passage || "",
+      image: q.image || "",
+      options: q.options || [],
+      selectedIndex: response.selectedOption ?? null,
+      selectedText: q.type === "mcq" && response.selectedOption !== null && response.selectedOption !== undefined ? q.options[response.selectedOption] : "",
+      selectedOptionLetter: q.type === "mcq" && response.selectedOption !== null && response.selectedOption !== undefined ? String.fromCharCode(65 + response.selectedOption) : "",
+      correctIndex: q.type === "mcq" ? q.correct : null,
+      correctAnswer: q.type === "mcq" ? q.options[q.correct] : "",
+      correctOptionLetter: q.type === "mcq" ? String.fromCharCode(65 + q.correct) : "",
+      isCorrect: q.type === "mcq" ? response.selectedOption === q.correct : null,
+      writtenInCopy: Boolean(response.writtenInCopy),
+      status: response.status || "not-visited",
+      marks: Number(q.marks || 0)
+    };
+  });
+
   return {
     testId: ACTIVE_TEST_ID,
     testName: getActiveTestName(),
@@ -577,7 +603,8 @@ function buildSubmissionPayload() {
       score,
       totalMarks: objectiveQuestions.reduce((sum, q) => sum + q.marks, 0),
       answers
-    }
+    },
+    allQuestions
   };
 }
 
