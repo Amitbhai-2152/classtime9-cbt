@@ -1,4 +1,4 @@
-const CACHE_NAME = "test02-cbt-offline-v32";
+const CACHE_NAME = "test02-cbt-offline-v33";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -15,6 +15,7 @@ const APP_SHELL = [
   "./test03-questions-social.js",
   "./test03-questions-english.js",
   "./test03-questions-reasoning.js",
+  "./test-practice-questions.js",
   "./assets/test03/maths/maths-coordinate-plane-01.png",
   "./assets/test03/maths/maths-linear-equation-graph-01.png",
   "./assets/test03/maths/maths-linear-equation-graph-02.png",
