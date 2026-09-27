@@ -34,6 +34,24 @@
         "संस्कृत": 8,
         "तर्कशक्ति": 14
       }
+    },
+    "practice50": {
+      "id": "practice50",
+      "count": 50,
+      "mcq": 43,
+      "subjective": 7,
+      "hash": "71712c78",
+      "recoveryKey": "class9_cbt_practice50_active_exam_v1",
+      "durationMinutes": 75,
+      "subjects": {
+        "गणित": 7,
+        "विज्ञान": 7,
+        "हिन्दी": 9,
+        "संस्कृत": 4,
+        "सामाजिक विज्ञान": 7,
+        "English": 9,
+        "तर्कशक्ति": 7
+      }
     }
   },
   "test03SourceFiles": [
@@ -45,5 +63,6 @@
     "test03-questions-english.js",
     "test03-questions-reasoning.js"
   ],
-  "expectedCrossPaperDuplicates": 0
+  "expectedCrossPaperDuplicates": 0,
+  "practice50SourceFile": "test-practice-questions.js"
 }
