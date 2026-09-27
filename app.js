@@ -675,7 +675,6 @@ function finalizeSubmission() {
   // Email submission happens automatically; there is no student-facing email button.
   submitObjectiveAnswersAutomatically().then(() => {
     if (!statusEl) return;
-
     if (emailSubmissionStatus === "sent") {
       statusEl.innerText = "✓ आपके ऑब्जेक्टिव उत्तर सबमिशन सर्वर को भेज दिए गए हैं।";
       statusEl.className = "email-status success";
@@ -687,6 +686,72 @@ function finalizeSubmission() {
       statusEl.className = "email-status error";
     }
   });
+}
+
+function getReviewQuestionStatus(q, index) {
+  const response = studentResponses[index] || {};
+  if (q.type === "subjective") return response.writtenInCopy ? "subjective-written" : "subjective-unmarked";
+  if (response.selectedOption === null || response.selectedOption === undefined) return "unanswered";
+  return response.selectedOption === q.correct ? "correct" : "wrong";
+}
+
+function openAnswerReview() {
+  const config = getActiveTestConfig();
+  const questions = getActiveQuestions();
+  const title = document.getElementById("answerReviewTitle");
+  const subtext = document.getElementById("answerReviewSubtext");
+  const subjectFilter = document.getElementById("answerReviewSubjectFilter");
+  const statusFilter = document.getElementById("answerReviewStatusFilter");
+  if (!title || !subtext || !subjectFilter || !statusFilter) return;
+  title.innerText = "📘 " + (config?.name || "परीक्षा") + " — विस्तृत उत्तर समीक्षा";
+  subtext.innerText = "प्रश्न-दर-प्रश्न आपका उत्तर, सही उत्तर, विषय, टॉपिक और कठिनाई देखें।";
+  const subjects = [...new Set(questions.map(q => q.subject))];
+  subjectFilter.innerHTML = '<option value="all">सभी विषय</option>' + subjects.map(s => '<option value="' + escapeHtml(s) + '">' + escapeHtml(s) + '</option>').join("");
+  const render = () => {
+    const subject = subjectFilter.value;
+    const status = statusFilter.value;
+    const indexed = questions.map((q,i) => ({q:q,i:i,status:getReviewQuestionStatus(q,i)}));
+    const filtered = indexed.filter(item => {
+      if (subject !== "all" && item.q.subject !== subject) return false;
+      if (status === "correct") return item.status === "correct";
+      if (status === "wrong") return item.status === "wrong";
+      if (status === "unanswered") return item.status === "unanswered";
+      if (status === "subjective") return item.q.type === "subjective";
+      return true;
+    });
+    const mcq = indexed.filter(x => x.q.type === "mcq");
+    const correct = mcq.filter(x => x.status === "correct").length;
+    const wrong = mcq.filter(x => x.status === "wrong").length;
+    const unanswered = mcq.filter(x => x.status === "unanswered").length;
+    const subjective = indexed.filter(x => x.q.type === "subjective");
+    const written = subjective.filter(x => studentResponses[x.i]?.writtenInCopy).length;
+    document.getElementById("answerReviewStats").innerHTML = [[
+      "सही", correct, "correct"], ["गलत", wrong, "wrong"], ["अनुत्तरित", unanswered, "unanswered"],
+      ["कॉपी में लिखे", written + "/" + subjective.length, "written"]
+    ].map(item => '<div class="answer-review-stat ' + item[2] + '"><strong>' + item[1] + '</strong><span>' + item[0] + '</span></div>').join("");
+    const list = document.getElementById("answerReviewList");
+    list.innerHTML = filtered.map(item => {
+      const q = item.q, i = item.i, status = item.status, response = studentResponses[i] || {}, isMcq = q.type === "mcq";
+      const selectedIndex = response.selectedOption;
+      const selectedText = isMcq && selectedIndex !== null && selectedIndex !== undefined ? q.options[selectedIndex] : "";
+      const correctText = isMcq ? q.options[q.correct] : "";
+      const resultLabel = status === "correct" ? "✓ सही उत्तर" : status === "wrong" ? "✗ गलत उत्तर" : status === "unanswered" ? "○ अनुत्तरित" : response.writtenInCopy ? "✓ कॉपी में लिखा" : "○ कॉपी में नहीं लिखा";
+      const passage = q.passage ? '<div class="answer-review-passage"><strong>' + (q.subject === "हिन्दी" ? "अपठित गद्यांश" : "Reading Passage") + '</strong><div>' + escapeHtml(q.passage).replace(/\\n/g,"<br>") + '</div></div>' : "";
+      const image = q.image ? '<div class="answer-review-image"><img src="' + escapeHtml(q.image) + '" alt="प्रश्न ' + q.id + ' का चित्र" loading="lazy"></div>' : "";
+      const options = isMcq ? '<div class="answer-review-options">' + q.options.map((opt,optIdx) => {
+        const selected = selectedIndex === optIdx, correctOpt = q.correct === optIdx;
+        const cls = correctOpt ? " correct-option" : selected ? " selected-option" : "";
+        const tag = correctOpt ? '<span class="answer-option-tag">सही उत्तर</span>' : selected ? '<span class="answer-option-tag selected-tag">आपका उत्तर</span>' : "";
+        return '<div class="answer-review-option' + cls + '"><span class="answer-review-letter">' + String.fromCharCode(65+optIdx) + '</span><span>' + escapeHtml(opt) + '</span>' + tag + '</div>';
+      }).join("") + "</div>" : '<div class="answer-review-written"><strong>लिखित प्रश्न:</strong> उत्तर कॉपी में लिखना था। ' + (response.writtenInCopy ? "आपने लिखे होने की पुष्टि की है।" : "आपने लिखे होने की पुष्टि नहीं की।") + "</div>";
+      const explanation = isMcq ? '<div class="answer-review-explanation"><strong>सही उत्तर:</strong> ' + escapeHtml(correctText) + (status === "wrong" && selectedText ? "<br><strong>आपका उत्तर:</strong> " + escapeHtml(selectedText) : status === "unanswered" ? "<br><strong>आपका उत्तर:</strong> कोई विकल्प नहीं चुना गया।" : "") + "</div>" : "";
+      return '<article class="answer-review-card status-' + status + '"><div class="answer-review-card-top"><span class="answer-review-qid">प्रश्न ' + q.id + '</span><span>' + escapeHtml(q.subject) + '</span><span>' + escapeHtml(q.topic || "सामान्य") + '</span><span>' + escapeHtml(q.difficulty || "") + '</span><strong>' + resultLabel + '</strong></div><div class="answer-review-question">' + escapeHtml(q.question) + "</div>" + passage + image + options + explanation + "</article>";
+    }).join("") || '<div class="instruction-card">इस filter में कोई प्रश्न नहीं मिला।</div>';
+  };
+  subjectFilter.onchange = render;
+  statusFilter.onchange = render;
+  goToScreen("screen-answer-review");
+  render();
 }
 
 
