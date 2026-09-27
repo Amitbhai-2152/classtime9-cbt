@@ -147,21 +147,6 @@
     </div>
   </div>
 
-  <div id="screen-answer-review" class="screen">
-    <div class="auth-container answer-review-container">
-      <div class="brand-header">
-        <h1 id="answerReviewTitle">📘 विस्तृत उत्तर समीक्षा</h1>
-        <p id="answerReviewSubtext" class="subtext">आपके उत्तर और सही उत्तर प्रश्न-दर-प्रश्न देखें।</p>
-      </div>
-      <div id="answerReviewStats" class="answer-review-stats"></div>
-      <div class="answer-review-toolbar">
-        <label>विषय<select id="answerReviewSubjectFilter"><option value="all">सभी विषय</option></select></label>
-        <label>स्थिति<select id="answerReviewStatusFilter"><option value="all">सभी प्रश्न</option><option value="correct">सही</option><option value="wrong">गलत</option><option value="unanswered">अनुत्तरित</option><option value="subjective">लिखित-उत्तर</option></select></label>
-      </div>
-      <div id="answerReviewList"></div>
-      <div class="btn-row answer-review-footer"><button class="btn btn-outline" onclick="goToScreen('screen-summary')">← परिणाम पर वापस जाएँ</button></div>
-    </div>
-  </div>
   <div id="screen-summary" class="screen">
     <div class="auth-container" style="text-align: center;">
       <h1 id="summaryTestTitle" style="color: #10b981; font-size: 26px;">🎉 ClassTime 9 — TEST 02 — BSEB कक्षा 9 अभ्यास परीक्षा सफलतापूर्वक सबमिट हो गया!</h1>
@@ -184,7 +169,6 @@
       <div class="stat-row"><div class="stat-box"><div class="num" id="statSubjectiveMarked">0 / 14</div><div style="font-size: 12px; margin-top:5px;">कॉपी में लिखे चिन्हित</div></div><div class="stat-box"><div class="num" id="statMaxMarks">86 / 86</div><div style="font-size: 12px; margin-top:5px;">MCQ अधिकतम अंक</div></div></div><div id="subjectScoreBreakdown" style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 20px; text-align:center;"></div>
       <div style="text-align: left; background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 14px;">⚠️ <strong>महत्वपूर्ण निर्देश:</strong><br>अपने परिणाम की समीक्षा करें और गलत प्रश्नों को दोबारा हल करें।</div>
       <div id="emailStatus" class="email-status">आपके उत्तर शिक्षक के ईमेल पर स्वचालित रूप से भेजे जाएँगे।</div>
-      <div class="btn-row" style="margin-top:16px;"><button id="openAnswerReviewBtn" type="button" class="btn btn-primary" onclick="openAnswerReview()">📘 विस्तृत उत्तर देखें</button></div>
     </div>
   </div>
 
