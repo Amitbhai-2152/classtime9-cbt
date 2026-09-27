@@ -15,7 +15,7 @@ const TEST_CONFIGS = {
     bank: () => Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS : [],
     paperHash: "c8dd56b6",
     durationSeconds: 150 * 60,
-    studentReleased: false
+    studentReleased: true
   },
   practice50: {
     id: "practice50",
