@@ -29,13 +29,16 @@
         <div class="form-group"><label>मोबाइल नंबर *</label><input type="tel" id="mobileNo" pattern="[0-9]{10}" required /></div>
         <button type="submit" class="btn btn-primary">निर्देश पढ़ें &rarr;</button>
       </form>
-      <div class="preview-entry test03-release-card">
-        <div style="font-weight:800; margin-bottom:5px;">📝 TEST 03 — दूसरा अभ्यास पेपर</div>
+      <div class="preview-entry test03-release-card is-locked">
+        <div style="font-weight:800; margin-bottom:5px;">🔒 TEST 03 — दूसरा अभ्यास पेपर</div>
         <div style="font-size:12px; line-height:1.5; color:#475569; margin-bottom:9px;">
-          नया 100-प्रश्न BSEB कक्षा 9 paper • 86 MCQ + 14 written • 150 मिनट
+          TEST 03 अभी लॉक है। इसे छात्र तब तक शुरू नहीं कर सकते जब तक शिक्षक इसे प्रकाशित न करें।
+        </div>
+        <div id="test03LockNotice" class="test03-lock-notice" role="status">
+          🔐 <strong>अभी उपलब्ध नहीं है</strong> — TEST 03 केवल शिक्षक के आदेश पर खोला जाएगा।
         </div>
         <div class="btn-row" style="margin-top:0;">
-          <button type="button" class="btn btn-primary" onclick="openTest03StudentMode()">🎓 TEST 03 शुरू करें</button>
+          <button id="test03StudentStartBtn" type="button" class="btn btn-primary" disabled aria-disabled="true">🔒 TEST 03 लॉक है</button>
         </div>
       </div>
       </div>
