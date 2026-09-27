@@ -6,7 +6,7 @@ const TEST_CONFIGS = {
     bank: () => Array.isArray(window.TEST02_QUESTIONS) ? window.TEST02_QUESTIONS : [],
     paperHash: "4a67342c",
     durationSeconds: 150 * 60,
-    studentReleased: false
+    studentReleased: true
   },
   test03: {
     id: "test03",
@@ -907,6 +907,11 @@ window.addEventListener("load", () => {
       goToScreen("screen-registration");
     } else if (params.get("preview") === "test03") {
       openTest03Preview();
+    } else {
+      // TEST 02 is the currently released/default student paper.
+      configureActiveTest("test02");
+      updateActiveTestUI();
+      goToScreen("screen-registration");
     }
   } catch (error) {
     console.warn("Could not open requested test:", error);
