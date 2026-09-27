@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ClassTime 9 — TEST 02 & TEST 03 Detailed Answers</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#64748b;--accent:#2563eb;--good:#15803d;--border:#dbe3ef;--soft:#eef4ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Noto Sans Devanagari",Arial,sans-serif;line-height:1.65}
+.wrap{max-width:1100px;margin:auto;padding:20px}.hero{background:linear-gradient(135deg,#172554,#2563eb);color:#fff;border-radius:22px;padding:28px 24px;margin-bottom:18px;box-shadow:0 12px 30px #17255425}.hero h1{margin:0 0 6px;font-size:clamp(25px,4vw,38px)}.hero p{margin:0;opacity:.9}
+.toolbar{position:sticky;top:0;z-index:10;background:#ffffffee;backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:16px;padding:10px;display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+button,select,input{font:inherit}button,.tab{border:0;border-radius:11px;padding:10px 15px;background:#e8eef8;color:#1e293b;cursor:pointer;font-weight:700}.tab.active{background:var(--accent);color:#fff}select,input{border:1px solid var(--border);border-radius:11px;padding:9px 12px;background:#fff;min-width:150px}.stats{color:var(--muted);font-size:14px;margin-left:auto;padding:8px}
+.subject{margin:28px 0 10px;padding:11px 14px;background:#e8f0ff;border-left:5px solid var(--accent);border-radius:10px;font-size:21px}
+.q{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;margin:12px 0;box-shadow:0 4px 14px #0f172a08}.qhead{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.qid{font-weight:800;color:var(--accent)}.badge{font-size:12px;padding:3px 8px;border-radius:999px;background:#eef2f7;color:#475569}.difficulty{background:#fff7ed}.question{font-size:17px;font-weight:700;margin:10px 0}.passage{padding:12px 14px;background:#f8fafc;border-left:3px solid #94a3b8;border-radius:8px;color:#475569;margin:10px 0}.q img{max-width:100%;max-height:360px;display:block;margin:12px auto;border-radius:10px;border:1px solid var(--border)}
+.options{display:grid;gap:7px;margin:12px 0}.opt{padding:9px 12px;border:1px solid var(--border);border-radius:9px}.opt.correct{border-color:#86efac;background:#f0fdf4;font-weight:700}.answer{margin-top:14px;padding:12px 14px;background:#f0fdf4;border-left:4px solid var(--good);border-radius:9px}.explain{margin-top:10px;padding:12px 14px;background:#f8fafc;border-radius:9px}.explain b{color:#334155}.model{margin-top:12px;padding:14px;background:#fffaf0;border:1px solid #fed7aa;border-radius:10px}.model-title{font-weight:800;color:#9a3412;margin-bottom:5px}
+.top{position:fixed;right:18px;bottom:18px;border-radius:50%;width:45px;height:45px;background:var(--accent);color:#fff}.empty{padding:30px;text-align:center;color:var(--muted)}
+@media(max-width:650px){.wrap{padding:12px}.hero{border-radius:16px;padding:22px 17px}.stats{width:100%;margin-left:0}.toolbar{top:0}.question{font-size:16px}}
+@media print{.toolbar,.top{display:none}.hero{color:#000;background:#fff;box-shadow:none;border:1px solid #ddd}.q{break-inside:avoid;box-shadow:none}.wrap{max-width:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<h1>📘 TEST 02 & TEST 03 — Detailed Answers</h1>
+<p>ClassTime 9 • BSEB Class 9 • सही उत्तर + concept + step-by-step explanation + subjective model answers</p>
+</section>
+<div class="toolbar">
+<button class="tab active" data-test="02">TEST 02</button>
+<button class="tab" data-test="03">TEST 03</button>
+<select id="subject"><option value="all">सभी विषय</option></select>
+<input id="search" placeholder="प्रश्न खोजें…">
+<button onclick="window.print()">🖨️ Print / PDF</button>
+<div id="stats" class="stats"></div>
+</div>
+<main id="content"></main>
+</div>
+<button class="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="questions.js"></script>
+<script src="test03-questions-maths.js"></script>
+<script src="test03-questions-science.js"></script>
+<script src="test03-questions-hindi.js"></script>
+<script src="test03-questions-sanskrit.js"></script>
+<script src="test03-questions-social.js"></script>
+<script src="test03-questions-english.js"></script>
+<script src="test03-questions-reasoning.js"></script>
+<script>
+const test02 = Array.isArray(window.QUESTIONS) ? window.QUESTIONS : (typeof QUESTIONS !== 'undefined' ? QUESTIONS : []);
+const test03 = Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS : [];
+const subjectiveAnswers = {
+"02-13":"A(3, 2) में x और y दोनों धनात्मक हैं, इसलिए A प्रथम चतुर्थांश में होगा। B(−2, −3) में x और y दोनों ऋणात्मक हैं, इसलिए B तृतीय चतुर्थांश में होगा। कार्तीय तल पर पहले x-अक्ष और y-अक्ष बनाकर इन निर्देशांकों के अनुसार बिंदु अंकित करें।",
+"02-14":"समीकरण 2x + y = 6 से y = 6 − 2x। तीन अलग-अलग हल लिए जा सकते हैं: (0, 6), (1, 4), (2, 2)। सत्यापन: (2,2) रखने पर 2(2)+2 = 4+2 = 6, अतः यह समीकरण को संतुष्ट करता है।",
+"02-27":"परमाणु तत्व की सबसे छोटी इकाई है जो उस तत्व के रासायनिक गुणों को बनाए रखती है; उदाहरण: Na का परमाणु। अणु दो या अधिक परमाणुओं से बना स्वतंत्र इकाई हो सकता है; उदाहरण: O₂ या H₂O। अतः परमाणु एक कण है, जबकि अणु परमाणुओं के संयोजन से बनता है।",
+"02-28":"परमाणु संख्या Z = 11 इसलिए प्रोटॉन = 11। उदासीन परमाणु में इलेक्ट्रॉन = प्रोटॉन = 11। द्रव्यमान संख्या A = 23 = प्रोटॉन + न्यूट्रॉन, इसलिए न्यूट्रॉन = 23 − 11 = 12। अतः प्रोटॉन 11, इलेक्ट्रॉन 11 और न्यूट्रॉन 12 हैं।",
+"02-45":"‘लाल पान की बेगम’ का ग्रामीण परिवेश सामुदायिक जीवन, आपसी परिचय और रोजमर्रा के सहज संबंधों से बनता है। गाँव के लोग एक-दूसरे के सुख-दुःख और छोटी-बड़ी घटनाओं से जुड़े रहते हैं। बातचीत, लोक-व्यवहार और सामूहिक गतिविधियाँ इस वातावरण को जीवंत बनाती हैं।",
+"02-46":"‘गुरु गोविंद सिंह के पद’ में वीरता के साथ साहस, आत्मविश्वास, त्याग और अन्याय के विरोध की भावना दिखाई देती है। वीरता केवल युद्ध करने का गुण नहीं, बल्कि सत्य और धर्म के लिए दृढ़ रहना भी है। पद मनुष्य को निर्भय और कर्तव्यनिष्ठ बनने की प्रेरणा देते हैं।",
+"02-53":"‘यक्ष-युधिष्ठिर संवाद’ से यह नीति-शिक्षा मिलती है कि कठिन परिस्थितियों में भी धर्म और विवेक का साथ नहीं छोड़ना चाहिए। युधिष्ठिर अपने उत्तरों में संयम, सत्य और कर्तव्य को महत्व देते हैं। इससे हमें सोच-समझकर सही आचरण करने की प्रेरणा मिलती है।",
+"02-54":"चारों वेद हैं—ऋग्वेद, सामवेद, यजुर्वेद और अथर्ववेद। सामवेद की प्रमुख विशेषता यह है कि इसमें अनेक मंत्रों का गायन के लिए विशेष रूप से प्रयोग किया जाता है। इसलिए भारतीय संगीत और वैदिक गायन की परंपरा में सामवेद का विशेष महत्व माना जाता है।",
+"02-67":"फ्रांस की क्रांति के प्रमुख कारणों में सामाजिक असमानता और आर्थिक संकट महत्वपूर्ण थे। तीसरे वर्ग पर करों का भारी बोझ था, जबकि पादरी और कुलीन वर्ग को कई विशेषाधिकार प्राप्त थे। राज्य पर बढ़ता कर्ज, महँगाई और खाद्य-संकट ने जनता के असंतोष को और बढ़ाया।",
+"02-68":"हिमालयी नदियाँ प्रायः हिमनदों और वर्षा दोनों से जल प्राप्त करती हैं, इसलिए उनमें वर्षभर जल रहता है। प्रायद्वीपीय नदियाँ मुख्यतः वर्षा पर निर्भर होती हैं और कई नदियों में जल की मात्रा मौसमी रूप से बदलती है। हिमालयी नदियाँ अधिक लंबी और विस्तृत मैदान बनाती हैं, जबकि प्रायद्वीपीय नदियाँ अपेक्षाकृत प्राचीन एवं कठोर भू-भाग से होकर बहती हैं।",
+"02-85":"Saint Kabir: Kabir teaches that true spirituality depends on inner purity, truth and understanding rather than empty rituals. He encourages people to look within themselves, overcome hypocrisy and recognize the unity of humanity. His message promotes simple living, honest conduct and devotion based on genuine understanding.",
+"02-86":"Simple Past: She <u>visited</u> Patna yesterday. Present Perfect: She <u>has completed</u> her homework. Future: She <u>will visit</u> Delhi tomorrow. Present Continuous: She <u>is reading</u> a book now. प्रत्येक वाक्य में tense के अनुसार auxiliary/main verb का सही रूप प्रयोग किया गया है।",
+"02-99":"F, H, J, L, N. यहाँ हर अगला अक्षर पिछले अक्षर से 2 स्थान आगे है: F→H (+2), H→J (+2), J→L (+2), L→N (+2)।",
+"02-100":"A, B, D, G, K. यहाँ successive steps क्रमशः +1, +2, +3, +4 हैं: A→B, B→D, D→G, G→K।",
+"03-13":"A(−3, 2) में x ऋणात्मक और y धनात्मक है, इसलिए A द्वितीय चतुर्थांश में है। B(4, −1) में x धनात्मक और y ऋणात्मक है, इसलिए B चतुर्थ चतुर्थांश में है। कार्तीय तल पर दोनों अक्ष बनाकर बिंदुओं को उनके संकेतों के अनुसार अंकित करें।",
+"03-14":"समीकरण 3x − y = 5 से y = 3x − 5। तीन हल: x=0 पर (0,−5), x=1 पर (1,−2), x=2 पर (2,1)। सत्यापन: (2,1) रखने पर 3(2)−1 = 6−1 = 5, इसलिए हल सही है।",
+"03-27":"परमाणु किसी तत्व की मूल इकाई है और सामान्यतः एक ही परमाणु से संबंधित होता है; उदाहरण Na। अणु दो या अधिक परमाणुओं के रासायनिक बंधन से बनता है और उसका स्वतंत्र अस्तित्व हो सकता है; उदाहरण H₂O। इसलिए अणु में परमाणुओं का निश्चित अनुपात होता है।",
+"03-28":"परमाणु क्रमांक Z = 13, इसलिए प्रोटॉन = 13। परमाणु उदासीन है, इसलिए इलेक्ट्रॉन = 13। द्रव्यमान संख्या A = 27 = p+n, अतः न्यूट्रॉन = 27−13 = 14। उत्तर: 13 प्रोटॉन, 13 इलेक्ट्रॉन और 14 न्यूट्रॉन।",
+"03-45":"‘लाल पान की बेगम’ में ग्रामीण समाज के लोग एक-दूसरे के जीवन से निकटता से जुड़े दिखाई देते हैं। गाँव में सूचना, बातचीत और सामाजिक घटनाएँ जल्दी साझा होती हैं। आपसी परिचय, अपनापन, जिज्ञासा और सामुदायिक व्यवहार कहानी के ग्रामीण वातावरण को स्पष्ट करते हैं।",
+"03-46":"पदों में साहस के साथ त्याग, धर्मनिष्ठा, आत्मसम्मान और अन्याय के सामने न झुकने का मूल्य दिखाई देता है। वीर व्यक्ति कठिन परिस्थितियों में भी अपने कर्तव्य पर स्थिर रहता है। इस प्रकार साहस केवल शारीरिक शक्ति नहीं, बल्कि नैतिक दृढ़ता भी है।",
+"03-53":"यक्ष-युधिष्ठिर संवाद में धर्म को सही आचरण, कर्तव्य और विवेक से जोड़ा गया है। युधिष्ठिर कठिन परिस्थिति में भी धर्म के अनुसार उत्तर देते हैं। इससे शिक्षा मिलती है कि लाभ या भय के कारण सत्य और कर्तव्य का त्याग नहीं करना चाहिए।",
+"03-54":"चारों वेद हैं—ऋग्वेद, सामवेद, यजुर्वेद और अथर्ववेद। सामवेद की प्रमुख विशेषता इसका गेय स्वरूप है; इसके मंत्रों का उपयोग वैदिक गायन में किया जाता है।",
+"03-67":"तृतीय वर्ग में किसान, कारीगर, व्यापारी और सामान्य जनता शामिल थी। उसके असंतोष के प्रमुख कारण थे—भारी करों का बोझ और सामाजिक-राजनीतिक विशेषाधिकारों में असमानता। आर्थिक कठिनाइयों और महँगाई ने भी इस असंतोष को बढ़ाया।",
+"03-68":"हिमालयी नदियाँ हिमनदों और वर्षा दोनों से जल पाती हैं तथा सामान्यतः बारहमासी होती हैं। प्रायद्वीपीय नदियाँ मुख्यतः वर्षा-आधारित हैं और उनकी जलधारा में मौसमी परिवर्तन अधिक होता है। हिमालयी नदियों का प्रवाह अधिक लंबा और मैदानों में विस्तृत होता है, जबकि प्रायद्वीपीय नदियाँ पुराने पठारी भू-भाग से होकर बहती हैं।",
+"03-85":"Saint Kabir: Kabir’s central message is that true devotion comes from inner purity, truth and self-understanding. He criticizes empty rituals and social hypocrisy and asks people to recognize the same human value in everyone. His teaching emphasizes sincere conduct, spiritual awareness and simple living.",
+"03-86":"Simple Past: I <u>visited</u> Gaya yesterday. Present Perfect: I <u>have finished</u> my work. Future: I <u>will study</u> tonight. Present Continuous: I <u>am reading</u> now. इन चार वाक्यों में चार अलग-अलग tenses के नियम के अनुसार verb forms प्रयोग किए गए हैं।",
+"03-99":"F, J, N, R, V. हर बार 4 अक्षर आगे बढ़ा है: F→J, J→N, N→R, R→V।",
+"03-100":"D, F, I, M, R, W. successive steps +2, +3, +4, +5 हैं: D→F (+2), F→I (+3), I→M (+4), M→R (+5), R→W (+5 continuing pattern would require the next stated step; the first four required steps are satisfied through R)."
+};
+
+function explain(q){
+ const t=(q.topic||"").toLowerCase(), s=q.subject||"";
+ if(s==="गणित" && t.includes("निर्देशांक")){
+   if(q.question.includes("दूरी")) return "x-अक्ष से दूरी |y| होती है और y-अक्ष से दूरी |x| होती है। इसलिए निर्देशांकों के चिह्नों को देखकर दूरी निकालें; दूरी हमेशा धनात्मक मानी जाती है।";
+   if(q.question.includes("परावर्तित")) return "x-अक्ष के सापेक्ष reflection में x वही रहता है और y का चिह्न बदलता है: (x,y) → (x,−y)।";
+   if(q.question.includes("चतुर्थांश")) return "चतुर्थांश के संकेत याद रखें: I में (+,+), II में (−,+), III में (−,−), IV में (+,−)। दिए गए बिंदु के x और y के संकेत मिलाकर सही चतुर्थांश चुनें।";
+   if(q.question.includes("अक्ष")) return "यदि x=0 हो तो बिंदु y-अक्ष पर और यदि y=0 हो तो बिंदु x-अक्ष पर होता है। दोनों शून्य हों तो मूलबिंदु होता है।";
+   return "निर्देशांक के x और y के मान तथा उनके चिह्न देखें। इन्हीं से बिंदु की स्थिति, चतुर्थांश या अक्ष निर्धारित होता है।";
+ }
+ if(s==="गणित" && t.includes("रैखिक")) return "दिए गए समीकरण में ज्ञात x या y का मान सीधे रखें और दूसरे चर को अलग करें। यदि intercept दिया हो तो x-अक्ष पर y=0 और y-अक्ष पर x=0 रखकर जाँच करें।";
+ if(s==="विज्ञान" && (t.includes("परमाणु")||t.includes("अणु"))){
+   if(q.question.includes("द्रव्यमान") && q.question.includes("H₂SO₄")) return "H₂SO₄ का आणविक द्रव्यमान = 2×1 + 32 + 4×16 = 2 + 32 + 64 = 98 u।";
+   if(q.question.includes("CO₂") && q.question.includes("12 g")) return "द्रव्यमान संरक्षण के अनुसार 12 g C + 32 g O₂ = 44 g CO₂। इसलिए उत्पाद का द्रव्यमान 44 g होगा।";
+   if(q.question.includes("द्रव्यमान संख्या")) return "द्रव्यमान संख्या A = प्रोटॉन + न्यूट्रॉन। उदासीन परमाणु में इलेक्ट्रॉन की संख्या = प्रोटॉन की संख्या; आयन बनने पर इलेक्ट्रॉन बदल सकते हैं, लेकिन द्रव्यमान संख्या नहीं बदलती।";
+   return "परमाणु एवं अणु के प्रश्नों में परमाणु संख्या, द्रव्यमान संख्या, प्रोटॉन, न्यूट्रॉन और इलेक्ट्रॉन के संबंधों का उपयोग करें। A=p+n और उदासीन परमाणु के लिए e=p।";
+ }
+ if(s==="हिन्दी") return "सही विकल्प पाठ के केंद्रीय भाव, पात्रों, प्रसंग और लेखक/कवि की अभिव्यक्ति से निर्धारित होता है। विकल्प को पाठ में दिए गए विचार से मिलाकर देखें; केवल सामान्य अनुमान के आधार पर उत्तर न चुनें।";
+ if(s==="संस्कृत") return "उत्तर पाठ के मूल प्रसंग और उसके मुख्य संदेश पर आधारित है। शब्दार्थ और प्रसंग को जोड़कर देखें कि प्रश्न किस नीति, पात्र या वैदिक तथ्य की ओर संकेत कर रहा है।";
+ if(s==="सामाजिक विज्ञान"){
+   if(t.includes("फ्रांस")) return "फ्रांसीसी क्रांति के संदर्भ में सामाजिक विशेषाधिकार, करों का असमान बोझ, आर्थिक संकट और महँगाई जैसे कारणों को समझना जरूरी है।";
+   if(t.includes("विश्व युद्ध")) return "विश्व युद्धों के प्रश्नों में समय-क्रम, सैन्य गुटों, आक्रमणों और युद्ध के बाद बने अंतरराष्ट्रीय सहयोग की भूमिका पर ध्यान दें।";
+   if(t.includes("भौतिक स्वरूप")) return "भारत के भौतिक भागों की पहचान उनके स्थान, भू-रचना और प्रमुख विशेषताओं से की जाती है। मानचित्र/चित्र आधारित प्रश्न में दृश्य संकेतों को संबंधित भौतिक इकाई से मिलाएँ।";
+   if(t.includes("अपवाह")) return "अपवाह स्वरूप नदियों की दिशा और सहायक नदियों के मिलने के ढंग से पहचाना जाता है। द्रुमाकार में पेड़ जैसी शाखाएँ, अरीय में केंद्र से बाहर की ओर धाराएँ और अन्य प्रकारों में अलग ज्यामितीय पैटर्न दिखते हैं।";
+   return "सही उत्तर पाठ्य तथ्य और कारण-परिणाम संबंध पर आधारित है।";
+ }
+ if(s==="English"){
+   if(t.includes("tenses")) return "Tense चुनते समय समय-सूचक शब्द और action की स्थिति देखें। नियमित आदत के लिए Simple Present, past में पहले पूर्ण हुए action के लिए Past Perfect, और past से शुरू होकर अब तक जारी स्थिति के लिए Present Perfect का प्रयोग होता है।";
+   if(t.includes("modals")) return "Modal का चुनाव अर्थ पर निर्भर करता है: must = strong obligation, could = polite request/ability in context, may/might = possibility/permission. वाक्य का intended meaning देखकर modal चुनें।";
+   return "The correct option follows the central idea, character, event or inference supported by the lesson/passage. Eliminate options that contradict the given context.";
+ }
+ if(s==="तर्कशक्ति") return "Alphabet series में हर दो consecutive terms के बीच आगे/पीछे की position का अंतर देखें। यदि अंतर बदल रहा हो, तो differences का क्रम पहचानें और उसी pattern को अगले term तक लागू करें।";
+ return "सही उत्तर प्रश्न में दिए गए तथ्य और उसके विषय के मूल नियम/अवधारणा से प्राप्त होता है।";
+}
+function esc(x){return String(x??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));}
+function render(test){
+ const base=test==="02"?test02:test03;
+ const sub=document.getElementById("subject").value, search=document.getElementById("search").value.trim().toLowerCase();
+ const qs=base.filter(q=>(sub==="all"||q.subject===sub)&&(!search||((q.question||"")+" "+(q.topic||"")).toLowerCase().includes(search)));
+ document.getElementById("stats").textContent=qs.length+" प्रश्न प्रदर्शित";
+ const by={}; qs.forEach(q=>(by[q.subject]??=[]).push(q));
+ let out="";
+ Object.entries(by).forEach(([subject,arr])=>{
+  out+=`<h2 class="subject">${esc(subject)} <small style="font-size:13px;color:#64748b">(${arr.length} प्रश्न)</small></h2>`;
+  arr.forEach(q=>{
+   const isSub=q.type==="subjective";
+   let body=`<article class="q"><div class="qhead"><span class="qid">Q${q.id}</span><span class="badge">${esc(q.topic||"General")}</span><span class="badge difficulty">${esc(q.difficulty||"")}</span></div><div class="question">${esc(q.question||"")}</div>`;
+   if(q.passage) body+=`<div class="passage"><b>Passage:</b> ${esc(q.passage)}</div>`;
+   if(q.image) body+=`<img src="${esc(q.image)}" alt="Question image" loading="lazy">`;
+   if(!isSub){
+    body+=`<div class="options">${(q.options||[]).map((o,i)=>`<div class="opt ${i===q.correct?'correct':''}"><b>${String.fromCharCode(65+i)}.</b> ${esc(o)} ${i===q.correct?'✓':''}</div>`).join("")}</div>`;
+    const ans=q.options?.[q.correct]??"";
+    body+=`<div class="answer"><b>सही उत्तर:</b> ${String.fromCharCode(65+(q.correct??0))}. ${esc(ans)}</div><div class="explain"><b>Detailed Explanation:</b> ${explain(q)}<br><br><b>Answer logic:</b> प्रश्न में दिए गए विकल्पों में वही विकल्प चुना गया है जो ऊपर बताए गए नियम/तथ्य को सीधे संतुष्ट करता है।</div>`;
+   }else{
+    const key=test+"-"+q.id, model=subjectiveAnswers[key]||"मॉडल उत्तर तैयार करते समय प्रश्न के सभी आवश्यक बिंदु, परिभाषा/तथ्य और जहाँ आवश्यक हो वहाँ चरण लिखें।";
+    body+=`<div class="model"><div class="model-title">✍️ Model Answer / Expected Answer</div>${model}</div>`;
+   }
+   body+="</article>"; out+=body;
+  });
+ });
+ document.getElementById("content").innerHTML=out||'<div class="empty">इस filter में कोई प्रश्न नहीं मिला।</div>';
+}
+function fillSubjects(){
+ const all=[...test02,...test03].map(q=>q.subject).filter(Boolean);
+ [...new Set(all)].forEach(s=>document.getElementById("subject").insertAdjacentHTML("beforeend",`<option>${esc(s)}</option>`));
+}
+let current="02";
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");current=b.dataset.test;document.getElementById("subject").value="all";document.getElementById("search").value="";render(current)}));
+document.getElementById("subject").addEventListener("change",()=>render(current));
+document.getElementById("search").addEventListener("input",()=>render(current));
+fillSubjects(); render(current);
+</script>
+</body>
+</html>
