@@ -510,6 +510,22 @@ input { min-height: 44px; }
   }
 }
 
+.practice50-launch-card {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #93c5fd;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #eff6ff 0%, #f0fdf4 100%);
+}
+.practice50-launch-card .btn-primary {
+  background: #2563eb;
+}
+@media (max-width: 600px) {
+  .practice50-launch-card .btn-row {
+    flex-direction: column;
+  }
+}
+
 .test03-release-card {
   background: linear-gradient(180deg, #f0fdfa 0%, #eff6ff 100%);
   border-color: #5eead4;
