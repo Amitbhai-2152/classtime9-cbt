@@ -1,7 +1,8 @@
 (function () {
   const lock = {
     test02: { id: "test02", count: 100, mcq: 86, subjective: 14, hash: "4a67342c" },
-    test03: { id: "test03", count: 100, mcq: 86, subjective: 14, hash: "c8dd56b6" }
+    test03: { id: "test03", count: 100, mcq: 86, subjective: 14, hash: "c8dd56b6" },
+    practice50: { id: "practice50", count: 50, mcq: 43, subjective: 7, hash: "71712c78" }
   };
 
   const normalize = value => String(value ?? "")
@@ -41,6 +42,7 @@
   const getBank = testId => {
     if (testId === "test02") return Array.isArray(window.TEST02_QUESTIONS) ? window.TEST02_QUESTIONS : [];
     if (testId === "test03") return Array.isArray(window.TEST03_QUESTIONS) ? window.TEST03_QUESTIONS : [];
+    if (testId === "practice50") return Array.isArray(window.TESTPRACTICE_QUESTIONS) ? window.TESTPRACTICE_QUESTIONS : [];
     return [];
   };
 
