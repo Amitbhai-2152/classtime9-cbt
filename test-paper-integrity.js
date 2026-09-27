@@ -2,7 +2,7 @@
   const lock = {
     test02: { id: "test02", count: 100, mcq: 86, subjective: 14, hash: "4a67342c" },
     test03: { id: "test03", count: 100, mcq: 86, subjective: 14, hash: "c8dd56b6" },
-    practice50: { id: "practice50", count: 50, mcq: 43, subjective: 7, hash: "cbecb040" }
+    practice50: { id: "practice50", count: 50, mcq: 43, subjective: 7, hash: "d6009f30" }
   };
 
   const normalize = value => String(value ?? "")
